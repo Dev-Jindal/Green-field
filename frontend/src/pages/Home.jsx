@@ -38,7 +38,7 @@ const Home = () => {
         "Risk assessment tools",
       ],
       image:
-        "https://images.pexels.com/photos/5475755/pexels-photo-5475755.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "/images/sandmaster.png",
     },
     {
       icon: Workflow,
@@ -53,7 +53,7 @@ const Home = () => {
         "Compliance tracking",
       ],
       image:
-        "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "/images/autowellz.png",
     },
     {
       icon: Cpu,
@@ -68,7 +68,7 @@ const Home = () => {
         "Performance optimization",
       ],
       image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "/images/autopro.png",
     },
     {
       icon: Mountain,
@@ -83,7 +83,7 @@ const Home = () => {
         "Formation evaluation",
       ],
       image:
-        "https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "/images/rockmaster.png",
     },
     {
       icon: Leaf,
@@ -98,7 +98,7 @@ const Home = () => {
         "Reduction strategies",
       ],
       image:
-        "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "/images/green.png",
     },
   ];
 
@@ -229,17 +229,17 @@ const Home = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  to="/services"
+                  to="/schedule-demo"
                   className="bg-white text-[#1B4D3E] px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 shadow-lg transition"
                 >
                  Book a Demo
                 </Link>
 
                 <Link
-                  to="/contact"
+                  to="/services"
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1B4D3E] px-8 py-4 rounded-lg font-semibold transition"
                 >
-                  Get in Touch
+                  Our Services
                 </Link>
               </div>
             </div>
@@ -409,59 +409,63 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ========= PARTNERS SECTION ========= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* ========= PARTNERS LOGO SCROLLER ========= */}
+<section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] text-center mb-10">
+      Our Partners
+    </h2>
 
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
-              Our Partners
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Collaborating with global leaders to build sustainable solutions.
-            </p>
-          </div>
+    {/* Scrolling Wrapper */}
+    <div className="overflow-hidden">
+      <div className="flex items-center gap-12 whitespace-nowrap animate-scroll hover:pause-scroll">
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Factory,
-                name: "Global Oil & Gas Corp",
-                description:
-                  "Strategic collaboration on digital transformation projects.",
-              },
-              {
-                icon: Building2,
-                name: "Energy Solutions Group",
-                description:
-                  "Joint initiatives for sustainable production optimization.",
-              },
-              {
-                icon: BadgeCheck,
-                name: "Tech Innovate Labs",
-                description:
-                  "R&D partnership for cutting-edge energy software.",
-              },
-            ].map((partner, i) => (
-              <div
-                key={i}
-                className="border rounded-2xl p-8 bg-gray-50 hover:bg-white shadow transition"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-[#e8f5e9] flex items-center justify-center rounded-xl">
-                    <partner.icon className="w-7 h-7 text-[#1B4D3E]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1B4D3E]">
-                    {partner.name}
-                  </h3>
-                </div>
-                <p className="text-gray-700">{partner.description}</p>
-              </div>
-            ))}
-          </div>
+        {/* Repeat your logos here */}
+        {[
+          "/images/partners/P1.png",
+          "/images/partners/P2.png",
+          "/images/partners/P3.png",
+          "/images/partners/P4.png",
+          "/images/partners/P5.png",
+          "/images/partners/P6.png",
+        ].map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt="Partner Logo"
+        className="w-[150px] h-[70px] object-contain transition-all duration-300
+           hover:scale-110 hover:brightness-110 hover:border-2 hover:border-[#1B4D3E] rounded-lg"
 
-        </div>
-      </section>
+
+
+          />
+        ))}
+
+        {/* Duplicate for seamless scroll */}
+        {[
+           "/images/partners/P1.png",
+          "/images/partners/P2.png",
+          "/images/partners/P3.png",
+          "/images/partners/P4.png",
+          "/images/partners/P5.png",
+          "/images/partners/P6.png",
+        ].map((img, i) => (
+          <img
+            key={"d" + i}
+            src={img}
+            alt="Partner Logo"
+          className="w-[150px] h-[70px] object-contain transition-all duration-300
+           hover:scale-110 hover:brightness-110 hover:border-2 hover:border-[#1B4D3E] rounded-lg"
+
+
+
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ========= NEWS & EVENTS ========= */}
       <section className="py-20 bg-[#e8f5e9]">
@@ -653,6 +657,7 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
 
