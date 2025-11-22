@@ -22,3 +22,17 @@
 .pause-scroll {
   animation-play-state: paused;
 }
+
+/* In your main CSS file or Tailwind config */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* Start at 0 */
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll exactly halfway (the length of one full content group) */
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}

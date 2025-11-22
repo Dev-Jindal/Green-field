@@ -417,10 +417,14 @@ const Home = () => {
     </h2>
 
     {/* Scrolling Wrapper */}
-    <div className="overflow-hidden">
-      <div className="flex items-center gap-12 whitespace-nowrap animate-scroll hover:pause-scroll">
-
-        {/* Repeat your logos here */}
+    <div className="overflow-hidden relative">
+      <div className="
+          flex whitespace-nowrap
+          animate-marquee
+          hover:[animation-play-state:paused]
+        "
+      >
+        {/* Original + Duplicate logos */}
         {[
           "/images/partners/P1.png",
           "/images/partners/P2.png",
@@ -428,43 +432,32 @@ const Home = () => {
           "/images/partners/P4.png",
           "/images/partners/P5.png",
           "/images/partners/P6.png",
-        ].map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt="Partner Logo"
-        className="w-[150px] h-[70px] object-contain transition-all duration-300
-           hover:scale-110 hover:brightness-110 hover:border-2 hover:border-[#1B4D3E] rounded-lg"
-
-
-
-          />
-        ))}
-
-        {/* Duplicate for seamless scroll */}
-        {[
-           "/images/partners/P1.png",
+          "/images/partners/P1.png",
           "/images/partners/P2.png",
           "/images/partners/P3.png",
           "/images/partners/P4.png",
           "/images/partners/P5.png",
           "/images/partners/P6.png",
         ].map((img, i) => (
-          <img
-            key={"d" + i}
-            src={img}
-            alt="Partner Logo"
-          className="w-[150px] h-[70px] object-contain transition-all duration-300
-           hover:scale-110 hover:brightness-110 hover:border-2 hover:border-[#1B4D3E] rounded-lg"
-
-
-
-          />
+          <div key={i} className="flex-shrink-0 w-1/6 flex justify-center px-6">
+            <img
+              src={img}
+              alt="Partner Logo"
+              className="
+                h-24 md:h-28 lg:h-32 w-auto
+                object-contain rounded-xl
+                transition-all duration-300
+                hover:scale-110 hover:brightness-110 hover:shadow-lg
+                hover:border-2 hover:border-[#1B4D3E]
+              "
+            />
+          </div>
         ))}
       </div>
     </div>
   </div>
 </section>
+
 
 
       {/* ========= NEWS & EVENTS ========= */}
