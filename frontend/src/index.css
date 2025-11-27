@@ -1,11 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind Base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animation for partners slider */
+/* --------------------------------------
+    PARTNER SLIDER ANIMATIONS
+---------------------------------------*/
+
+/* Old scroll animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -23,16 +25,28 @@
   animation-play-state: paused;
 }
 
-/* In your main CSS file or Tailwind config */
+/* New marquee animation (cleaner, smoother) */
 @keyframes marquee {
   0% {
-    transform: translateX(0%); /* Start at 0 */
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%); /* Scroll exactly halfway (the length of one full content group) */
+    transform: translateX(-50%);
   }
 }
 
 .animate-marquee {
   animation: marquee 10s linear infinite;
+}
+
+
+/* --------------------------------------
+    CHATBOT FIXES (Prevents Overlapping)
+---------------------------------------*/
+
+
+
+/* Chatbot always stays above other content */
+.chatbot-fixed {
+  z-index: 9999 !important;
 }

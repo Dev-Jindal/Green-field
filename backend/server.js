@@ -1,46 +1,39 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import contactRoutes from './routes/contactRoutes.js';
-import productRoutes from './routes/productRoutes.js';
-import serviceRoutes from './routes/serviceRoutes.js';
+import express from "express";
+import cors from "cors";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from "dotenv";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Greenfield Energy API',
-    version: '1.0.0',
-    endpoints: {
-      contact: '/api/contact',
-      products: '/api/products',
-      services: '/api/services',
-    },
-  });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { prompt } = req.body;
+
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",  // ✅ Correct model
+    });
+
+    const result = await model.generateContent(prompt);
+
+    // ✅ FIXED: .text()
+    const reply = result.response.text();
+
+    return res.json({ reply });
+  } catch (err) {
+    console.error("❌ Gemini Error:", err);
+
+    return res.status(500).json({
+      reply: "Server error while generating response. Check server logs.",
+    });
+  }
 });
 
-app.use('/api/contact', contactRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/services', serviceRoutes);
-
-app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong!', error: err.message });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
-export default app;
+app.listen(5000, () =>
+  console.log("✅ Backend running on http://localhost:5000")
+);

@@ -9,6 +9,20 @@ const products = [
   'Green Consulting Services',
 ];
 
+// ❗ List of personal email domains that are NOT allowed
+const publicDomains = [
+  "gmail.com",
+  "yahoo.com",
+  "outlook.com",
+  "hotmail.com",
+  "rediffmail.com",
+  "proton.me",
+  "icloud.com",
+  "aol.com",
+  "live.com",
+  "msn.com",
+];
+
 export default function ScheduleDemo() {
   const [form, setForm] = useState({
     name: '',
@@ -31,19 +45,20 @@ export default function ScheduleDemo() {
 
     if (!form.name.trim()) newErrors.name = 'Name is required';
 
+    // 🛑 Company email validation
     if (!form.companyEmail.trim()) {
       newErrors.companyEmail = 'Company email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.companyEmail)) {
       newErrors.companyEmail = 'Enter a valid email address';
+    } else {
+      const domain = form.companyEmail.split("@")[1].toLowerCase();
+      if (publicDomains.includes(domain)) {
+        newErrors.companyEmail = "Please use a valid company email (not personal email IDs)";
+      }
     }
 
-    if (!form.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    }
-
-    if (!form.product) {
-      newErrors.product = 'Please select a product';
-    }
+    if (!form.phone.trim()) newErrors.phone = 'Phone number is required';
+    if (!form.product) newErrors.product = 'Please select a product';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -53,7 +68,6 @@ export default function ScheduleDemo() {
     e.preventDefault();
     if (!validate()) return;
 
-    // For now just log – here you’d call your API
     console.log('Form submitted:', form);
     alert('Thank you! We have received your demo request.');
 
@@ -69,9 +83,7 @@ export default function ScheduleDemo() {
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-16 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-green-100 p-6 sm:p-10">
-        <h1 className="text-3xl font-semibold text-gray-900 mb-2">
-          Schedule a Demo
-        </h1>
+        <h1 className="text-3xl font-semibold text-gray-900 mb-2">Schedule a Demo</h1>
         <p className="text-gray-600 mb-8">
           Share a few details and our team will reach out to set up a personalized demo.
         </p>
@@ -92,9 +104,7 @@ export default function ScheduleDemo() {
               `}
               placeholder="Enter your name"
             />
-            {errors.name && (
-              <p className="mt-1 text-xs text-red-500">{errors.name}</p>
-            )}
+            {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
           </div>
 
           {/* Company Email */}
@@ -132,9 +142,7 @@ export default function ScheduleDemo() {
               `}
               placeholder="+91 98765 43210"
             />
-            {errors.phone && (
-              <p className="mt-1 text-xs text-red-500">{errors.phone}</p>
-            )}
+            {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
           </div>
 
           {/* Product Dropdown */}
@@ -157,12 +165,10 @@ export default function ScheduleDemo() {
                 </option>
               ))}
             </select>
-            {errors.product && (
-              <p className="mt-1 text-xs text-red-500">{errors.product}</p>
-            )}
+            {errors.product && <p className="mt-1 text-xs text-red-500">{errors.product}</p>}
           </div>
 
-          {/* Additional Info / Message */}
+          {/* Additional Info */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Additional Information / Message
