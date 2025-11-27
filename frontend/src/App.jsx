@@ -15,6 +15,10 @@ import ChatBot from './components/ChatBot';
  import AutoWellz from "./pages/AutoWellz.jsx";
  import AutoPro from "./pages/AutoPro.jsx";
  import Green from "./pages/Green.jsx";
+import OilGasConsultancy from "./pages/OilGasConsultancy";
+import SoftwareDevelopment from "./pages/SoftwareDevelopment";
+import TrainingPage from "./pages/TrainingPage";
+import DataAnalysisPage from "./pages/DataAnalysisPage";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,6 +44,11 @@ function App() {
             <Route path="/products/autowellz" element={<AutoWellz />} />
             <Route path="/products/autopro" element={<AutoPro />} />
             <Route path="/products/green" element={<Green />} />
+            {/* SERVICE ROUTES */}
+            <Route path="/services/oil-gas" element={<OilGasConsultancy />} />
+            <Route path="/services/software" element={<SoftwareDevelopment />} />
+            <Route path="/services/training" element={<TrainingPage />} />
+            <Route path="/services/data-analysis" element={<DataAnalysisPage />} />
           </Routes>
         </main>
 
