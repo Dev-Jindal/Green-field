@@ -15,6 +15,8 @@ import ChatBot from './components/ChatBot';
  import AutoWellz from "./pages/AutoWellz.jsx";
  import AutoPro from "./pages/AutoPro.jsx";
  import Green from "./pages/Green.jsx";
+//Scroll top
+import ScrollToTop from "./components/ScrollToTop";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -22,6 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         
@@ -49,6 +52,8 @@ function App() {
         <ChatBot />
       </div>
     </Router>
+  
+
   );
 }
 

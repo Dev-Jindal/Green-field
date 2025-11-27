@@ -277,25 +277,33 @@ export default function RockMaster() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Frequently Asked Questions</h2>
+  <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              "How are MEM properties derived from basic log inputs?",
-              "What correlations are used for CDP curve generation?",
-              "Can RockMaster be calibrated with laboratory core data?",
-              "How do we rank wells by sanding tendency?",
-              "What sand control methods does RockMaster support modelling for?"
-            ].map((q) => (
-              <div key={q} className="border rounded-xl p-4 text-[#1B4D3E]/90">
-                {q}
-              </div>
-            ))}
-          </div>
+    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-6">
+      {[
+        "How are MEM properties derived from basic log inputs?",
+        "What correlations are used for CDP curve generation?",
+        "Can RockMaster be calibrated with laboratory core data?",
+        "How do we rank wells by sanding tendency?",
+        "What sand control methods does RockMaster support modelling for?"
+      ].map((q) => (
+        <div
+          key={q}
+          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+        >
+          {q}
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* BLOG / ARTICLES */}
       <section className="py-24 bg-[#f7fffb]">

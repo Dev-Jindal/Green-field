@@ -1,6 +1,9 @@
 import { Box, Workflow, Cpu, Mountain, Leaf, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       icon: Box,
@@ -16,6 +19,7 @@ const Products = () => {
       ],
       video:
         "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+      link: "/products/sandmaster",
     },
     {
       icon: Workflow,
@@ -31,6 +35,7 @@ const Products = () => {
       ],
       video:
         "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
+      link: "/products/autowellz",
     },
     {
       icon: Cpu,
@@ -44,8 +49,8 @@ const Products = () => {
         "Data integration",
         "Performance optimization",
       ],
-      image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?w=800",
+      video: "/video/autopro.mp4",
+      link: "/products/autopro",
     },
     {
       icon: Mountain,
@@ -59,8 +64,9 @@ const Products = () => {
         "Risk prediction",
         "Formation evaluation",
       ],
-      image:
-        "https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?w=800",
+      video:
+        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+      link: "/products/rockmaster",
     },
     {
       icon: Leaf,
@@ -74,8 +80,9 @@ const Products = () => {
         "Sustainability reporting",
         "Reduction strategies",
       ],
-      image:
-        "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?w=800",
+      video:
+        "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
+      link: "/products/green",
     },
   ];
 
@@ -131,7 +138,11 @@ const Products = () => {
                   </ul>
                 </div>
 
-                <button className="bg-[#1B4D3E] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#153c30] transition-all duration-300 flex items-center gap-2 shadow-lg">
+                {/* UPDATED BUTTON WITH NAVIGATION */}
+                <button
+                  onClick={() => navigate(product.link)}
+                  className="bg-[#1B4D3E] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#153c30] transition-all duration-300 flex items-center gap-2 shadow-lg"
+                >
                   Learn More
                   <ArrowRight className="w-5 h-5" />
                 </button>
@@ -162,8 +173,6 @@ const Products = () => {
           ))}
         </div>
       </section>
-
-      {/* Why Choose Us + CTA remain unchanged… */}
     </div>
   );
 };

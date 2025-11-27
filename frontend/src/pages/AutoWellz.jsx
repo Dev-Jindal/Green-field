@@ -341,6 +341,36 @@ export default function AutoWellz() {
 
         </div>
       </section>
+          {/* ========================================================= */}
+      {/* FAQ SECTION */}
+      {/* ========================================================= */}
+     <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-6">
+      {[
+        "How does AutoWellz help reduce NPT?",
+        "Can the software integrate with rig sensors?",
+        "Does AutoWellz support multi-operator workflows?",
+        "How does the program generation module work?",
+        "Is AutoWellz cloud-based or hybrid?",
+      ].map((q) => (
+        <div
+          key={q}
+          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+        >
+          {q}
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* ========================================================= */}
       {/* BLOG SECTION */}
@@ -389,35 +419,7 @@ export default function AutoWellz() {
         </button>
       </section>
 
-      {/* ========================================================= */}
-      {/* FAQ SECTION */}
-      {/* ========================================================= */}
-      <section className="py-20 bg-[#e8f5e9]">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-10">Frequently Asked Questions</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {[
-              "How does AutoWellz help reduce NPT?",
-              "Can the software integrate with rig sensors?",
-              "Does AutoWellz support multi-operator workflows?",
-              "How does the program generation module work?",
-              "Is AutoWellz cloud-based or hybrid?",
-            ].map((q) => (
-              <div
-                key={q}
-                className="border border-[#1B4D3E] bg-white rounded-xl p-5 text-[#1B4D3E] shadow-sm"
-              >
-                {q}
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
+  
 
       {/* ========================================================= */}
       {/* FINAL CTA */}

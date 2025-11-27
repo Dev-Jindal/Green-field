@@ -238,7 +238,8 @@ export default function Products() {
         "Risk prediction",
         "Formation evaluation",
       ],
-      image: "/images/rockmaster.png",
+     video:
+        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
     },
     {
       icon: Leaf,
@@ -252,7 +253,8 @@ export default function Products() {
         "Sustainability reporting",
         "Reduction strategies",
       ],
-      image: "/images/green.png",
+      video:
+        "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
     },
   ];
 
