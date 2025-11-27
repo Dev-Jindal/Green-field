@@ -10,7 +10,7 @@ export default function WhyChoose() {
         {/* LEFT SIDE */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Why Choose Greenfield Energy?
+            Why G.O.T.S?
           </h2>
 
           <div className="space-y-8">
