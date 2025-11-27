@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,13 +39,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#e8f5e9] group-hover:bg-white transition-colors">
-              <Leaf className="w-6 h-6 text-[#1B4D3E]" />
-            </div>
-            <span className="text-2xl font-semibold tracking-tight text-white">
-              Greenfield <span className="text-[#e8f5e9]">Energy</span>
+          {/* Logo Updated */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img
+              src="/images/Logo.png"
+              alt="Greenfield Oil and Trading Services Pvt. Ltd."
+              className="w-12 h-12 object-contain rounded-md"
+            />
+            <span className="text-lg sm:text-xl font-semibold tracking-tight text-white leading-tight">
+              Greenfield Oil and Trading Services Pvt. Ltd.
             </span>
           </Link>
 

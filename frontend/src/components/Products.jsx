@@ -168,84 +168,203 @@
 //   );
 // }
 // src/components/Products.jsx (MINIMAL CHANGE)
-import React, { useEffect, useRef } from "react";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import gsap from 'gsap'; // 1. Import GSAP
 
-export default function Products({ products }) {
-  const productRef = useRef(null); // 2. Create a ref for the section container
+
+import React, { useEffect, useRef } from "react";
+import { ArrowRight, Box, Workflow, Cpu, Mountain, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Products() {
+  const productRef = useRef(null);
+
+  const products = [
+    {
+      icon: Box,
+      name: "SandMaster",
+      tagline: "Advanced Sand Management",
+      description:
+        "Comprehensive software solution for sand management in oil and gas operations. Monitor, predict, and optimize sand control strategies with real-time analytics.",
+      features: [
+        "Real-time sand production monitoring",
+        "Predictive analytics",
+        "Automated reporting",
+        "Risk assessment tools",
+      ],
+      video:
+        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+    },
+    {
+      icon: Workflow,
+      name: "AutoWellz",
+      tagline: "Well Operation Workflow",
+      description:
+        "Streamline your well operations with automated workflow management. From planning to execution, manage every aspect efficiently.",
+      features: [
+        "Workflow automation",
+        "Real-time collaboration",
+        "Document management",
+        "Compliance tracking",
+      ],
+      video:
+        "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
+    },
+    {
+      icon: Cpu,
+      name: "AutoPro",
+      tagline: "Engineering Process Digitization",
+      description:
+        "Transform your engineering processes with digital solutions. Automate routine tasks, enhance accuracy, and improve efficiency.",
+      features: [
+        "Process automation",
+        "Digital workflows",
+        "Data integration",
+        "Performance optimization",
+      ],
+      video: "/video/autopro.mp4",
+    },
+    {
+      icon: Mountain,
+      name: "RockMaster",
+      tagline: "Rock Mechanical Stability",
+      description:
+        "Advanced rock mechanics analysis tool for evaluating wellbore stability, formation integrity, and geomechanical risks.",
+      features: [
+        "Wellbore stability analysis",
+        "Geomechanical modeling",
+        "Risk prediction",
+        "Formation evaluation",
+      ],
+     video:
+        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+    },
+    {
+      icon: Leaf,
+      name: "GREEN",
+      tagline: "GHG Emissions Calculator",
+      description:
+        "Calculate, track, and reduce your carbon footprint with our comprehensive emissions calculator.",
+      features: [
+        "Emissions calculation",
+        "Carbon footprint tracking",
+        "Sustainability reporting",
+        "Reduction strategies",
+      ],
+      video:
+        "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
+    },
+  ];
 
   useEffect(() => {
-    // 3. Set up GSAP context for safe animations and cleanup
     const ctx = gsap.context(() => {
-      
-      // Select all product cards using the class selector
-      const cards = gsap.utils.toArray('.product-card');
-      
-      // --- GSAP ScrollTrigger Staggered Reveal ---
+      const cards = gsap.utils.toArray(".product-card");
       gsap.from(cards, {
         opacity: 0,
-        y: 80, // Start 80px below their final position
-        duration: 1.0,
-        ease: "power3.out", // Use a more dramatic ease for a nice effect
-        stagger: 0.15, // Sequential delay of 0.15s between each card animation
+        y: 60,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.15,
         scrollTrigger: {
-          trigger: productRef.current, // Use the main section ref as the trigger
-          start: "top 85%", // Start the animation when the top of the section is 85% down the viewport
-          toggleActions: "play none none none", // Only play the animation once
-        }
+          trigger: productRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
       });
-      
-    }, productRef); // Scope the context to the product section
-
-    // 4. Cleanup function to revert the GSAP context
+    }, productRef);
     return () => ctx.revert();
-  }, [products]);
+  }, []);
 
   return (
-    // 5. Attach the ref to the section element
     <section className="py-20 bg-white" ref={productRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-2">Our Products</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">Innovative digital solutions built for the future of energy.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-2">
+            Our Products
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Innovative digital solutions built for the future of energy.
+          </p>
         </div>
 
         {products.map((product, index) => (
           <div
             key={index}
-            // 6. Use 'product-card' class for GSAP targeting and remove the old transition classes
-            className={`grid md:grid-cols-2 gap-10 items-center product-card ${index % 2 === 1 ? "md:grid-flow-dense" : ""}`}
+            className={`grid md:grid-cols-2 gap-10 items-center product-card ${
+              index % 2 === 1 ? "md:grid-flow-dense" : ""
+            }`}
           >
-            {/* ... Product Details (no change) ... */}
-            <div className={index % 2 === 1 ? "md:col-start-2" : ""}>
+            {/* TEXT SECTION */}
+            <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
               <div className="bg-[#1B4D3E] w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                 <product.icon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-[#1B4D3E] mb-2">{product.name}</h3>
-              <p className="text-lg font-semibold text-[#1B4D3E] mb-3">{product.tagline}</p>
-              <p className="text-gray-700 mb-6 leading-relaxed">{product.description}</p>
+
+              <h3 className="text-3xl font-bold text-[#1B4D3E] mb-2">
+                {product.name}
+              </h3>
+
+              <p className="text-lg font-semibold text-[#1B4D3E] mb-3">
+                {product.tagline}
+              </p>
+
+              <p className="text-gray-700 mb-6">
+                {product.description}
+              </p>
 
               <ul className="space-y-2 mb-6">
                 {product.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-3">
+                  <li key={i} className="flex items-center gap-3 text-gray-700">
                     <div className="bg-[#1B4D3E] w-2 h-2 rounded-full" />
-                    <span className="text-gray-700">{f}</span>
+                    {f}
                   </li>
                 ))}
               </ul>
 
-              <Link to="/products" className="bg-[#1B4D3E] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#153c30] transition inline-flex items-center gap-2">
+              <Link
+                to="/products"
+                className="bg-[#1B4D3E] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#153c30] transition inline-flex items-center gap-2"
+              >
                 Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* ... Product Image (no change) ... */}
-            <div className={index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-[#1B4D3E] opacity-10 blur-3xl"></div>
-                <img src={product.image} alt={`${product.name} product`} className="relative rounded-2xl w-full object-cover hover:scale-105 transition-transform duration-500" />
+            {/* MEDIA SECTION (ALL UNIFIED NOW) */}
+            <div
+              className={`${
+                index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
+              }`}
+            >
+              <div className="relative w-full h-[300px] md:h-[350px] border-[3px] border-[#1B4D3E] rounded-xl overflow-hidden shadow-xl">
+                {product.video ? (
+                  product.video.includes("vimeo") ? (
+                    <iframe
+                      src={product.video}
+                      className="w-full h-full object-cover"
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      title={product.name}
+                    />
+                  ) : (
+                    <video
+                      src={product.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  )
+                ) : (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           </div>

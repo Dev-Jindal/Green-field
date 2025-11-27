@@ -4,370 +4,386 @@ export default function SandMaster() {
   return (
     <div className="pt-24">
 
+      {/* ========================================================= */}
       {/* HERO SECTION */}
+      {/* ========================================================= */}
       <section className="w-full bg-gradient-to-r from-[#e8f5e9] to-white py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-          {/* LEFT */}
+          {/* LEFT CONTENT */}
           <div>
             <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">SandMaster</h3>
 
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-[#1B4D3E]">
-              4 Hours of Work,
-              <br /> 4 Days of Results.
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
+              Advanced Sand Management System for  
+              <br />Optimized Well Performance
             </h1>
 
-            <p className="text-[#1B4D3E]/80 mt-5 text-lg">
-              SandMaster is the first-of-its-kind sand management and evaluation software
-              designed specifically for Oil & Gas operations. Built on patented workflow
-              and advanced correlations, it enables complete sand risk prediction,
-              monitoring, and optimization across your entire facility—from wellbore to
-              surface.
+            <p className="text-[#1B4D3E]/80 mt-5 text-lg leading-relaxed">
+              SandMaster delivers complete sand monitoring, solids modeling, erosion prediction, 
+              deposition analysis, choke optimization and long-term risk management across the 
+              entire production system — from downhole to topside facilities.
             </p>
 
-            <button className="mt-8 px-6 py-3 bg-[#1B4D3E] text-white font-semibold rounded-xl
-                               hover:bg-[#153c30] transition-all inline-flex items-center gap-2">
-              Book a Demo <ArrowRight size={18} />
-            </button>
+            <div className="flex gap-4 mt-8">
+              <button className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition inline-flex items-center gap-2">
+                Book a Demo <ArrowRight size={18} />
+              </button>
+
+              <a
+                href="#"
+                target="_blank"
+                className="px-6 py-3 border-2 border-[#1B4D3E] text-[#1B4D3E] rounded-xl font-semibold hover:bg-[#1B4D3E] hover:text-white transition inline-flex items-center gap-2"
+              >
+                Download Brochure
+              </a>
+            </div>
           </div>
 
-          {/* RIGHT – VIDEO */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-xl bg-white shadow-lg rounded-2xl overflow-hidden">
-              <video
-                src="VIDEO_URL_HERE"
-                controls
-                className="w-full h-auto rounded-xl"
-              />
+          {/* RIGHT: VIDEO */}
+     <div className="flex justify-center">
+  <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
+    <div className="relative pb-[56.25%]">
+      <iframe
+        src="https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
+        frameBorder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+        className="absolute inset-0 w-full h-full"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* BRING TOGETHER */}
+      {/* ========================================================= */}
+      <section className="py-24 text-center bg-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] max-w-4xl mx-auto">
+          Bring together sand monitoring, solids modeling and risk prediction  
+          <br />in one powerful platform with <span className="text-[#0f8f6d]">SandMaster</span>.
+        </h2>
+      </section>
+
+      {/* ========================================================= */}
+      {/* FEATURE CARDS */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-[#f7fffb]">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+          {/* CARD 1 */}
+          <div className="border border-[#1B4D3E]/20 rounded-3xl p-8 bg-white">
+            <h3 className="text-3xl font-bold text-[#1B4D3E] mb-6">Sand Monitoring</h3>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Real-Time Insights</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Live sand production tracking with automated diagnostics.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Accurate Thresholds</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Detect when facilities cross safe operating limits.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Historical Insights</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Identify trends & compare field behavior over time.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="border border-[#1B4D3E]/20 rounded-3xl p-8 bg-white">
+            <h3 className="text-3xl font-bold text-[#1B4D3E] mb-6">Facility Modelling</h3>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Complete Flow Analysis</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Model erosion, deposition & PSD across the facility.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Predictive Modelling</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Understand solids movement across pipelines.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Geospatial Intelligence</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Visualize risky zones & sand concentration paths.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="border border-[#1B4D3E]/20 rounded-3xl p-8 bg-white">
+            <h3 className="text-3xl font-bold text-[#1B4D3E] mb-6">Operational Economics</h3>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Cost Optimization</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Reduce failures & optimize maintenance cycles.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Real-Time Alerts</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Detect high-risk flow conditions instantly.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#1B4D3E]">Instant Reporting</h4>
+                <p className="text-[#1B4D3E]/70 text-sm">Automated reporting for sand trends & erosion risks.</p>
+              </div>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* BIG COMBOWIDE HEADLINE (new) */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0f2730] leading-tight">
-            Bring together forecasting, type curves, and economics in a single tool with ComboCore.
-          </h2>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------
-         THREE FEATURE BOXES (ComboCurve Layout)
-      ----------------------------------------------------- */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-          <div className="rounded-3xl border border-[#1B4D3E]/20 p-8">
-            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-4">Monitoring</h2>
-
-            <ul className="space-y-6 text-[#1B4D3E]">
-              <li>
-                <p className="font-semibold">Real-Time Sand Tracking</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Continuous surveillance of sand production levels across all equipment.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Weak-Link Detection</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Identify components most susceptible to erosion, deposition or failure.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Smart Alerts</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  System-generated alerts before high-risk sand events occur.
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-[#1B4D3E]/20 p-8">
-            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-4">Optimization</h2>
-
-            <ul className="space-y-6 text-[#1B4D3E]">
-              <li>
-                <p className="font-semibold">Facility-Level Simulation</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Model and optimize entire systems from wellbore to topside.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Predictive Modeling</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Predict erosional velocity, deposition patterns, and failure points.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Component Life Estimation</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Compute MAWT, wall loss, and equipment lifespan using advanced algorithms.
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-[#1B4D3E]/20 p-8">
-            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-4">Reporting</h2>
-
-            <ul className="space-y-6 text-[#1B4D3E]">
-              <li>
-                <p className="font-semibold">Automated Sand Reports</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Generate daily/weekly risk, erosion & deposition summaries.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Compliance-Ready Outputs</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Standardized reports suitable for audits and engineering documentation.
-                </p>
-              </li>
-
-              <li>
-                <p className="font-semibold">Detailed Export</p>
-                <p className="text-sm text-[#1B4D3E]/70">
-                  Export in XLS, CSV, and API integration formats.
-                </p>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------
-         BIG CONTENT SECTIONS (Your content plugged in)
-      ----------------------------------------------------- */}
-
+      {/* ========================================================= */}
       {/* WHAT IS SANDMASTER */}
-      <section className="py-20 bg-[#f7fffa]">
-        <div className="max-w-7xl mx-auto px-6 md:grid md:grid-cols-2 gap-12">
+      {/* ========================================================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
 
           <div>
             <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">What is SandMaster?</h2>
 
-            <ul className="space-y-4 text-[#1B4D3E]/80">
-              <li>• First software of its type focusing mainly on sand management in Oil & Gas.</li>
-              <li>• Built on a patented workflow with advanced correlations & algorithms.</li>
-              <li>• End-to-end system for evaluation of erosion, deposition & handling risk.</li>
-              <li>• Identifies weak links and risk envelopes across the entire facility.</li>
-            </ul>
-
-            <h3 className="mt-10 text-3xl font-bold text-[#1B4D3E]">
-              Unlock Current Challenges in Sand Management
-            </h3>
-
-            <ul className="space-y-4 mt-4 text-[#1B4D3E]/80">
-              <li>• Decision making for sand management during FDP & facility design.</li>
-              <li>• Estimating component life based on erosion rate & risk history.</li>
-              <li>• Determining optimum sand production limit without HSE risk.</li>
+            <ul className="space-y-4 text-[#1B4D3E]/80 leading-relaxed">
+              <li>• First software in Oil & Gas dedicated entirely to sand management.</li>
+              <li>• Built with patented workflows for sand systems & risk evaluation.</li>
+              <li>• Uses advanced algorithms & correlations for erosion & deposition prediction.</li>
+              <li>• Identifies weak links, risk envelopes & sand production limits.</li>
             </ul>
           </div>
 
-          <div className="flex justify-center mt-10 md:mt-0">
+          <img
+            src="https://www.greenfield.energy/wp-content/uploads/2021/10/Capture-of-Facility.jpg"
+            className="rounded-xl shadow-lg"
+          />
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* HIGHLIGHTS */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-[#f7fffb]">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">Highlights of the Main Features</h2>
+
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+
+            <ul className="space-y-6 text-[#1B4D3E]/80">
+              <li><b>Entire Facility Modelling:</b> From reservoir inflow to topside separators.</li>
+              <li><b>Sand Mapping:</b> Track concentration, velocity & deposition rate.</li>
+              <li><b>Multiphase Flow:</b> Gas injection, separation & erosion impacts.</li>
+              <li><b>PSD Profiling:</b> Particle size distribution across all equipment.</li>
+            </ul>
+
             <img
-              src="https://via.placeholder.com/600x350"
-              alt="Facility Model"
+              src="https://www.greenfield.energy/wp-content/uploads/2021/10/Particle-Size-Distribution-chart.png"
               className="rounded-xl shadow-lg"
             />
+
           </div>
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* SOLIDS RISK */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+          <div>
+            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Simulation of Solids Related Risks</h2>
+
+            <ul className="space-y-6 text-[#1B4D3E]/80">
+              <li><b>Deposition Risk:</b> Simulates deposition in annulus, casing, tubing & vessels.</li>
+              <li><b>Corrosion–Erosion:</b> Evaluates combined erosion–corrosion mechanisms.</li>
+              <li><b>Sand Handling Risk:</b> Helps design flushing / removal schedules.</li>
+              <li><b>Erosion Risk:</b> Predicts erosion in bends, chokes & pumps.</li>
+            </ul>
+          </div>
+
+          <img
+            src="https://www.greenfield.energy/wp-content/uploads/2021/10/Liquid-Rate-vs-Critical-Velocity-chart.png"
+            className="rounded-xl shadow-lg"
+          />
 
         </div>
       </section>
 
-      {/* HIGHLIGHTS / FEATURES DETAILED (use provided content) */}
+      {/* ========================================================= */}
+      {/* ADVANCED ALGORITHMS */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-[#f7fffb]">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+          <div>
+            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">A Unique Blend of Algorithms & Calculations</h2>
+
+            <ul className="space-y-6 text-[#1B4D3E]/80">
+              <li><b>Scatter Point Calibration:</b> Matches erosion & deposition models with field data.</li>
+              <li><b>Critical Transport Velocity:</b> Determines minimum flow to avoid settling.</li>
+              <li><b>Operating Envelope:</b> Predicts safe vs risk flow regions.</li>
+              <li><b>Model Calibration:</b> Aligns predictions with long-term well data.</li>
+            </ul>
+          </div>
+
+          <img
+            src="https://www.greenfield.energy/wp-content/uploads/2021/10/chart-Hydrocyclone.png"
+            className="rounded-xl shadow-lg"
+          />
+
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* FULL-FIELD SAND MANAGEMENT STRATEGY */}
+      {/* ========================================================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
+          
+          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Full-Field Sand Management Strategy</h2>
 
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Highlights of the Main Features</h2>
-          <h3 className="text-2xl font-semibold text-[#1B4D3E] mb-8">Modelling entire facility from wellbore to surface</h3>
-
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <ul className="space-y-5 text-[#1B4D3E]/90 leading-relaxed">
-              <li>
-                <b>Development of entire facility :</b> The software can develop an entire facility
-                from sub-surface well-bore to topside facilities & pipelines in a single model.
-              </li>
-
-              <li>
-                <b>Sand Mapping :</b> As the facility is modelled and flow parameters are included,
-                sand mapping (concentration, mass rate, velocity, deposition) is available for each component.
-              </li>
-
-              <li>
-                <b>Handling Gas injection and separation :</b> Simulate multiphase flows with gas inclusion/exclusion
-                logic for separators, injection and top-side systems.
-              </li>
-
-              <li>
-                <b>Particle Size Distribution profile :</b> Provide complete PSD profiles after separation at each component.
-              </li>
+          <div className="grid md:grid-cols-2 gap-10">
+            
+            <ul className="list-disc pl-6 space-y-4 text-[#1B4D3E]/80">
+              <li>Define short-term & long-term sand management strategy.</li>
+              <li>Select optimal sand control techniques based on economics.</li>
+              <li>Support perforation design & selective completions.</li>
+              <li>Long-term field life prediction using erosion & deposition models.</li>
+              <li>Optimize choke strategies & sustainable drawdown limits.</li>
             </ul>
 
-            <img src="https://via.placeholder.com/600x320?text=PSD+Profile+Graph" className="rounded-xl shadow" />
+            <img
+              src="https://www.greenfield.energy/wp-content/uploads/2021/10/Dashboard-for-Last-page.jpg"
+              className="rounded-xl shadow-lg"
+            />
+
           </div>
         </div>
       </section>
 
-      {/* SOLIDS RELATED RISKS */}
-      <section className="py-20 bg-[#f8fdf9]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Simulation of Solids related risks</h2>
+      {/* ========================================================= */}
+      {/* LONG TERM SUPPORT */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-[#f7fffb]">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+          
+          <div>
+            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Long-Term Support</h2>
 
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <ul className="space-y-5 text-[#1B4D3E]/90 leading-relaxed">
-              <li><b>Deposition Risk :</b> Simulate solid deposition in annulus, casing, production tubing, pipelines & separators.</li>
-              <li><b>Corrosion – Erosion :</b> Combined analysis to detect erosion-dominated or corrosion-dominated behaviors.</li>
-              <li><b>Sand Handling Risk :</b> Time-based scheduling for cleanouts, flushing, and handling strategies.</li>
-              <li><b>Erosion risk :</b> Predict wall loss and identify erosional hotspots (bends, chokes, pumps).</li>
+            <ul className="list-disc pl-6 text-[#1B4D3E]/80 space-y-4">
+              <li>SandMaster delivered as a licensed platform with regular updates.</li>
+              <li>Field model updates using new operational data.</li>
+              <li>Dedicated experts support erosion & sand control strategy.</li>
+              <li>Seamless connectivity with complementary tools (AutoPro, RockMaster).</li>
             </ul>
-
-            <img src="https://via.placeholder.com/600x320?text=Erosion+Curve" className="rounded-xl shadow" />
           </div>
-        </div>
-      </section>
 
-      {/* ALGORITHMS & CALCULATIONS */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">A unique blend of Algorithms & Calculations</h2>
-
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <ul className="space-y-5 text-[#1B4D3E]/90 leading-relaxed">
-              <li><b>Scatter point Calibration for Erosion :</b> Calibrate and history-match erosion outputs across flow conditions.</li>
-              <li><b>Critical Transport velocity :</b> Calculate velocities needed to transport each particle size.</li>
-              <li><b>Operating Envelope :</b> Diagnose risks & build interactive operating envelopes for the facility.</li>
-              <li><b>Calibration of models :</b> Tune models against true values to improve predictive power.</li>
-            </ul>
-
-            <img src="https://via.placeholder.com/600x320?text=Transport+Velocity+Graph" className="rounded-xl shadow" />
-          </div>
-        </div>
-      </section>
-
-      {/* CRITICAL COMPONENT DESIGN */}
-      <section className="py-20 bg-[#f7fffa]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Critical component design & facility Integrity</h2>
-
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <ul className="space-y-5 text-[#1B4D3E]/90 leading-relaxed">
-              <li><b>Component Life and MAWT :</b> Calculate minimum wall thickness and component life.</li>
-              <li><b>Data Analytics :</b> Build backend analytics for metal loss, erosion rates and uplift opportunities.</li>
-              <li><b>Choke Management Plan :</b> Predict choke erosion and create robust choke strategies.</li>
-              <li><b>Hydro-cyclone design :</b> Simulate hydro-cyclone geometries to evaluate cut diameter and separation efficiency.</li>
-            </ul>
-
-            <img src="https://via.placeholder.com/600x320?text=Facility+Integrity+Graphs" className="rounded-xl shadow" />
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------
-         FAQ
-      ----------------------------------------------------- */}
-      <section className="py-20 bg-gradient-to-r from-[#1B4D3E] to-[#0f3027] text-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-
-          <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
-
-          <div className="space-y-6">
-            {[
-              "How does SandMaster compute erosion and deposition risks?",
-              "Does SandMaster support entire facility modelling?",
-              "Is it compatible with real-time field sensor data?",
-              "Can I simulate choke performance and hydro-cyclone efficiency?",
-              "Does it estimate component life and MAWT?",
-              "Can SandMaster be customized for different operating environments?"
-            ].map((q, i) => (
-              <div key={i} className="border-b border-white/20 pb-3">
-                <p className="text-lg">{q}</p>
-              </div>
-            ))}
-          </div>
+          <img
+            src="https://www.greenfield.energy/wp-content/uploads/2021/10/Liquid-Rate-vs-Critical-Velocity-chart.png"
+            className="rounded-xl shadow-lg"
+          />
 
         </div>
       </section>
+      
+      {/* ========================================================= */}
+      {/* FAQ SECTION (UPDATED GREEN THEME) */}
+      {/* ========================================================= */}
+     <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
 
-      {/* ---------------------------------------------------
-         BLOG / ARTICLES (new section)
-      ----------------------------------------------------- */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+      Frequently Asked Questions
+    </h2>
 
-          <h2 className="text-3xl font-bold text-[#0f2730] mb-6 text-center">Discover More: Handpicked Articles from Our Blog</h2>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
-            {/* Card 1 */}
-            <article className="bg-white border rounded-2xl shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="text-sm text-[#1B4D3E] font-semibold mb-3">ComboCurve</div>
-                <h3 className="text-xl font-bold mb-3">How SandMaster improves asset reliability</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mb-4">
-                  Case study: reduce downtime by early detection of erosional hotspots.
-                </p>
-                <a className="inline-flex items-center gap-2 text-[#1B4D3E] font-semibold" href="#">
-                  Read more <ArrowRight size={14} />
-                </a>
-              </div>
-            </article>
-
-            {/* Card 2 */}
-            <article className="bg-white border rounded-2xl shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="text-sm text-[#1B4D3E] font-semibold mb-3">Engineering</div>
-                <h3 className="text-xl font-bold mb-3">Designing for sand: best practices</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mb-4">
-                  Technical guidance for choke and separator selection to manage solids.
-                </p>
-                <a className="inline-flex items-center gap-2 text-[#1B4D3E] font-semibold" href="#">
-                  Read more <ArrowRight size={14} />
-                </a>
-              </div>
-            </article>
-
-            {/* Card 3 */}
-            <article className="bg-white border rounded-2xl shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="text-sm text-[#1B4D3E] font-semibold mb-3">Operations</div>
-                <h3 className="text-xl font-bold mb-3">Scheduling cleanouts the right way</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mb-4">
-                  How time-based flushing reduces risk and extends component life.
-                </p>
-                <a className="inline-flex items-center gap-2 text-[#1B4D3E] font-semibold" href="#">
-                  Read more <ArrowRight size={14} />
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <div className="text-center">
-            <button className="px-8 py-3 bg-[#20c997] text-white font-semibold rounded-xl shadow-lg hover:bg-[#17a984] transition">
-              Read Our Blog
-            </button>
-          </div>
+    <div className="grid md:grid-cols-2 gap-6">
+      {[
+        "How does SandMaster calculate erosion risk?",
+        "Can SandMaster predict long-term deposition?",
+        "Does the software support real-time monitoring?",
+        "What inputs are required for PSD modelling?",
+        "Can SandMaster integrate with downhole sensors?",
+      ].map((q) => (
+        <div
+          key={q}
+          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+        >
+          {q}
         </div>
-      </section>
+      ))}
+    </div>
 
-      {/* ---------------------------------------------------
-         CTA
-      ----------------------------------------------------- */}
-      <section className="py-20 bg-[#0c2f26] text-center">
-        <h2 className="text-4xl font-bold text-white">
-          Partner with a team that brings deep sand expertise.
+  </div>
+</section>
+
+
+      {/* ========================================================= */}
+      {/* BLOG SECTION */}
+      {/* ========================================================= */}
+      <section className="py-24 bg-[#f7fffb] text-center">
+        <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+          Discover More: Handpicked Insights from Sand Management Experts
         </h2>
 
-        <button className="mt-8 px-8 py-3 bg-[#20c997] text-white text-lg font-semibold rounded-xl 
-                           hover:bg-[#17a984] transition shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+          {[
+            {
+              img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format",
+              title: "How SandMaster Enhances Sand Evaluation",
+              subtitle: "A complete guide to erosion & deposition risk prediction",
+              author: "Dr. Aditya Singh",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=1400&auto=format",
+              title: "Why Operators Trust SandMaster",
+              subtitle: "Understanding flow risks across the facility",
+              author: "Rohit Verma",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format",
+              title: "Boosting Well Performance with SandMaster",
+              subtitle: "Choke optimization & PSD modelling strategies",
+              author: "Priya Nair",
+            },
+          ].map((b) => (
+            <div key={b.title} className="bg-white rounded-3xl shadow-xl overflow-hidden text-left">
+              <img src={b.img} className="w-full h-44 object-cover" />
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#1B4D3E]">{b.title}</h3>
+                <p className="text-[#1B4D3E]/70 mt-2">{b.subtitle}</p>
+                <p className="mt-4 text-sm font-semibold text-[#1B4D3E]">{b.author}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition">
+          Read Our Blog
+        </button>
+      </section>
+
+
+      {/* ========================================================= */}
+      {/* FINAL CTA */}
+      {/* ========================================================= */}
+      <section className="py-20 bg-[#0c2f26] text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">
+          Partner with a team that brings deep sand management expertise.
+        </h2>
+
+        <button className="mt-8 px-8 py-3 bg-[#20c997] text-white rounded-xl shadow-lg hover:bg-[#17a984] transition">
           Connect With Our Team
         </button>
       </section>

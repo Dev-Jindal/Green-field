@@ -19,6 +19,8 @@ import OilGasConsultancy from "./pages/OilGasConsultancy";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import TrainingPage from "./pages/TrainingPage";
 import DataAnalysisPage from "./pages/DataAnalysisPage";
+//Scroll top
+import ScrollToTop from "./components/ScrollToTop";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,6 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         
@@ -58,6 +61,8 @@ function App() {
         <ChatBot />
       </div>
     </Router>
+  
+
   );
 }
 
