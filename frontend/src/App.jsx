@@ -16,7 +16,9 @@ import ChatBot from './components/ChatBot';
  import AutoPro from "./pages/AutoPro.jsx";
  import Green from "./pages/Green.jsx";
 
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 function App() {
   return (
     <Router>
