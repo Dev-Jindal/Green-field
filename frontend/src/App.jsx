@@ -19,6 +19,7 @@ import OilGasConsultancy from "./pages/OilGasConsultancy";
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import TrainingPage from "./pages/TrainingPage";
 import DataAnalysisPage from "./pages/DataAnalysisPage";
+import Careers from "./pages/Careers";
 //Scroll top
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -40,6 +41,8 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/schedule-demo" element={<ScheduleDemo />} />
+            <Route path="/career" element={<Careers />} />
+
 
             {/* PRODUCT ROUTES */}
             <Route path="/products/sandmaster" element={<SandMaster />} />

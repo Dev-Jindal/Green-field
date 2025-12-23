@@ -7,14 +7,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Greenfield <span className="text-green-500">Energy</span>
+             Greenfield Oil and <span className="text-green-500">Trading Services Pvt. Ltd</span>
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
               Leading provider of innovative engineering consultancy and software solutions
               for the oil and gas industry. Committed to sustainable and efficient energy management.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-green-500 transition-colors">
+              <a href="https://www.linkedin.com/company/greenfield-oil-and-trading-services/" className="hover:text-green-500 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="#" className="hover:text-green-500 transition-colors">
@@ -42,7 +42,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-green-500 mt-0.5" />
-                <span className="text-sm">info@greenfield.energy</span>
+                <span className="text-sm">support@greenfield.energy</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-green-500 mt-0.5" />
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Greenfield Energy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Greenfield Oil and Trading Services Pvt. Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

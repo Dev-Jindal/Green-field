@@ -39,20 +39,25 @@ export default function RockMaster() {
             </div>
           </div>
 
-          {/* Vimeo Embed */}
-         <div className="flex justify-center">
+  <div className="flex justify-center py-12">
   <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
     <div className="relative pb-[56.25%]">
-      <iframe
-        src="https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
-        frameBorder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowFullScreen
-        className="absolute inset-0 w-full h-full"
-      ></iframe>
+      <video
+        src="/video/RockMaster_Final.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover bg-black"
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </div>
+
 
         </div>
       </section>

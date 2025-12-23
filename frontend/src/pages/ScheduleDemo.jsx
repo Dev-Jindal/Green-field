@@ -2,11 +2,11 @@
 import { useState } from 'react';
 
 const products = [
-  'Solar Rooftop Solutions',
-  'EV Charging Stations',
-  'Energy Management System',
-  'Battery Storage',
-  'Green Consulting Services',
+  'SandMaster',
+  'RockMaster',
+  'AutoWellz',
+  'AutoPro',
+  'GREEN',
 ];
 
 // ❗ List of personal email domains that are NOT allowed

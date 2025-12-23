@@ -196,6 +196,20 @@ export default function Products() {
       ],
       video:
         "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+    },  {
+      icon: Mountain,
+      name: "RockMaster",
+      tagline: "Rock Mechanical Stability",
+      description:
+        "Advanced rock mechanics analysis tool for evaluating wellbore stability, formation integrity, and geomechanical risks.",
+      features: [
+        "Wellbore stability analysis",
+        "Geomechanical modeling",
+        "Risk prediction",
+        "Formation evaluation",
+      ],
+     video:
+        "/video/RockMaster_Final.mp4",
     },
     {
       icon: Workflow,
@@ -225,21 +239,6 @@ export default function Products() {
         "Performance optimization",
       ],
       video: "/video/autopro.mp4",
-    },
-    {
-      icon: Mountain,
-      name: "RockMaster",
-      tagline: "Rock Mechanical Stability",
-      description:
-        "Advanced rock mechanics analysis tool for evaluating wellbore stability, formation integrity, and geomechanical risks.",
-      features: [
-        "Wellbore stability analysis",
-        "Geomechanical modeling",
-        "Risk prediction",
-        "Formation evaluation",
-      ],
-     video:
-        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
     },
     {
       icon: Leaf,
