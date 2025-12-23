@@ -67,7 +67,7 @@ export default function OilGasConsultancy() {
                 <div ref={heroCtaRef} style={{ opacity: 0 }} className="mt-8">
                   {/* Only Download Brochure in hero */}
                   <a
-                    href="/assets/brochure-oil-gas.pdf"
+                    href="/brochures/OilAndGas.pdf"
                     className={`${CTA_EMERALD} inline-flex items-center gap-3 text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
                   >
                     <DownloadCloud className="w-5 h-5" /> Download Brochure
@@ -179,7 +179,7 @@ export default function OilGasConsultancy() {
               </a>
 
               <a
-                href="/assets/brochure-oil-gas.pdf"
+                href="/brochures/OilAndGas.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white shadow-sm border border-gray-200 text-slate-700 hover:bg-gray-50 transition"
               >
                 <DownloadCloud className="w-4 h-4" /> Download Full Brochure
