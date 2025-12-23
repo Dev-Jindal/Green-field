@@ -129,6 +129,7 @@ function App() {
             <Route path="/services/software" element={<SoftwareDevelopment />} />
             <Route path="/services/training" element={<TrainingPage />} />
             <Route path="/services/data-analysis" element={<DataAnalysisPage />} />
+            
           </Routes>
         </main>
 

@@ -81,3 +81,26 @@
 .chatbot-fixed {
   z-index: 9999 !important;
 }
+
+
+
+
+// why choose us section animation
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.animate-card {
+  animation: fadeUp 0.8s ease forwards;
+}

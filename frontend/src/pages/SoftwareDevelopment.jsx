@@ -65,7 +65,7 @@ export default function SoftwareDevelopment() {
 
 								<div className="mt-6 flex flex-wrap gap-3">
 									<a
-										href="/assets/brochure-software.pdf"
+										href="/brochures-software.pdf"
 										className={`inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 ${CTA_TEXT_COLOR} px-5 py-3 rounded-xl font-semibold shadow-xl transition duration-300`}
 									>
 										<DownloadCloud className="w-5 h-5" /> Product Brochure
