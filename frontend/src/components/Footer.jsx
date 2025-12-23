@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -17,8 +17,8 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/greenfield-oil-and-trading-services/" className="hover:text-green-500 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-green-500 transition-colors">
-                <Twitter className="w-6 h-6" />
+              <a href="https://www.youtube.com/@gotspvtltd160" className="hover:text-green-500 transition-colors">
+                <Youtube className="w-6 h-6" />
               </a>
               <a href="#" className="hover:text-green-500 transition-colors">
                 <Facebook className="w-6 h-6" />
@@ -30,7 +30,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="/" className="hover:text-green-500 transition-colors">Home</a></li>
-              <li><a href="/about" className="hover:text-green-500 transition-colors">About Us</a></li>
+              <li><a href="/About" className="hover:text-green-500 transition-colors">About Us</a></li>
               <li><a href="/services" className="hover:text-green-500 transition-colors">Services</a></li>
               <li><a href="/products" className="hover:text-green-500 transition-colors">Products</a></li>
               <li><a href="/contact" className="hover:text-green-500 transition-colors">Contact</a></li>
