@@ -97,7 +97,7 @@ export const services = [
   },
   {
     icon: Briefcase,
-    title: "Engineering Consultancy",
+    title: "Oil and Gas Consultancy",
     description: "Expert consultancy services with global engineering team.",
   },
   {
@@ -105,6 +105,7 @@ export const services = [
     title: "Customized Training",
     description: "Professional training programs for industry professionals.",
   },
+ 
 ];
 
 export const newsEvents = [
