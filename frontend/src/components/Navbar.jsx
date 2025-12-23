@@ -25,7 +25,7 @@ const Navbar = () => {
   ];
 
   const serviceItems = [
-    { name: "Services Overview", path: "/services/overview" },
+    // { name: "Services Overview", path: "/services/overview" },
     { name: "Oil & Gas Consultancy", path: "/services/oil-gas" },
     { name: "Software Development", path: "/services/software" },
     { name: "Training", path: "/services/training" },
