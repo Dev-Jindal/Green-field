@@ -1,39 +1,52 @@
-import { Code, Briefcase, GraduationCap, Wrench, LineChart, Shield } from "lucide-react";
+// src/components/Services.jsx
+import React, { useEffect, useState } from "react";
+import {
+  Code,
+  Briefcase,
+  GraduationCap,
+  Wrench,
+  LineChart,
+  Shield,
+} from "lucide-react";
 
 const Services = () => {
+  // === updated main services (four items) ===
   const mainServices = [
     {
       icon: Briefcase,
-      title: "Engineering Consultancy",
-      description: "Comprehensive engineering solutions tailored to your specific needs",
+      title: "Oil & Gas Consultancy",
+      description:
+        "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
       features: [
         "Reservoir Engineering",
         "Production Optimization",
         "Well Design & Planning",
-        "Risk Assessment",
         "Field Development Studies",
+        "Risk Assessment",
       ],
       image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       icon: Code,
       title: "Software Development",
-      description: "Custom software solutions designed for the energy industry",
+      description:
+        "Custom software solutions and integrations tailored to the energy sector — web apps, automation and cloud systems.",
       features: [
         "Workflow Automation",
         "Data Management Systems",
         "Real-time Monitoring",
-        "Cloud-based Solutions",
+        "Cloud-native Solutions",
         "Mobile Applications",
       ],
       image:
-        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
       icon: GraduationCap,
-      title: "Customized Training",
-      description: "Professional development programs for industry professionals",
+      title: "Training",
+      description:
+        "Hands-on professional training programs and certifications for industry teams and individuals.",
       features: [
         "Technical Workshops",
         "Software Training",
@@ -42,32 +55,84 @@ const Services = () => {
         "Certification Programs",
       ],
       image:
-        "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    },
+    {
+      icon: LineChart,
+      title: "Data Analysis",
+      description:
+        "Advanced analytics, visualization and reporting to convert operational data into actionable insights.",
+      features: [
+        "Data Cleaning & ETL",
+        "Trend Analysis",
+        "Predictive Models",
+        "Dashboards & Reporting",
+        "Anomaly Detection",
+      ],
+      image:
+        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
   ];
 
+  // === additional services (kept as before) ===
   const additionalServices = [
     {
       icon: Wrench,
       title: "Technical Support",
-      description:
-        "Round-the-clock technical assistance for all our products and services",
-    },
-    {
-      icon: LineChart,
-      title: "Performance Analysis",
-      description: "Detailed analytics and reporting to optimize your operations",
+      description: "Round-the-clock technical assistance for all our products and services",
     },
     {
       icon: Shield,
       title: "Quality Assurance",
       description: "Rigorous testing and quality control for all deliverables",
     },
+    {
+      icon: LineChart,
+      title: "Performance Analysis",
+      description: "Detailed analytics and reporting to optimize your operations",
+    },
   ];
+
+  // === Typewriter logic (rotates the four service names) ===
+  const phrases = mainServices.map((s) => s.title);
+  const [typed, setTyped] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+    const current = phrases[phraseIndex] || "";
+    const typingSpeed = deleting ? 30 : 70;
+    const completePause = 800;
+
+    if (!deleting) {
+      if (charIndex === current.length) {
+        timeoutId = setTimeout(() => setDeleting(true), completePause);
+      } else {
+        timeoutId = setTimeout(() => {
+          setTyped(current.slice(0, charIndex + 1));
+          setCharIndex((c) => c + 1);
+        }, typingSpeed);
+      }
+    } else {
+      timeoutId = setTimeout(() => {
+        setTyped(current.slice(0, charIndex - 1));
+        setCharIndex((c) => c - 1);
+
+        if (charIndex - 1 === 0) {
+          setDeleting(false);
+          setPhraseIndex((p) => (p + 1) % phrases.length);
+        }
+      }, typingSpeed);
+    }
+
+    return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [charIndex, deleting, phraseIndex, phrases]);
 
   return (
     <div className="pt-20">
-
       {/* ============= HERO SECTION ============= */}
       <section className="bg-[#1B4D3E] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -76,6 +141,25 @@ const Services = () => {
             Comprehensive solutions designed to optimize your operations and drive
             innovation in the energy sector.
           </p>
+
+          {/* Typewriter caret styles */}
+          <style>{`
+            .caret::after {
+              content: "|";
+              display: inline-block;
+              margin-left: 6px;
+              animation: blink 1s steps(2,end) infinite;
+            }
+            @keyframes blink { 50% { opacity: 0; } }
+          `}</style>
+
+        <div className="mt-6 text-2xl md:text-3xl text-[#e8f5e9] font-semibold">
+  Specializing in{" "}
+  <span className="ml-2 inline-block caret text-3xl md:text-4xl font-bold">
+    {typed}
+  </span>
+</div>
+
         </div>
       </section>
 
@@ -104,7 +188,7 @@ const Services = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <div className="bg-[#1B4D3E] w-2 h-2 rounded-full"></div>
+                      <div className="bg-[#1B4D3E] w-2 h-2 rounded-full" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -114,11 +198,11 @@ const Services = () => {
               {/* IMAGE */}
               <div className={index % 2 === 1 ? "md:order-1" : ""}>
                 <div className="relative">
-                  <div className="absolute inset-0 bg-[#1B4D3E] rounded-2xl opacity-20 blur-3xl"></div>
+                  <div className="absolute inset-0 bg-[#1B4D3E] rounded-2xl opacity-20 blur-3xl" />
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                    className="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500 w-full"
                   />
                 </div>
               </div>
@@ -130,7 +214,6 @@ const Services = () => {
       {/* ============= ADDITIONAL SERVICES ============= */}
       <section className="py-20 bg-[#e8f5e9]">
         <div className="max-w-7xl mx-auto px-4">
-
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
               Additional Services
@@ -158,20 +241,17 @@ const Services = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* ============= WHY CHOOSE US ============= */}
       <section className="py-20 bg-[#1B4D3E] text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose Our Services?
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-
             <div className="bg-white text-[#1B4D3E] p-6 rounded-xl shadow-md">
               <div className="text-4xl font-bold mb-2">15+</div>
               <div className="text-gray-700">Successful Projects</div>
@@ -186,21 +266,18 @@ const Services = () => {
               <div className="text-4xl font-bold mb-2">100%</div>
               <div className="text-gray-700">Quality Guaranteed</div>
             </div>
-
           </div>
 
           <p className="text-xl text-gray-200 leading-relaxed mt-12 max-w-3xl mx-auto">
             Backed by industry expertise and innovation, we deliver tailored
             solutions that drive measurable performance improvements.
           </p>
-
         </div>
       </section>
 
       {/* ============= CTA SECTION ============= */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-
           <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-6">
             Ready to Get Started?
           </h2>
@@ -215,10 +292,8 @@ const Services = () => {
           >
             Contact Us Today
           </a>
-
         </div>
       </section>
-
     </div>
   );
 };
