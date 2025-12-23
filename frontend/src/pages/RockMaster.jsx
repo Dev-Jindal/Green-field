@@ -29,7 +29,7 @@ export default function RockMaster() {
               </button>
 
               <a
-                href="BROCHURE_LINK_HERE"
+                href="/brochure/Rockmaster Brochure.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-3 border-2 border-[#1B4D3E] text-[#1B4D3E] rounded-xl font-semibold hover:bg-[#1B4D3E] hover:text-white transition inline-flex items-center gap-2"
