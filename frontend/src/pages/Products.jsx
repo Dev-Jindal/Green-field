@@ -65,7 +65,7 @@ const Products = () => {
         "Formation evaluation",
       ],
       video:
-        "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
+        "/video/RockMaster_Final.mp4",
       link: "/products/rockmaster",
     },
     {
