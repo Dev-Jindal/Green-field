@@ -9,7 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI("AIzaSyDLqEXBsK1QUqMxTqcjagf2LiT7Ed3YC-Q");
+
 
 app.post("/api/chat", async (req, res) => {
   try {
