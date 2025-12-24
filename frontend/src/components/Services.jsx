@@ -2,6 +2,20 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const getServicePath = (id) => {
+  switch (id) {
+   
+    case 1:
+      return "/services/software";
+    case 2:
+      return "/services/oil-gas";
+    case 3:
+      return "/services/training";
+    default:
+      return "/services";
+  }
+};
+
 export default function Services({ services }) {
   return (
     <section className="py-20 bg-[#e8f5e9]">
@@ -19,7 +33,14 @@ export default function Services({ services }) {
               </div>
               <h4 className="text-2xl font-bold text-[#1B4D3E] mb-3">{s.title}</h4>
               <p className="text-gray-700 mb-6">{s.description}</p>
-              <Link to="/services" className="text-[#1B4D3E] font-semibold inline-flex items-center gap-2">Learn More <ArrowRight className="w-4 h-4" /></Link>
+              {/* <Link to="/services" className="text-[#1B4D3E] font-semibold inline-flex items-center gap-2">Learn More <ArrowRight className="w-4 h-4" /></Link> */}
+              <Link
+  to={getServicePath(s.id)}
+  className="text-[#1B4D3E] font-semibold inline-flex items-center gap-2"
+>
+  Learn More <ArrowRight className="w-4 h-4" />
+</Link>
+
             </div>
           ))}
         </div>
