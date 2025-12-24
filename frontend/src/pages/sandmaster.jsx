@@ -1,6 +1,12 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import eventsData from "../data/eventsData";
+
+
 
 export default function SandMaster() {
+  const navigate = useNavigate();
+
   return (
     <div className="pt-24">
 
@@ -327,52 +333,60 @@ export default function SandMaster() {
 </section>
 
 
-      {/* ========================================================= */}
-      {/* BLOG SECTION */}
-      {/* ========================================================= */}
-      <section className="py-24 bg-[#f7fffb] text-center">
-        <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
-          Discover More: Handpicked Insights from Sand Management Experts
-        </h2>
+    {/* ========================================================= */}
+{/* INSIGHTS & EVENTS SECTION */}
+{/* ========================================================= */}
+<section className="py-24 bg-[#f7fffb] text-center">
+  <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+    Discover More: Insights & Events from GOTS
+  </h2>
 
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    {eventsData.slice(0, 3).map((event) => (
+      <div
+        key={event.id}
+        className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+      >
+        {/* Top Accent */}
+        <div className="h-2 bg-[#1B4D3E]" />
 
-          {[
-            {
-              img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format",
-              title: "How SandMaster Enhances Sand Evaluation",
-              subtitle: "A complete guide to erosion & deposition risk prediction",
-              author: "Dr. Aditya Singh",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=1400&auto=format",
-              title: "Why Operators Trust SandMaster",
-              subtitle: "Understanding flow risks across the facility",
-              author: "Rohit Verma",
-            },
-            {
-              img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format",
-              title: "Boosting Well Performance with SandMaster",
-              subtitle: "Choke optimization & PSD modelling strategies",
-              author: "Priya Nair",
-            },
-          ].map((b) => (
-            <div key={b.title} className="bg-white rounded-3xl shadow-xl overflow-hidden text-left">
-              <img src={b.img} className="w-full h-44 object-cover" />
+        <div className="p-6 flex flex-col h-full">
+          {/* Date */}
+          <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+            {event.date}
+          </p>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#1B4D3E]">{b.title}</h3>
-                <p className="text-[#1B4D3E]/70 mt-2">{b.subtitle}</p>
-                <p className="mt-4 text-sm font-semibold text-[#1B4D3E]">{b.author}</p>
-              </div>
-            </div>
-          ))}
+          {/* Title */}
+          <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+            {event.title}
+          </h3>
+
+          {/* Preview */}
+          <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+            {event.preview}
+          </p>
+
+          {/* Read More */}
+          <button
+            onClick={() => navigate(`/events/${event.id}`)}
+            className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+          >
+            Read Update →
+          </button>
         </div>
+      </div>
+    ))}
+  </div>
 
-        <button className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition">
-          Read Our Blog
-        </button>
-      </section>
+  {/* CTA */}
+  <button
+    onClick={() => navigate("/events")}
+    className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+  >
+    Read Our Events
+  </button>
+</section>
+
 
 
       {/* ========================================================= */}

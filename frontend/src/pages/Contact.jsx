@@ -41,14 +41,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "info@greenfield.energy",
-      link: "mailto:info@greenfield.energy",
+      details: "Support@greenfield.energy",
+      link: "mailto:Support@greenfield.energy",
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      details: "+91 90798 81880",
+      link: "tel:+919079881880",
     },
     {
       icon: MapPin,

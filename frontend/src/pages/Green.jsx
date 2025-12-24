@@ -1,10 +1,12 @@
 // src/pages/Green.jsx
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
+import eventsData from "../data/eventsData";
 
 export default function Green() {
   // Vimeo or any environment video related to sustainability
   
-
+const navigate = useNavigate();
   return (
     <div className="pt-24">
 
@@ -311,66 +313,59 @@ export default function Green() {
         </div>
       </section>
 
-      {/* CASE STUDIES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        {/* ========================================================= */}
+{/* INSIGHTS & EVENTS SECTION */}
+{/* ========================================================= */}
+<section className="py-24 bg-[#f7fffb] text-center">
+  <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+    Discover More: Insights & Events from GOTS
+  </h2>
 
-          <h2 className="text-4xl font-bold text-[#1B4D3E] mb-10 text-center">Sustainability Insights & Case Studies</h2>
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    {eventsData.slice(0, 3).map((event) => (
+      <div
+        key={event.id}
+        className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+      >
+        {/* Top Accent */}
+        <div className="h-2 bg-[#1B4D3E]" />
 
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="p-6 flex flex-col h-full">
+          {/* Date */}
+          <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+            {event.date}
+          </p>
 
-            <article className="bg-[#f7fffb] rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=1400&auto=format&fit=crop"
-                alt="Case Study 1"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Industrial Carbon Reduction</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">
-                  How GREEN helped reduce CO₂ emissions by 18% in 6 months.
-                </p>
-              </div>
-            </article>
+          {/* Title */}
+          <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+            {event.title}
+          </h3>
 
-            <article className="bg-[#f7fffb] rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop"
-                alt="Case Study 2"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Energy Efficiency Uplift</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">
-                  Improving energy efficiency score by 32% using GREEN’s analytics.
-                </p>
-              </div>
-            </article>
+          {/* Preview */}
+          <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+            {event.preview}
+          </p>
 
-            <article className="bg-[#f7fffb] rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop"
-                alt="Case Study 3"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Renewable Shift Success</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">
-                  Case study of transitioning a plant to 60% renewable energy.
-                </p>
-              </div>
-            </article>
-
-          </div>
-
-          <div className="text-center mt-10">
-            <button className="px-8 py-3 bg-[#1B4D3E] text-white font-semibold rounded-xl hover:bg-[#163f33] transition">
-              Read Our Blog
-            </button>
-          </div>
-
+          {/* Read More */}
+          <button
+            onClick={() => navigate(`/events/${event.id}`)}
+            className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+          >
+            Read Update →
+          </button>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+
+  {/* CTA */}
+  <button
+    onClick={() => navigate("/events")}
+    className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+  >
+    Read Our Events
+  </button>
+</section>
 
       {/* FINAL CTA */}
       <section className="py-20 bg-[#0c2f26] text-center">

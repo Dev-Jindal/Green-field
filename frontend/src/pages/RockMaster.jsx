@@ -1,9 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
+import eventsData from "../data/eventsData";
 
 export default function RockMaster() {
   // Vimeo embed id from provided URL: 637143154 -> embed link below
-  
 
+  const navigate = useNavigate();
   return (
     <div className="pt-24">
 
@@ -39,24 +41,24 @@ export default function RockMaster() {
             </div>
           </div>
 
-  <div className="flex justify-center py-12">
-  <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
-    <div className="relative pb-[56.25%]">
-      <video
-        src="/video/RockMaster_Final.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        controls
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover bg-black"
-      >
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-</div>
+          <div className="flex justify-center py-12">
+            <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
+              <div className="relative pb-[56.25%]">
+                <video
+                  src="/video/RockMaster_Final.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="auto"
+                  className="absolute inset-0 w-full h-full object-cover bg-black"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
 
 
         </div>
@@ -282,83 +284,86 @@ export default function RockMaster() {
       </section>
 
       {/* FAQ */}
-  <section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
-
-    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
-      Frequently Asked Questions
-    </h2>
-
-    <div className="grid md:grid-cols-2 gap-6">
-      {[
-        "How are MEM properties derived from basic log inputs?",
-        "What correlations are used for CDP curve generation?",
-        "Can RockMaster be calibrated with laboratory core data?",
-        "How do we rank wells by sanding tendency?",
-        "What sand control methods does RockMaster support modelling for?"
-      ].map((q) => (
-        <div
-          key={q}
-          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
-        >
-          {q}
-        </div>
-      ))}
-    </div>
-
-  </div>
-</section>
-
-
-      {/* BLOG / ARTICLES */}
-      <section className="py-24 bg-[#f7fffb]">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#1B4D3E] mb-10 text-center">Insights & Case Studies</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=b5c6b8a3d3a3b7f7adf7e3a3b8c8d9e0"
-                alt="Case Study 1"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Mechanical Earth Modelling: Case Study</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">How MEM improved prediction accuracy for a mature field.</p>
-              </div>
-            </article>
+          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+            Frequently Asked Questions
+          </h2>
 
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1bcd3f9f9b5a2b7c8d9e0f1a2b3c4d5e"
-                alt="Case Study 2"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Sanding Tendency Analysis</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">Ranking wells and planning sand control interventions.</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              "How are MEM properties derived from basic log inputs?",
+              "What correlations are used for CDP curve generation?",
+              "Can RockMaster be calibrated with laboratory core data?",
+              "How do we rank wells by sanding tendency?",
+              "What sand control methods does RockMaster support modelling for?"
+            ].map((q) => (
+              <div
+                key={q}
+                className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+              >
+                {q}
               </div>
-            </article>
-
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c1c2b9b8e3f6f3c305d2f9d3b9c1d0f"
-                alt="Case Study 3"
-                className="w-full h-44 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1B4D3E]">Field Life Sand Modelling</h3>
-                <p className="text-sm text-[#1B4D3E]/80 mt-2">Predictive modelling to reduce unplanned downtime.</p>
-              </div>
-            </article>
+            ))}
           </div>
 
-          <div className="text-center mt-10">
-            <button className="px-8 py-3 bg-[#1B4D3E] text-white font-semibold rounded-xl hover:bg-[#163f33] transition">
-              Read Our Blog
-            </button>
-          </div>
         </div>
+      </section>
+
+
+      {/* ========================================================= */}
+      {/* INSIGHTS & EVENTS SECTION */}
+      {/* ========================================================= */}
+      <section className="py-24 bg-[#f7fffb] text-center">
+        <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+          Discover More: Insights & Events from GOTS
+        </h2>
+
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          {eventsData.slice(0, 3).map((event) => (
+            <div
+              key={event.id}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+            >
+              {/* Top Accent */}
+              <div className="h-2 bg-[#1B4D3E]" />
+
+              <div className="p-6 flex flex-col h-full">
+                {/* Date */}
+                <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+                  {event.date}
+                </p>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+                  {event.title}
+                </h3>
+
+                {/* Preview */}
+                <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+                  {event.preview}
+                </p>
+
+                {/* Read More */}
+                <button
+                  onClick={() => navigate(`/events/${event.id}`)}
+                  className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+                >
+                  Read Update →
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={() => navigate("/events")}
+          className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+        >
+          Read Our Events
+        </button>
       </section>
 
       {/* FINAL CTA */}

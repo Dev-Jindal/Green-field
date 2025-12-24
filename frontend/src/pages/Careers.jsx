@@ -5,8 +5,9 @@ import {
   Users,
   TrendingUp,
   Leaf,
-  MapPin,
 } from "lucide-react";
+
+/* ================= ANIMATIONS ================= */
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -25,32 +26,7 @@ const stagger = {
   },
 };
 
-const jobOpenings = [
-  {
-    title: "Software Engineer – Full Stack",
-    location: "Remote / India",
-    experience: "1–3 Years",
-    skills: ["React", "Node.js", "MongoDB", "REST APIs"],
-  },
-  {
-    title: "Data Engineer",
-    location: "India",
-    experience: "2–4 Years",
-    skills: ["Python", "SQL", "ETL"],
-  },
-  {
-    title: "Petroleum Engineer (Consulting)",
-    location: "Hybrid",
-    experience: "3+ Years",
-    skills: ["Production", "Reservoir", "Forecasting"],
-  },
-  {
-    title: "Intern – Software / Data",
-    location: "Remote",
-    experience: "Students / Freshers",
-    skills: ["Programming", "Problem Solving"],
-  },
-];
+/* ================= COMPONENT ================= */
 
 const Careers = () => {
   return (
@@ -78,10 +54,10 @@ const Careers = () => {
 
             <div className="mt-8 flex gap-4">
               <a
-                href="#open-positions"
+                href="#future-opportunities"
                 className="bg-white text-[#143d2c] px-7 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
               >
-                View Open Positions
+                Future Opportunities
               </a>
               <a
                 href="#life-at-gots"
@@ -92,7 +68,6 @@ const Careers = () => {
             </div>
           </motion.div>
 
-          {/* Glass Card */}
           <motion.div
             variants={fadeUp}
             className="hidden md:block backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-10 shadow-2xl"
@@ -198,10 +173,10 @@ const Careers = () => {
         </motion.div>
       </section>
 
-      {/* ================= OPEN POSITIONS ================= */}
-      <section id="open-positions" className="py-24 bg-gray-50">
+      {/* ================= FUTURE OPPORTUNITIES ================= */}
+      <section id="future-opportunities" className="py-24 bg-gray-50">
         <motion.div
-          className="max-w-7xl mx-auto px-6"
+          className="max-w-5xl mx-auto px-6 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -209,52 +184,60 @@ const Careers = () => {
         >
           <motion.h2
             variants={fadeUp}
-            className="text-4xl font-bold text-center text-gray-900"
+            className="text-4xl font-bold text-gray-900"
           >
-            Open Positions
+            Future Opportunities at GOTS
           </motion.h2>
 
-          <div className="mt-14 space-y-6">
-            {jobOpenings.map((job, index) => (
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            We currently don’t have any active openings. However, we’re always
+            open to connecting with passionate engineers, analysts, and
+            innovators who want to create long-term impact.
+          </motion.p>
+
+          <motion.div
+            variants={stagger}
+            className="mt-14 grid md:grid-cols-3 gap-8"
+          >
+            {[
+              "Engineering & Technology Roles",
+              "Data & Analytics Positions",
+              "Petroleum & Consulting Expertise",
+            ].map((text, i) => (
               <motion.div
-                key={index}
+                key={i}
                 variants={fadeUp}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+                className="bg-white p-8 rounded-2xl shadow-lg"
               >
-                <div>
-                  <h3 className="text-xl font-semibold">
-                    {job.title}
-                  </h3>
-
-                  <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
-                    <MapPin className="w-4 h-4" />
-                    {job.location} • {job.experience}
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {job.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <button className="border border-green-700 text-green-700 px-5 py-2 rounded-xl font-semibold hover:bg-green-50 transition">
-                    View Details
-                  </button>
-                  <button className="bg-green-700 text-white px-5 py-2 rounded-xl font-semibold hover:bg-green-800 transition">
-                    Apply Now
-                  </button>
-                </div>
+                <p className="font-semibold text-gray-800">
+                  {text}
+                </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-16 bg-white rounded-3xl p-10 shadow-xl"
+          >
+            <h3 className="text-2xl font-semibold text-gray-900">
+              Stay Connected
+            </h3>
+            <p className="mt-4 text-gray-600 max-w-xl mx-auto">
+              Share your resume with us, and we’ll reach out when a role
+              aligns with your expertise.
+            </p>
+
+            <a
+              href="mailto:Support@greenfield.energy"
+              className="inline-block mt-6 bg-green-700 text-white px-10 py-3 rounded-xl font-semibold hover:bg-green-800 transition"
+            >
+              Send Your Resume
+            </a>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -270,16 +253,17 @@ const Careers = () => {
             Ready to Build Something Meaningful?
           </h2>
           <p className="mt-4 text-gray-200">
-            Send your profile and let’s explore your future with us.
+            Let’s connect and explore future possibilities.
           </p>
           <a
             href="mailto:careers@greenfieldots.com"
             className="inline-block mt-6 bg-white text-[#143d2c] px-10 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
           >
-            careers@greenfieldots.com
+            Support@greenfield.energy
           </a>
         </motion.div>
       </section>
+
     </div>
   );
 };
