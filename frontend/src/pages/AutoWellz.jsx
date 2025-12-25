@@ -82,7 +82,7 @@ export default function AutoWellz() {
               </button>
 
               {/* Talk to Expert Hover */}
-            <div className="relative inline-block">
+<div className="relative inline-block">
   {/* BUTTON */}
   <button className="peer px-6 py-3 border-2 border-[#1B4D3E] rounded-xl font-semibold inline-flex items-center gap-2 hover:bg-[#1B4D3E] hover:text-white">
     <Phone size={18} /> Talk to an Expert
@@ -427,13 +427,33 @@ export default function AutoWellz() {
 
     {/* CTA BUTTONS */}
     <div className="flex flex-wrap justify-center gap-4 mt-10">
-      <button className="px-8 py-3 bg-[#20c997] text-white rounded-xl font-semibold hover:bg-[#1aa87d] transition">
+      <button className="px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#1aa87d] transition">
         Request Demo
       </button>
 
-      <button className="px-8 py-3 border border-white text-white rounded-xl font-semibold hover:bg-white hover:text-[#0c2f26] transition">
-        Talk to an Expert
-      </button>
+  <div className="relative inline-block">
+  {/* BUTTON */}
+  <button
+    className="peer px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2
+    border-2 border-white text-white bg-transparent
+    hover:bg-[#1B4D3E] hover:text-white
+    transition-all duration-300"
+  >
+    <Phone size={18} />
+    Talk to an Expert
+  </button>
+
+  {/* TOOLTIP */}
+  <div
+    className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+    opacity-0 peer-hover:opacity-100 transition
+    bg-[#1B4D3E] text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap"
+  >
+    📞 86583 24008
+  </div>
+</div>
+
+
 
       <a
         href="/brochure/Autowellz Brochure.pdf"
