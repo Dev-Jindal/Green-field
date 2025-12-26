@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import eventsData from "../data/eventsData";
 
 
@@ -32,9 +32,13 @@ export default function SandMaster() {
             </p>
 
             <div className="flex gap-4 mt-8">
-              <button className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition inline-flex items-center gap-2">
-                Book a Demo <ArrowRight size={18} />
-              </button>
+             <Link
+                             to="/schedule-demo"
+                             className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold
+                                        hover:bg-[#163f33] transition inline-flex items-center gap-2"
+                           >
+                             Book a Demo <ArrowRight size={18} />
+                           </Link>
 
               <a
                 href="/brochure/SandMaster-Brochure.pdf"

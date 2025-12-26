@@ -1,8 +1,6 @@
 
-
-
 import { ArrowRight, Phone, ChevronDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import eventsData from "../data/eventsData";
 import {
@@ -77,22 +75,64 @@ export default function AutoWellz() {
 
             <div className="flex flex-wrap gap-4 mt-8">
 
-              <button className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold inline-flex items-center gap-2">
-                Request Demo <ArrowRight size={18} />
-              </button>
+             <Link
+                to="/schedule-demo"
+                className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold
+                           hover:bg-[#163f33] transition inline-flex items-center gap-2"
+              >
+                Book a Demo <ArrowRight size={18} />
+              </Link>
 
               {/* Talk to Expert Hover */}
 <div className="relative inline-block">
-  {/* BUTTON */}
-  <button className="peer px-6 py-3 border-2 border-[#1B4D3E] rounded-xl font-semibold inline-flex items-center gap-2 hover:bg-[#1B4D3E] hover:text-white">
-    <Phone size={18} /> Talk to an Expert
-  </button>
+  <button
+    className="
+      group
+      relative
+      px-6 py-3
+      border-2 border-[#1B4D3E]
+      rounded-xl
+      font-semibold
+      overflow-hidden
+      text-[#1B4D3E]
+      hover:bg-[#1B4D3E]
+      hover:text-white
+      transition-colors
+      duration-300
+      flex items-center justify-center
+      min-w-[210px]
+    "
+  >
+    {/* Default Text */}
+    <span
+      className="
+        flex items-center gap-2
+        transition-all duration-300
+        group-hover:-translate-y-8
+        group-hover:opacity-0
+      "
+    >
+      <Phone size={18} />
+      Talk to an Expert
+    </span>
 
-  {/* TOOLTIP */}
-  <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 peer-hover:opacity-100 transition bg-[#1B4D3E] text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap">
-    📞 86583 24008
-  </div>
+    {/* Hover Text */}
+    <span
+      className="
+        absolute
+        flex items-center gap-2
+        opacity-0
+        translate-y-8
+        transition-all duration-300
+        group-hover:translate-y-0
+        group-hover:opacity-100
+      "
+    >
+      📞 86583 24008
+    </span>
+  </button>
 </div>
+
 
 
               <a
@@ -177,21 +217,104 @@ export default function AutoWellz() {
           </div>
 
           <img
-            src="https://www.greenfield.energy/wp-content/uploads/2022/04/img2.jpg"
+            src="/images/Picture1.png"
             alt="Energy operations"
             className="rounded-xl shadow-lg"
           />
         </div>
       </section>
 
-      {/* ================= ONE PLATFORM ================= */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-bold">One Platform. One Workflow.</h2>
-        <p className="mt-4 max-w-4xl mx-auto text-[#1B4D3E]/80">
-          Every activity, parameter, resource, and deviation is captured once and used
-          throughout the workflow, eliminating data silos, duplication, and manual consolidation.
-        </p>
-      </section>
+     {/* ================= ONE PLATFORM ================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E]">
+      One Platform. One Workflow.
+    </h2>
+
+    <p className="mt-4 max-w-4xl mx-auto text-[#1B4D3E]/80 text-lg">
+      Every activity, parameter, resource, and deviation is captured once and reused
+      across the entire lifecycle—eliminating silos, duplication, and manual effort.
+    </p>
+
+    {/* ===== Feature Cards ===== */}
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      
+      {/* Program Generation */}
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-8 shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-[#1B4D3E] mb-4">
+          Program Generation
+        </h3>
+
+        <ul className="space-y-3 text-[#1B4D3E]/80">
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Unified Workflow</span><br />
+            Create, modify, approve, and submit programs seamlessly within a single platform.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Attachment Support</span><br />
+            Add images, tables, logs, and supporting documents directly to programs.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Cost & Time Estimation</span><br />
+            Automatically calculate resources, inventory needs, and operational timelines.
+          </li>
+        </ul>
+      </div>
+
+      {/* Reporting */}
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-8 shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-[#1B4D3E] mb-4">
+          Reporting
+        </h3>
+
+        <ul className="space-y-3 text-[#1B4D3E]/80">
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Error-Free Compilation</span><br />
+            Program references ensure accurate, complete, and consistent reporting.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Operational Tracking</span><br />
+            Monitor real-time activities, costs, and resource utilization.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Digital Resources</span><br />
+            Convert all reports into structured, searchable digital formats.
+          </li>
+        </ul>
+      </div>
+
+      {/* Analysis */}
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-8 shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-[#1B4D3E] mb-4">
+          Analysis
+        </h3>
+
+        <ul className="space-y-3 text-[#1B4D3E]/80">
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Interactive Dashboards</span><br />
+            One-click analytics for cost, performance, and operational insights.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Advanced Algorithms</span><br />
+            Automated End-of-Well (EoW) reports and actionable intelligence.
+          </li>
+
+          <li>
+            <span className="font-semibold text-[#1B4D3E]">Multi-Well Comparison</span><br />
+            Instantly analyze and benchmark multiple wells across key metrics.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ================= CORE CAPABILITIES (FULL TEXT) ================= */}
       {/* ================= CORE CAPABILITIES (FULL TEXT) ================= */}
@@ -245,13 +368,13 @@ export default function AutoWellz() {
     {/* RIGHT: TWO STACKED IMAGES */}
     <div className="flex flex-col gap-6">
       <img
-        src="/images/coreCapability1.jpg"
+        src="/images/Picture5.png"
         alt="Operational planning dashboard"
         className="rounded-xl shadow-lg object-cover"
       />
 
       <img
-        src="/images/coreCapability2.jpg"
+        src="/images/Picture6.png"
         alt="Analytics and reporting"
         className="rounded-xl shadow-lg object-cover"
       />
@@ -261,26 +384,41 @@ export default function AutoWellz() {
 </section>
 
 
-      {/* ================= SECURITY ================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4">
-            Security, Governance & Data Ownership
-          </h2>
+     {/* ================= SECURITY ================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+    {/* LEFT CONTENT */}
+    <div>
+      <h2 className="text-3xl font-bold mb-4 text-[#1B4D3E]">
+        Security, Governance & Data Ownership
+      </h2>
 
-          <p className="text-[#1B4D3E]/80 mb-4">
-            AutoWellz is designed with strong controls to meet governance, security, and
-            compliance expectations of energy organizations.
-          </p>
+      <p className="text-[#1B4D3E]/80 mb-6">
+        AutoWellz is designed with strong controls to meet governance, security, and
+        compliance expectations of energy organizations.
+      </p>
 
-          <ul className="list-disc pl-6 text-[#1B4D3E]/80 space-y-2">
-            <li>Role-based access control to protect sensitive operational data</li>
-            <li>Secure data storage with full ownership retained by the client</li>
-            <li>Audit-ready logs for traceability and compliance</li>
-            <li>Scalable architecture across multiple projects and assets</li>
-          </ul>
-        </div>
-      </section>
+      <ul className="list-disc pl-6 text-[#1B4D3E]/80 space-y-3">
+        <li>Role-based access control to protect sensitive operational data</li>
+        <li>Secure data storage with full ownership retained by the client</li>
+        <li>Audit-ready logs for traceability and compliance</li>
+        <li>Scalable architecture across multiple projects and assets</li>
+      </ul>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="flex justify-center md:justify-end">
+      <img
+        src="/images/Picture10.png"
+        alt="Security and Governance"
+        className="w-full max-w-md rounded-2xl shadow-lg"
+      />
+    </div>
+
+  </div>
+</section>
+
 
 
 {/* ================= LONG-TERM SUPPORT (PROFESSIONAL ICONS) ================= */}
@@ -403,8 +541,61 @@ export default function AutoWellz() {
           </div>
         </div>
       </section>
+      {/* ========================================================= */}
+{/* INSIGHTS & EVENTS SECTION */}
+{/* ========================================================= */}
+<section className="py-24 bg-[#f7fffb] text-center">
+  <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+    Discover More: Insights & Events from GOTS
+  </h2>
 
-      {/* ================= TAKE NEXT STEP ================= */}
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    {eventsData.slice(0, 3).map((event) => (
+      <div
+        key={event.id}
+        className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+      >
+        {/* Top Accent */}
+        <div className="h-2 bg-[#1B4D3E]" />
+
+        <div className="p-6 flex flex-col h-full">
+          {/* Date */}
+          <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+            {event.date}
+          </p>
+
+          {/* Title */}
+          <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+            {event.title}
+          </h3>
+
+          {/* Preview */}
+          <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+            {event.preview}
+          </p>
+
+          {/* Read More */}
+          <button
+            onClick={() => navigate(`/events/${event.id}`)}
+            className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+          >
+            Read Update →
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* CTA */}
+  <button
+    onClick={() => navigate("/events")}
+    className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+  >
+    Read Our Events
+  </button>
+</section>
+
+{/* ================= TAKE NEXT STEP ================= */}
 <section className="py-24 bg-[#0c2f26] text-center relative overflow-hidden">
   <div className="max-w-5xl mx-auto px-6">
 
@@ -431,27 +622,58 @@ export default function AutoWellz() {
         Request Demo
       </button>
 
-  <div className="relative inline-block">
-  {/* BUTTON */}
+ <div className="relative inline-block">
   <button
-    className="peer px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2
-    border-2 border-white text-white bg-transparent
-    hover:bg-[#1B4D3E] hover:text-white
-    transition-all duration-300"
-  >
-    <Phone size={18} />
-    Talk to an Expert
-  </button>
+    className="
+      group
+      relative
+      px-6 py-3
+      rounded-xl
+      font-semibold
+      overflow-hidden
+      min-w-[220px]
 
-  {/* TOOLTIP */}
-  <div
-    className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2
-    opacity-0 peer-hover:opacity-100 transition
-    bg-[#1B4D3E] text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap"
+      border-2 border-white
+      text-white
+      bg-transparent
+
+      hover:bg-[#1B4D3E]
+      hover:text-white
+
+      transition-colors duration-300
+      flex items-center justify-center
+    "
   >
-    📞 86583 24008
-  </div>
+    {/* Default Text */}
+    <span
+      className="
+        flex items-center gap-2
+        transition-all duration-300
+        group-hover:-translate-y-8
+        group-hover:opacity-0
+      "
+    >
+      <Phone size={18} />
+      Talk to an Expert
+    </span>
+
+    {/* Hover Text */}
+    <span
+      className="
+        absolute
+        flex items-center gap-2
+        opacity-0
+        translate-y-8
+        transition-all duration-300
+        group-hover:translate-y-0
+        group-hover:opacity-100
+      "
+    >
+      📞 86583 24008
+    </span>
+  </button>
 </div>
+
 
 
 

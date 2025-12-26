@@ -1,11 +1,10 @@
 // src/pages/AutoPro.jsx
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import eventsData from "../data/eventsData";
-
+import { Link, useNavigate } from "react-router-dom";
 export default function AutoPro() {
- 
-const navigate = useNavigate();
+
+  const navigate = useNavigate();
   return (
     <div className="pt-24">
       {/* HERO */}
@@ -16,7 +15,7 @@ const navigate = useNavigate();
             <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">AutoPro</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
-              Digitize Engineering Processes —  
+              Digitize Engineering Processes —
               <br />Plan, Execute & Analyse Seamlessly
             </h1>
 
@@ -27,9 +26,14 @@ const navigate = useNavigate();
             </p>
 
             <div className="flex gap-4 mt-8">
-              <button className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition inline-flex items-center gap-2">
+              <Link
+                to="/schedule-demo"
+                className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold
+               hover:bg-[#163f33] transition inline-flex items-center gap-2"
+              >
                 Book a Demo <ArrowRight size={18} />
-              </button>
+              </Link>
+
 
               <a
                 href="/brochure/Autopro New Brochure_compressed.pdf"
@@ -43,19 +47,19 @@ const navigate = useNavigate();
           </div>
 
           {/* RIGHT: Vimeo video */}
-         <div className="flex justify-center">
-  <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
-    <div className="relative pb-[56.25%]">
-      <iframe
-        src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
-        frameBorder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowFullScreen
-        className="absolute inset-0 w-full h-full"
-      ></iframe>
-    </div>
-  </div>
-</div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
+              <div className="relative pb-[56.25%]">
+                <iframe
+                  src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -117,7 +121,7 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2022/04/img2.png"
               alt="Workshop assembly"
-             className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>
@@ -130,7 +134,7 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2022/04/img3.png"
               alt="database management"
-             className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg"
             />
           </div>
 
@@ -170,7 +174,7 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2022/04/img4.png"
               alt="personnel tracking"
-             className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>
@@ -197,7 +201,7 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2022/04/img1.png"
               alt="quality assurance"
-             className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>
@@ -246,13 +250,13 @@ const navigate = useNavigate();
                 <li><b>Reducing Carbon Footprint:</b> Paperless workflows to reduce environmental impact.</li>
               </ul>
             </div>
-          <div>
-            <img
-              src="https://www.greenfield.energy/wp-content/uploads/2022/04/img7.jpg"
-              alt="cost analysis"
-              className="rounded-xl shadow-lg"
-            />
-          </div>
+            <div>
+              <img
+                src="https://www.greenfield.energy/wp-content/uploads/2022/04/img7.jpg"
+                alt="cost analysis"
+                className="rounded-xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -278,7 +282,7 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2022/04/img3.png"
               alt="support and licensing"
-             className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>
@@ -296,83 +300,83 @@ const navigate = useNavigate();
       </section>
 
       {/* FAQ */}
-     <section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
-    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Frequently Asked Questions</h2>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Frequently Asked Questions</h2>
 
-    <div className="grid md:grid-cols-2 gap-6">
-      {[
-        "What processes does AutoPro digitize?",
-        "Can AutoPro be used offline in remote workshop locations?",
-        "Does AutoPro support QA/QC checklists for each assembly?",
-        "How does AutoPro track planned vs actual cost?",
-        "Can I export AutoPro data to third-party analytics tools?",
-      ].map((q) => (
-        <div
-          key={q}
-          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              "What processes does AutoPro digitize?",
+              "Can AutoPro be used offline in remote workshop locations?",
+              "Does AutoPro support QA/QC checklists for each assembly?",
+              "How does AutoPro track planned vs actual cost?",
+              "Can I export AutoPro data to third-party analytics tools?",
+            ].map((q) => (
+              <div
+                key={q}
+                className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+              >
+                {q}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ========================================================= */}
+      {/* INSIGHTS & EVENTS SECTION */}
+      {/* ========================================================= */}
+      <section className="py-24 bg-[#f7fffb] text-center">
+        <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+          Discover More: Insights & Events from GOTS
+        </h2>
+
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          {eventsData.slice(0, 3).map((event) => (
+            <div
+              key={event.id}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+            >
+              {/* Top Accent */}
+              <div className="h-2 bg-[#1B4D3E]" />
+
+              <div className="p-6 flex flex-col h-full">
+                {/* Date */}
+                <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+                  {event.date}
+                </p>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+                  {event.title}
+                </h3>
+
+                {/* Preview */}
+                <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+                  {event.preview}
+                </p>
+
+                {/* Read More */}
+                <button
+                  onClick={() => navigate(`/events/${event.id}`)}
+                  className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+                >
+                  Read Update →
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={() => navigate("/events")}
+          className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
         >
-          {q}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-         {/* ========================================================= */}
-{/* INSIGHTS & EVENTS SECTION */}
-{/* ========================================================= */}
-<section className="py-24 bg-[#f7fffb] text-center">
-  <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
-    Discover More: Insights & Events from GOTS
-  </h2>
-
-  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-    {eventsData.slice(0, 3).map((event) => (
-      <div
-        key={event.id}
-        className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
-      >
-        {/* Top Accent */}
-        <div className="h-2 bg-[#1B4D3E]" />
-
-        <div className="p-6 flex flex-col h-full">
-          {/* Date */}
-          <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
-            {event.date}
-          </p>
-
-          {/* Title */}
-          <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
-            {event.title}
-          </h3>
-
-          {/* Preview */}
-          <p className="text-[#1B4D3E]/70 mt-3 flex-1">
-            {event.preview}
-          </p>
-
-          {/* Read More */}
-          <button
-            onClick={() => navigate(`/events/${event.id}`)}
-            className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
-          >
-            Read Update →
-          </button>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* CTA */}
-  <button
-    onClick={() => navigate("/events")}
-    className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
-  >
-    Read Our Events
-  </button>
-</section>
+          Read Our Events
+        </button>
+      </section>
 
       {/* FINAL CTA */}
       <section className="py-20 bg-[#0c2f26] text-center">

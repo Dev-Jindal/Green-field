@@ -1,6 +1,6 @@
 // src/pages/OilGasConsultancy.jsx
 import React, { useEffect, useRef } from "react";
-import { DownloadCloud, Mail, Phone, ChevronRight, Zap } from "lucide-react";
+import { DownloadCloud, Mail, Phone, ChevronRight, Zap, Link } from "lucide-react";
 
 /**
  * OilGasConsultancy.jsx
@@ -67,11 +67,14 @@ export default function OilGasConsultancy() {
                 <div ref={heroCtaRef} style={{ opacity: 0 }} className="mt-8">
                   {/* Only Download Brochure in hero */}
                   <a
-                    href="/brochures/OilAndGas.pdf"
+                    href="/brochures/Integrated-Sand-Management_Brochure_Rev-Sep2021.pdf"
+                    target="_blank"
+                    rel="noreferrer"
                     className={`${CTA_EMERALD} inline-flex items-center gap-3 text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
                   >
                     <DownloadCloud className="w-5 h-5" /> Download Brochure
                   </a>
+
                 </div>
               </div>
             </div>
@@ -179,7 +182,7 @@ export default function OilGasConsultancy() {
               </a>
 
               <a
-                href="/brochures/OilAndGas.pdf"
+                href="/brochures/Integrated-Sand-Management_Brochure_Rev-Sep2021.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white shadow-sm border border-gray-200 text-slate-700 hover:bg-gray-50 transition"
               >
                 <DownloadCloud className="w-4 h-4" /> Download Full Brochure
@@ -241,7 +244,7 @@ export default function OilGasConsultancy() {
                   </div>
                 </div>
 
-                
+
               </div>
 
               {/* 3) Our Expertise / Quick Links */}
@@ -270,7 +273,7 @@ export default function OilGasConsultancy() {
           </aside>
         </div>
 
-       
+
       </div>
 
       <div className="h-24" />
