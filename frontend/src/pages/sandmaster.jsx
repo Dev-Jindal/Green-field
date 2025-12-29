@@ -1,11 +1,40 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import eventsData from "../data/eventsData";
 
 
 
 export default function SandMaster() {
   const navigate = useNavigate();
+  const faqs = [
+  {
+    question: "What is SandMaster and who is it designed for?",
+    answer:
+      "SandMaster is an advanced sand management platform designed for oil & gas operators, production engineers, and asset teams to manage sand-related risks across the entire production system.",
+  },
+  {
+    question: "How does SandMaster calculate erosion risk?",
+    answer:
+      "SandMaster uses industry-validated correlations, multiphase flow models, PSD data, and velocity-based algorithms to predict erosion in chokes, bends, valves, and pipelines.",
+  },
+  {
+    question: "Can SandMaster predict long-term deposition?",
+    answer:
+      "Yes. SandMaster simulates sand transport and deposition over time to identify long-term buildup risks in tubing, annulus, vessels, and surface facilities.",
+  },
+  {
+    question: "Does the software support real-time monitoring?",
+    answer:
+      "Yes. SandMaster integrates live production data and sensor inputs to provide real-time sand monitoring, alerts, and operational insights.",
+  },
+  {
+    question: "What inputs are required for PSD modelling?",
+    answer:
+      "PSD modelling requires particle size distribution data, flow rates, fluid properties, production conditions, and facility geometry.",
+  },
+];
+
 
   return (
     <div className="pt-24">
@@ -154,55 +183,94 @@ export default function SandMaster() {
         </div>
       </section>
 
-      {/* ========================================================= */}
-      {/* WHAT IS SANDMASTER */}
-      {/* ========================================================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+{/* ========================================================= */}
+{/* WHAT IS SANDMASTER */}
+{/* ========================================================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <div>
-            <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">What is SandMaster?</h2>
+    {/* LEFT CONTENT (UNCHANGED) */}
+    <div>
+      <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">
+        What is SandMaster?
+      </h2>
 
-            <ul className="space-y-4 text-[#1B4D3E]/80 leading-relaxed">
-              <li>• First software in Oil & Gas dedicated entirely to sand management.</li>
-              <li>• Built with patented workflows for sand systems & risk evaluation.</li>
-              <li>• Uses advanced algorithms & correlations for erosion & deposition prediction.</li>
-              <li>• Identifies weak links, risk envelopes & sand production limits.</li>
-            </ul>
-          </div>
+      <ul className="space-y-4 text-[#1B4D3E]/80 leading-relaxed">
+        <li>• First software in Oil & Gas dedicated entirely to sand management.</li>
+        <li>• Built with patented workflows for sand systems & risk evaluation.</li>
+        <li>• Uses advanced algorithms & correlations for erosion & deposition prediction.</li>
+        <li>• Identifies weak links, risk envelopes & sand production limits.</li>
+      </ul>
+    </div>
 
-          <img
-            src="https://www.greenfield.energy/wp-content/uploads/2021/10/Capture-of-Facility.jpg"
-            className="rounded-xl shadow-lg"
-          />
-        </div>
-      </section>
+    {/* RIGHT IMAGE (ALIGNMENT FIXED) */}
+    <div className="flex justify-center">
+      <img
+        src="https://www.greenfield.energy/wp-content/uploads/2021/10/Capture-of-Facility.jpg"
+        alt="SandMaster Workflow"
+        className="w-full max-w-2xl rounded-2xl shadow-lg object-contain"
+      />
+    </div>
 
-      {/* ========================================================= */}
-      {/* HIGHLIGHTS */}
-      {/* ========================================================= */}
-      <section className="py-20 bg-[#f7fffb]">
-        <div className="max-w-7xl mx-auto px-6">
-          
-          <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">Highlights of the Main Features</h2>
+  </div>
+</section>
 
-          <div className="grid md:grid-cols-2 gap-10 items-start">
+{/* ========================================================= */}
+{/* HIGHLIGHTS */}
+{/* ========================================================= */}
+<section className="py-20 bg-[#f7fffb]">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+      Highlights of the Main Features
+    </h2>
 
-            <ul className="space-y-6 text-[#1B4D3E]/80">
-              <li><b>Entire Facility Modelling:</b> From reservoir inflow to topside separators.</li>
-              <li><b>Sand Mapping:</b> Track concentration, velocity & deposition rate.</li>
-              <li><b>Multiphase Flow:</b> Gas injection, separation & erosion impacts.</li>
-              <li><b>PSD Profiling:</b> Particle size distribution across all equipment.</li>
-            </ul>
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      {/* LEFT CONTENT */}
+      <ul className="space-y-6 text-[#1B4D3E]/80 leading-relaxed">
+        <li>
+          <span className="font-semibold text-[#1B4D3E]">
+            Entire Facility Modelling:
+          </span>{" "}
+          From wellbore to topside facilities.
+        </li>
 
-            <img
-              src="https://www.greenfield.energy/wp-content/uploads/2021/10/Particle-Size-Distribution-chart.png"
-              className="rounded-xl shadow-lg"
-            />
+        <li>
+          <span className="font-semibold text-[#1B4D3E]">
+            Sand Mapping:
+          </span>{" "}
+          Track sand concentration, velocity, and risk rates throughout the flow path.
+        </li>
 
-          </div>
-        </div>
-      </section>
+        <li>
+          <span className="font-semibold text-[#1B4D3E]">
+            Multiphase Flow:
+          </span>{" "}
+          Sand considered as the fourth phase in the oil & gas system.
+        </li>
+
+        <li>
+          <span className="font-semibold text-[#1B4D3E]">
+            Particle Size Distribution Profiling:
+          </span>{" "}
+          Covers all PSD-defined particle sizes across the entire model.
+        </li>
+      </ul>
+
+      {/* RIGHT IMAGE */}
+      <div className="flex justify-center">
+        <img
+          src="https://www.greenfield.energy/wp-content/uploads/2021/10/Particle-Size-Distribution-chart.png"
+          alt="Particle Size Distribution"
+          className="w-full max-w-xl rounded-2xl shadow-lg object-contain"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ========================================================= */}
       {/* SOLIDS RISK */}
@@ -243,6 +311,7 @@ export default function SandMaster() {
               <li><b>Critical Transport Velocity:</b> Determines minimum flow to avoid settling.</li>
               <li><b>Operating Envelope:</b> Predicts safe vs risk flow regions.</li>
               <li><b>Model Calibration:</b> Aligns predictions with long-term well data.</li>
+              <li><b>Time-Based Analysis:</b> Dynamic modeling of metal loss and deposition risk over time with changing well parameters.</li>
             </ul>
           </div>
 
@@ -253,33 +322,40 @@ export default function SandMaster() {
 
         </div>
       </section>
+{/* ========================================================= */}
+{/* FULL-FIELD SAND MANAGEMENT STRATEGY */}
+{/* ========================================================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+      Full-Field Sand Management Strategy
+    </h2>
 
-      {/* ========================================================= */}
-      {/* FULL-FIELD SAND MANAGEMENT STRATEGY */}
-      {/* ========================================================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Full-Field Sand Management Strategy</h2>
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      {/* LEFT CONTENT (UNCHANGED) */}
+      <ul className="list-disc pl-6 space-y-4 text-[#1B4D3E]/80">
+        <li>Define short-term & long-term sand management strategy.</li>
+        <li>Select optimal sand control techniques based on economics.</li>
+        <li>Support perforation design & selective completions.</li>
+        <li>Long-term field life prediction using erosion & deposition models.</li>
+        <li>Optimize choke strategies & sustainable drawdown limits.</li>
+      </ul>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            
-            <ul className="list-disc pl-6 space-y-4 text-[#1B4D3E]/80">
-              <li>Define short-term & long-term sand management strategy.</li>
-              <li>Select optimal sand control techniques based on economics.</li>
-              <li>Support perforation design & selective completions.</li>
-              <li>Long-term field life prediction using erosion & deposition models.</li>
-              <li>Optimize choke strategies & sustainable drawdown limits.</li>
-            </ul>
+      {/* RIGHT IMAGE (ALIGNMENT FIXED) */}
+      <div className="flex justify-center">
+        <img
+          src="https://www.greenfield.energy/wp-content/uploads/2021/10/Dashboard-for-Last-page.jpg"
+          alt="Full Field Sand Management"
+          className="w-full max-w-2xl rounded-2xl shadow-lg object-contain"
+        />
+      </div>
 
-            <img
-              src="https://www.greenfield.energy/wp-content/uploads/2021/10/Dashboard-for-Last-page.jpg"
-              className="rounded-xl shadow-lg"
-            />
+    </div>
+  </div>
+</section>
 
-          </div>
-        </div>
-      </section>
 
       {/* ========================================================= */}
       {/* LONG TERM SUPPORT */}
@@ -316,22 +392,12 @@ export default function SandMaster() {
       Frequently Asked Questions
     </h2>
 
-    <div className="grid md:grid-cols-2 gap-6">
-      {[
-        "How does SandMaster calculate erosion risk?",
-        "Can SandMaster predict long-term deposition?",
-        "Does the software support real-time monitoring?",
-        "What inputs are required for PSD modelling?",
-        "Can SandMaster integrate with downhole sensors?",
-      ].map((q) => (
-        <div
-          key={q}
-          className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
-        >
-          {q}
-        </div>
-      ))}
-    </div>
+    <div className="space-y-4 max-w-4xl">
+  {faqs.map((faq, index) => (
+    <FAQItem key={index} faq={faq} />
+  ))}
+</div>
+
 
   </div>
 </section>
@@ -406,6 +472,34 @@ export default function SandMaster() {
         </button>
       </section>
 
+    </div>
+  );
+}
+function FAQItem({ faq }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border border-[#1B4D3E]/30 rounded-xl bg-[#e8f5e9]">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center px-6 py-4 text-left"
+      >
+        <span className="text-[#1B4D3E] font-semibold">
+          {faq.question}
+        </span>
+
+        <ChevronDown
+          className={`text-[#1B4D3E] transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {open && (
+        <div className="px-6 pb-5 text-[#1B4D3E]/80 leading-relaxed">
+          {faq.answer}
+        </div>
+      )}
     </div>
   );
 }

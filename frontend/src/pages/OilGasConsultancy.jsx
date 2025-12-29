@@ -57,7 +57,7 @@ export default function OilGasConsultancy() {
                   style={{ opacity: 0 }}
                   className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-xl"
                 >
-                  Strategic Advisory for the Future of Oil &amp; Gas
+                  Strategic Advisory for the Future of Energy
                 </h1>
 
                 <p style={{ opacity: 0 }} className="mt-4 text-base md:text-lg text-white/90 max-w-2xl font-light">
@@ -89,7 +89,7 @@ export default function OilGasConsultancy() {
           {/* Left: content */}
           <article ref={contentRef} className="lg:col-span-8 space-y-10">
             <h2 className={`text-3xl md:text-4xl font-extrabold ${BRAND_COLOR_CLASS} border-b-2 border-emerald-200 pb-3`}>
-              Oil &amp; Gas Consultancy
+              Energy Consultancy
             </h2>
 
             {/* Featured image */}

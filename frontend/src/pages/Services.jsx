@@ -1,5 +1,6 @@
 // src/components/Services.jsx
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Code,
   Briefcase,
@@ -11,68 +12,70 @@ import {
 
 const Services = () => {
   // === updated main services (four items) ===
-  const mainServices = [
-    {
-      icon: Briefcase,
-      title: "Oil & Gas Consultancy",
-      description:
-        "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
-      features: [
-        "Reservoir Engineering",
-        "Production Optimization",
-        "Well Design & Planning",
-        "Field Development Studies",
-        "Risk Assessment",
-      ],
-      image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-    {
-      icon: Code,
-      title: "Software Development",
-      description:
-        "Custom software solutions and integrations tailored to the energy sector — web apps, automation and cloud systems.",
-      features: [
-        "Workflow Automation",
-        "Data Management Systems",
-        "Real-time Monitoring",
-        "Cloud-native Solutions",
-        "Mobile Applications",
-      ],
-      image:
-        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-    {
-      icon: GraduationCap,
-      title: "Training",
-      description:
-        "Hands-on professional training programs and certifications for industry teams and individuals.",
-      features: [
-        "Technical Workshops",
-        "Software Training",
-        "Best Practices",
-        "Industry Standards",
-        "Certification Programs",
-      ],
-      image:
-        "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-    {
-      icon: LineChart,
-      title: "Data Analysis",
-      description:
-        "Advanced analytics, visualization and reporting to convert operational data into actionable insights.",
-      features: [
-        "Data Cleaning & ETL",
-        "Trend Analysis",
-        "Predictive Models",
-        "Dashboards & Reporting",
-        "Anomaly Detection",
-      ],
-      image:
-        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-  ];
+  const navigate = useNavigate();
+const mainServices = [
+  {
+    icon: Briefcase,
+    title: "Energy Consultancy",
+    slug: "oil-gas",
+    description:
+      "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
+    features: [
+      "Reservoir Engineering",
+      "Production Optimization",
+      "Well Design & Planning",
+      "Field Development Studies",
+      "Risk Assessment",
+    ],
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    icon: Code,
+    title: "Software Development",
+    slug: "software",
+    description:
+      "Custom software solutions and integrations tailored to the energy sector — web apps, automation and cloud systems.",
+    features: [
+      "Workflow Automation",
+      "Data Management Systems",
+      "Real-time Monitoring",
+      "Cloud-native Solutions",
+      "Mobile Applications",
+    ],
+    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    icon: GraduationCap,
+    title: "Training",
+    slug: "training",
+    description:
+      "Hands-on professional training programs and certifications for industry teams and individuals.",
+    features: [
+      "Technical Workshops",
+      "Software Training",
+      "Best Practices",
+      "Industry Standards",
+      "Certification Programs",
+    ],
+    image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    icon: LineChart,
+    title: "Data Analysis",
+    slug: "data-analysis",
+    description:
+      "Advanced analytics, visualization and reporting to convert operational data into actionable insights.",
+    features: [
+      "Data Cleaning & ETL",
+      "Trend Analysis",
+      "Predictive Models",
+      "Dashboards & Reporting",
+      "Anomaly Detection",
+    ],
+    image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+];
+
 
   // === additional services (kept as before) ===
   const additionalServices = [
@@ -168,11 +171,13 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 space-y-20">
           {mainServices.map((service, index) => (
             <div
-              key={index}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
-            >
+  key={index}
+  onClick={() => navigate(`/services/${service.slug}`)}
+  className={`grid md:grid-cols-2 gap-12 items-center cursor-pointer ${
+    index % 2 === 1 ? "md:flex-row-reverse" : ""
+  } hover:bg-gray-50 rounded-2xl p-4 transition`}
+>
+
               {/* TEXT CONTENT */}
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
                 <div className="bg-[#1B4D3E] w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
