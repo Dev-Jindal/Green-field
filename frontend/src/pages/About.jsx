@@ -1,6 +1,10 @@
-import { Target, Eye, Users, Globe, Award, TrendingUp } from "lucide-react";
+import React, { useState } from "react";
+import { Target, Eye, Users, Globe, Award, ChevronRight, X } from "lucide-react";
 
 const About = () => {
+  // State to manage which team member's popup is open
+  const [selectedMember, setSelectedMember] = useState(null);
+
   const values = [
     {
       icon: Target,
@@ -31,9 +35,75 @@ const About = () => {
     { metric: "344 MT", label: "Carbon Footprint Reduced" },
   ];
 
+  const teamMembers = [
+    {
+      name: "Vinnavadi C Babu Sivakumar",
+      role: "CTO, Petroleum Engineering Solutions",
+      image: "/images/team/Babu Sir.jpeg",
+      bio: `Sivakumar is a dynamic Oil and Gas Industry professional with enriched expertise & experience of more than 4 decades in the areas of Project Management; Well Completions; Sand Control; Artificial Lift & EOR/IOR; Production Operations; Process Reengineering and Team Management. He has been working hands on in the Oil and Gas Industry across India, Middle East and South East Asia regions.
+
+Sivakumar is a Post-Graduate in Petroleum Engineering from the Indian Institute of Technology (ISM) Dhanbad. He has presented and published several papers at SPE conferences on Artificial Lift, Thermal Stimulation with Downhole heaters and Chemical and Bacterial well treatments for water shutoff. Sivakumar has also been a line trainer and conducted classroom courses on Production Enhancement, Well Stimulation, Artificial Lift, Sand Control and Well Completions.
+
+Sivakumar is currently associated with M/S Greenfield Oil and Trading Company as a Principal Technical Consultant (Production Technology/Petroleum Engineering).`,
+    },
+    {
+      name: "Gaurav Dwivedi",
+      role: "CTO, Technology",
+      image: "/images/team/Gaurav Sir.png",
+      bio: `Gaurav Dwivedi, a seasoned system software professional, boasts of 20+ years of extensive experience in graphics system engineering and development. His expertise spans technical leadership, planning, reporting, resource management, risk management, mentorship, and cross-team coordination throughout the Software Development Life Cycle (SDLC) and Software Testing Life Cycle (STLC). His technical proficiency encompasses a wide array of skills including C, C++, Java, GPU architecture, microcontroller firmware, GPU power and performance profiling, and more, demonstrating versatility across different technologies.
+
+In his current role as Chief Technology Officer at Greenfield Oil and Trading Services, Gaurav spearheads software development initiatives and makes crucial architectural decisions. Notably, he is playing a pivotal role in crafting specialized software solutions tailored for the oil and gas industry, with a focus on greenhouse gas emission calculations.
+
+Gaurav holds a B. Tech in Electronics Engineering from the Indian Institute of Technology (IIT), Dhanbad, and has pursued advanced certification in Deep Learning Foundations and Applications from IISC Bangalore. Additionally, he has patents to his credit, reflecting his innovative prowess. Gaurav is proficient in English and Hindi, with a basic understanding of Korean.`,
+    },
+    {
+      name: "Abhishek Gupta",
+      role: "Senior Petroleum Engineer",
+      image: "/images/team/Abhishek Sir.png",
+      bio: `He is working as a Petroleum Engineer having 9+ yrs of experience in Oil & Gas Industry. Experience with Rig Operations involving Completion/Workover activities & with Rig less operations involving Coiled Tubing, E-Line, Slickline & Well Test operations.
+
+He is expert in Execution in Completion & Rigless operations for turn key Project including engineering support to Workover/Completion rigs & rigless operations. Expertise in Designing well completion, workover & rigless programs for ESP, PCP, Jet Pump, Mono & Selective injectors while abiding by process safety & HSE standards. Experience with well completions including seal bore packers, SSD’s, CIM’s etc.
+
+Currently working as a Senior Petroleum Engineer at Greenfield Oil & Trading services.`,
+    },
+    {
+      name: "Sejal Jain",
+      role: "Business Development Manager & HR Manager",
+      image: "/images/team/Sejal.jpeg",
+      bio: `She is a dedicated professional with over 2+ years of experience in Business Development and Human Resources, combining strategic thinking with strong people-management skills. She holds an MBA in HR and Marketing, which enables her to effectively align business growth strategies with talent and organizational development.
+
+In her current role, Sejal manages business development initiatives, client coordination, and partnership building, while also overseeing core HR functions such as recruitment, onboarding, employee engagement, and performance management. Her ability to handle multiple responsibilities ensures smooth internal operations and sustained business growth.
+
+Driven by a results-oriented and people-first approach, Sejal contributes to building efficient processes, strengthening workplace culture, and supporting the company’s long-term objectives through structured planning and collaborative execution.`,
+    },
+    {
+      name: "Swagat Pradhan",
+      role: "Analytics and Optimization Engineer",
+      image: "/images/team/Swagat.png",
+      bio: `With over 3+ years of experience in upstream oil and gas operations, he holds a degree in Petroleum Engineering and has worked closely with drilling, production, and well operations, gaining practical exposure to field workflows, reporting systems, and operational data management. Swagat has hands-on experience in coordinating technical data, understanding DPR/WSR workflows, and supporting decision-making through structured analysis, while handling multiple clients and projects simultaneously.
+
+With a strong interest in digital transformation, he is currently expanding his expertise in data analytics and upstream software solutions, contributing to the development and implementation of tools such as AutoWellz and AutoPro. His work bridges domain knowledge and technology to improve operational efficiency, data visibility, and process standardization.`,
+    },
+    {
+      name: "Kashish Bhardwaj",
+      role: "Petroleum Engineer",
+      image: "/images/team/kashish.jpeg",
+      bio: `Petroleum Engineer with a B. Tech from Chandigarh University (2019–2023), currently working at Greenfield Oil & Trading Services since October 2023. Actively involved in digital sand management projects, with hands-on experience in modeling and analysis using RockMaster™ and SandMaster™.
+
+Passionate about applying technology-driven solutions to enhance upstream operational efficiency.`,
+    },
+    {
+      name: "Firoza Sheikh",
+      role: "Petroleum Engineer | Product Champion-GREEN",
+      image: "/images/team/Firoza.jpeg",
+      bio: `She is a Petroleum Engineer and Product Champion for GREEN product, where she leads research and development efforts shaping next-generation sustainability and carbon accounting solutions across energy, industrial, and allied sectors. Her work contributes to building data-driven systems that support organizations in navigating the transition toward a low-carbon and climate-resilient future.
+
+With a strong engineering foundation, Firoza works at the intersection of petroleum engineering and ESG, translating complex operational data into credible carbon inventories and actionable emission reduction pathways. She plays a key role in shaping GREEN’s methodology and product direction, ensuring technical rigor, regulatory alignment, and long-term relevance as sustainability becomes central to future business and operational decision-making.`,
+    },
+  ];
+
   return (
     <div className="pt-20">
-
       {/* ================= HERO ================= */}
       <section className="bg-[#1B4D3E] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -50,10 +120,11 @@ const About = () => {
       {/* ================= OUR STORY ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-
           {/* LEFT TEXT */}
           <div>
-            <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">Our Story</h2>
+            <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">
+              Our Story
+            </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
                 Founded in 2015, Greenfield Energy has established itself as a
@@ -70,10 +141,9 @@ const About = () => {
                 the energy sector.
               </p>
               <p>
-                Today, we continue to push boundaries, developing
-                cutting-edge software and providing expert consultancy that
-                empowers our clients to optimize operations and reduce
-                environmental impact.
+                Today, we continue to push boundaries, developing cutting-edge
+                software and providing expert consultancy that empowers our
+                clients to optimize operations and reduce environmental impact.
               </p>
             </div>
           </div>
@@ -90,14 +160,12 @@ const About = () => {
               <div className="text-sm">Years of Excellence</div>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* ================= VISION / MISSION & ACHIEVEMENTS ================= */}
       <section className="py-20 bg-[#e8f5e9]">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-
           {/* Achievements */}
           <div className="order-2 md:order-1">
             <div className="grid grid-cols-2 gap-6">
@@ -109,9 +177,7 @@ const About = () => {
                   <div className="text-4xl font-bold text-[#1B4D3E] mb-2">
                     {item.metric}
                   </div>
-                  <div className="text-gray-700 font-medium">
-                    {item.label}
-                  </div>
+                  <div className="text-gray-700 font-medium">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -137,18 +203,16 @@ const About = () => {
 
             <p className="text-lg text-gray-700 leading-relaxed">
               To deliver research-driven, customer-focused solutions that help
-              our clients optimize workflows, reduce emissions, and innovate
-              for a sustainable future.
+              our clients optimize workflows, reduce emissions, and innovate for
+              a sustainable future.
             </p>
           </div>
-
         </div>
       </section>
 
       {/* ================= CORE VALUES ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
               Our Core Values
@@ -178,313 +242,240 @@ const About = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-{/* ================= OUR TEAM ================= */}
-<section className="py-20 bg-[#f5faf7]">
-  <div className="max-w-7xl mx-auto px-4">
-
-    {/* Heading */}
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
-        Our Leadership & Team
-      </h2>
-      <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-        A blend of industry veterans and professionals driving innovation in
-        petroleum engineering, technology, and sustainability.
-      </p>
-    </div>
-
-    {/* Team Grid */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-      {/* Sivakumar */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Babu Sir.jpeg"
-          alt="Vinnavadi C Babu Sivakumar"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Vinnavadi C Babu Sivakumar
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            CTO – Petroleum Engineering Solutions
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Oil & Gas professional with 40+ years of experience across India,
-            Middle East and South East Asia. Expertise in project management,
-            well completions, sand control, artificial lift, EOR/IOR, and
-            production operations. IIT (ISM) Dhanbad alumnus and published SPE
-            author.
-          </p>
-        </div>
-      </div>
-
-      {/* Gaurav */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Gaurav Sir.png"
-          alt="Gaurav Dwivedi"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Gaurav Dwivedi
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            CTO – Technology
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Technology leader with 20+ years of experience in system software,
-            GPU architecture, and SDLC leadership. Leads software architecture
-            and greenhouse gas emission platforms. IIT Dhanbad alumnus with AI
-            certification from IISc Bangalore.
-          </p>
-        </div>
-      </div>
-
-      {/* Abhishek */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Abhishek Sir.png"
-          alt="Abhishek Gupta"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Abhishek Gupta
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            Senior Petroleum Engineer
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Petroleum Engineer with 9+ years of experience in rig and rigless
-            operations including completion, workover, coiled tubing, slickline
-            and well testing. Expert in turnkey execution and completion design
-            with strong HSE compliance.
-          </p>
-        </div>
-      </div>
-
-      {/* Sejal */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Sejal.jpeg"
-          alt="Sejal Jain"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Sejal Jain
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            Business Development Manager & HR Manager
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            MBA in HR & Marketing with 2+ years of experience in business
-            development and human resources. Manages client partnerships,
-            recruitment, onboarding, and employee engagement with a people-first
-            approach.
-          </p>
-        </div>
-      </div>
-
-      {/* Swagat */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Swagat.png"
-          alt="Swagat Pradhan"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Swagat Pradhan
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            Analytics & Optimization Engineer
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Petroleum Engineer with 3+ years of experience in upstream
-            operations, reporting workflows, and data coordination. Actively
-            contributes to digital tools like AutoWellz and AutoPro, bridging
-            domain expertise with analytics.
-          </p>
-        </div>
-      </div>
-
-      {/* Kashish */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/kashish.jpeg"
-          alt="Kashish Bhardwaj"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Kashish Bhardwaj
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            Petroleum Engineer
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Petroleum Engineer from Chandigarh University (2019–2023), working
-            at Greenfield since October 2023. Involved in digital sand
-            management projects using RockMaster™ and SandMaster™ to enhance
-            upstream efficiency.
-          </p>
-        </div>
-      </div>
-
-      {/* Firoza */}
-      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
-        <img
-          src="/images/team/Firoza.jpeg"
-          alt="Firoza Sheikh"
-          className="w-full h-72 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-[#1B4D3E]">
-            Firoza Sheikh
-          </h3>
-          <p className="text-sm font-semibold text-gray-600 mb-3">
-            Petroleum Engineer | Product Champion – GREEN
-          </p>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Leads R&D for GREEN, focusing on sustainability and carbon
-            accounting solutions. Works at the intersection of petroleum
-            engineering and ESG, shaping methodologies for credible emission
-            inventories and reduction pathways.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* ================= OUR PARTNERS ================= */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4">
-
-    {/* ================= OUR PARTNERS ================= */}
-    <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-      Our Partners
-    </h2>
-
-    <div className="grid md:grid-cols-3 gap-12 text-center mb-20">
-      {[
-        {
-          img: "P1.png",
-          name: "BG Oilfield Sdn Bhd, Malaysia",
-          loc: "KLCC, Kuala Lumpur, Malaysia",
-        },
-        {
-          img: "apta_logo.jpeg",
-          name: "Apta Consultancy",
-          loc: "Kingwood, TX, 77399, USA",
-        },
-        {
-          img: "bg.png",
-          name: "Bee Groups, Iran",
-          loc: "UK Reg No.: 09020747",
-        },
-      ].map((p, i) => (
-        <div key={i}>
-          <div className="h-28 flex items-center justify-center mb-6">
-            <img
-              src={`/images/partners/${p.img}`}
-              alt={p.name}
-              className="max-h-full max-w-[180px] object-contain"
-            />
+      {/* ================= OUR TEAM (UPDATED WITH POPUP) ================= */}
+      <section className="py-20 bg-[#f5faf7]">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
+              Our Leadership & Team
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              A blend of industry veterans and professionals driving innovation
+              in petroleum engineering, technology, and sustainability.
+            </p>
           </div>
-          <h3 className="font-bold text-lg">{p.name}</h3>
-          <p className="text-gray-700">{p.loc}</p>
-        </div>
-      ))}
-    </div>
 
-    {/* ================= GLOBAL SERVICE PARTNERS ================= */}
-    <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-      Global Service Partners
-    </h2>
+          {/* Team Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group h-full border-t-4 border-[#1B4D3E]"
+              >
+                {/* Image Area - Kept in the grid card */}
+                <div className="h-72 overflow-hidden relative">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-    <div className="grid md:grid-cols-5 gap-10 text-center mb-20">
-      {[
-        { img: "PTS.png", name: "Production Tool", loc: "Solution, USA" },
-        { img: "rara.png", name: "Rara Energy", loc: "Abu Dhabi" },
-        { img: "tps.png", name: "Technical Petroleum", loc: "Services, Egypt" },
-        { img: "sutera.png", name: "Sutera Energy", loc: "Solutions, Brunei" },
-        { img: "pgas.png", name: "Permian Oil and Gas", loc: "Services Limited, Nigeria" },
-      ].map((p, i) => (
-        <div key={i}>
-          <div className="h-24 flex items-center justify-center mb-4">
-            <img
-              src={`/images/partners/${p.img}`}
-              alt={p.name}
-              className="max-h-full max-w-[160px] object-contain"
-            />
+                {/* Card Content */}
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-[#1B4D3E] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-wider text-red-600 mb-4">
+                    {member.role}
+                  </p>
+                  
+                  {/* Truncated Bio (3 Lines Max) */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                    {member.bio}
+                  </p>
+
+                  {/* Read More Button */}
+                  <div className="mt-auto">
+                    <button
+                      onClick={() => setSelectedMember(member)}
+                      className="inline-flex items-center text-[#1B4D3E] font-bold text-sm hover:text-red-600 transition-colors group/btn"
+                    >
+                      Read Full Profile
+                      <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <p className="font-semibold">{p.name}</p>
-          <p className="text-gray-700">{p.loc}</p>
         </div>
-      ))}
-    </div>
+      </section>
 
-    {/* ================= TECHNOLOGY PARTNERS ================= */}
-    <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-      Technology Partners
-    </h2>
+      {/* ================= POPUP MODAL WINDOW (TEXT ONLY) ================= */}
+      {selectedMember && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop with Blur */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setSelectedMember(null)}
+          ></div>
 
-    <div className="grid md:grid-cols-2 gap-16 text-center mb-20">
-      {[
-        { img: "Original_logo-3.jpg", name: "Turnera Tech" },
-        { img: "tdpvista-1.png", name: "TDPVista, India" },
-      ].map((p, i) => (
-        <div key={i}>
-          <div className="h-32 flex items-center justify-center mb-6">
-            <img
-              src={`/images/partners/${p.img}`}
-              alt={p.name}
-              className="max-h-full max-w-[220px] object-contain"
-            />
+          {/* Modal Content - TEXT ONLY, NO IMAGE */}
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative z-10 animate-in fade-in zoom-in duration-300 border-t-8 border-[#1B4D3E]">
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-4 right-4 z-20 p-2 rounded-full text-gray-400 hover:text-red-600 hover:bg-gray-100 transition-all"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Modal Text Content */}
+            <div className="p-8 md:p-12">
+              <div className="mb-8 border-b border-gray-100 pb-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-2">
+                  {selectedMember.name}
+                </h3>
+                <p className="text-sm md:text-base font-bold uppercase tracking-wider text-red-600">
+                  {selectedMember.role}
+                </p>
+              </div>
+
+              <div className="prose prose-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                {selectedMember.bio}
+              </div>
+            </div>
+
           </div>
-          <p className="font-bold text-lg">{p.name}</p>
         </div>
-      ))}
-    </div>
+      )}
 
-    {/* ================= UNIVERSITY PARTNERS ================= */}
-    <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-      University Partners
-    </h2>
+      {/* ================= OUR PARTNERS ================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* ================= OUR PARTNERS ================= */}
+          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
+            Our Partners
+          </h2>
 
-    <div className="grid md:grid-cols-2 gap-16 text-center">
-      {[
-        { img: "P3.png", name: "IIT ISM Dhanbad" },
-        { img: "rgu.png", name: "Robert Gordon University" },
-      ].map((p, i) => (
-        <div key={i}>
-          <div className="h-28 flex items-center justify-center mb-6">
-            <img
-              src={`/images/partners/${p.img}`}
-              alt={p.name}
-              className="max-h-full max-w-[200px] object-contain"
-            />
+          <div className="grid md:grid-cols-3 gap-12 text-center mb-20">
+            {[
+              {
+                img: "P1.png",
+                name: "BG Oilfield Sdn Bhd, Malaysia",
+                loc: "KLCC, Kuala Lumpur, Malaysia",
+              },
+              {
+                img: "apta_logo.jpeg",
+                name: "Apta Consultancy",
+                loc: "Kingwood, TX, 77399, USA",
+              },
+              {
+                img: "bg.png",
+                name: "Bee Groups, Iran",
+                loc: "UK Reg No.: 09020747",
+              },
+            ].map((p, i) => (
+              <div key={i}>
+                <div className="h-28 flex items-center justify-center mb-6">
+                  <img
+                    src={`/images/partners/${p.img}`}
+                    alt={p.name}
+                    className="max-h-full max-w-[180px] object-contain"
+                  />
+                </div>
+                <h3 className="font-bold text-lg">{p.name}</h3>
+                <p className="text-gray-700">{p.loc}</p>
+              </div>
+            ))}
           </div>
-          <p className="font-bold text-lg">{p.name}</p>
+
+          {/* ================= GLOBAL SERVICE PARTNERS ================= */}
+          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
+            Global Service Partners
+          </h2>
+
+          <div className="grid md:grid-cols-5 gap-10 text-center mb-20">
+            {[
+              {
+                img: "PTS.png",
+                name: "Production Tool",
+                loc: "Solution, USA",
+              },
+              { img: "rara.png", name: "Rara Energy", loc: "Abu Dhabi" },
+              {
+                img: "tps.png",
+                name: "Technical Petroleum",
+                loc: "Services, Egypt",
+              },
+              {
+                img: "sutera.png",
+                name: "Sutera Energy",
+                loc: "Solutions, Brunei",
+              },
+              {
+                img: "pgas.png",
+                name: "Permian Oil and Gas",
+                loc: "Services Limited, Nigeria",
+              },
+            ].map((p, i) => (
+              <div key={i}>
+                <div className="h-24 flex items-center justify-center mb-4">
+                  <img
+                    src={`/images/partners/${p.img}`}
+                    alt={p.name}
+                    className="max-h-full max-w-[160px] object-contain"
+                  />
+                </div>
+                <p className="font-semibold">{p.name}</p>
+                <p className="text-gray-700">{p.loc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ================= TECHNOLOGY PARTNERS ================= */}
+          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
+            Technology Partners
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-16 text-center mb-20">
+            {[
+              { img: "Original_logo-3.jpg", name: "Turnera Tech" },
+              { img: "tdpvista-1.png", name: "TDPVista, India" },
+            ].map((p, i) => (
+              <div key={i}>
+                <div className="h-32 flex items-center justify-center mb-6">
+                  <img
+                    src={`/images/partners/${p.img}`}
+                    alt={p.name}
+                    className="max-h-full max-w-[220px] object-contain"
+                  />
+                </div>
+                <p className="font-bold text-lg">{p.name}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ================= UNIVERSITY PARTNERS ================= */}
+          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
+            University Partners
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-16 text-center">
+            {[
+              { img: "P3.png", name: "IIT ISM Dhanbad" },
+              { img: "rgu.png", name: "Robert Gordon University" },
+            ].map((p, i) => (
+              <div key={i}>
+                <div className="h-28 flex items-center justify-center mb-6">
+                  <img
+                    src={`/images/partners/${p.img}`}
+                    alt={p.name}
+                    className="max-h-full max-w-[200px] object-contain"
+                  />
+                </div>
+                <p className="font-bold text-lg">{p.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-
-  </div>
-</section>
-
-
-
+      </section>
     </div>
   );
 };

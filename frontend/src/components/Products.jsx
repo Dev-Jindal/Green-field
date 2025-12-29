@@ -171,7 +171,7 @@
 
 
 import React, { useEffect, useRef } from "react";
-import { ArrowRight, Box, Workflow, Cpu, Mountain, Leaf } from "lucide-react";
+import { ArrowRight } from "lucide-react"; // Only ArrowRight is needed now
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -183,7 +183,8 @@ export default function Products() {
 
   const products = [
     {
-      icon: Box,
+      // Replaced Lucide component with image path
+      icon: "/images/icons/SandMaster.jpg", 
       name: "SandMaster",
       tagline: "Advanced Sand Management",
       description:
@@ -196,8 +197,9 @@ export default function Products() {
       ],
       video:
         "https://player.vimeo.com/video/637143154?autoplay=1&muted=1&loop=1&background=1",
-    },  {
-      icon: Mountain,
+    },
+    {
+      icon: "/images/icons/RockMaster.jpg",
       name: "RockMaster",
       tagline: "Rock Mechanical Stability",
       description:
@@ -208,11 +210,10 @@ export default function Products() {
         "Risk prediction",
         "Formation evaluation",
       ],
-     video:
-        "/video/RockMaster_Final.mp4",
+      video: "/video/RockMaster_Final.mp4",
     },
     {
-      icon: Workflow,
+      icon: "/images/icons/AutoWellz.jpg",
       name: "AutoWellz",
       tagline: "Well Operation Workflow",
       description:
@@ -227,7 +228,7 @@ export default function Products() {
         "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
     },
     {
-      icon: Cpu,
+      icon: "/images/icons/AutoPro.jpg",
       name: "AutoPro",
       tagline: "Engineering Process Digitization",
       description:
@@ -241,7 +242,7 @@ export default function Products() {
       video: "/video/autopro.mp4",
     },
     {
-      icon: Leaf,
+      icon: "/images/icons/GREEN.jpg",
       name: "GREEN",
       tagline: "GHG Emissions Calculator",
       description:
@@ -297,8 +298,13 @@ export default function Products() {
           >
             {/* TEXT SECTION */}
             <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
-              <div className="bg-[#1B4D3E] w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                <product.icon className="w-10 h-10 text-white" />
+              {/* IMAGE ICON CONTAINER - Same dimensions (w-20 h-20) */}
+              <div className="w-20 h-20 mb-6 shadow-lg rounded-2xl">
+                 <img 
+                   src={product.icon} 
+                   alt={`${product.name} Icon`} 
+                   className="w-full h-full object-cover rounded-2xl" 
+                 />
               </div>
 
               <h3 className="text-3xl font-bold text-[#1B4D3E] mb-2">
@@ -330,7 +336,7 @@ export default function Products() {
               </Link>
             </div>
 
-            {/* MEDIA SECTION (ALL UNIFIED NOW) */}
+            {/* MEDIA SECTION */}
             <div
               className={`${
                 index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
@@ -359,7 +365,7 @@ export default function Products() {
                   )
                 ) : (
                   <img
-                    src={product.image}
+                    src={product.image} // Note: Your data didn't have a 'product.image' property for the main media, but keeping logic just in case
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />
