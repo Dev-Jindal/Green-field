@@ -8,7 +8,7 @@ export default function AutoPro() {
   return (
     <div className="pt-24">
       {/* HERO */}
-      <section className="w-full bg-gradient-to-r from-[#e8f5e9] to-white py-20">
+      <section className="w-full bg-gradient-to-r from-[#AFE1AF] to-white py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           <div>
@@ -314,7 +314,7 @@ export default function AutoPro() {
             ].map((q) => (
               <div
                 key={q}
-                className="border border-[#1B4D3E] bg-[#e8f5e9] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
+                className="border border-[#1B4D3E] bg-[#AFE1AF]rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
               >
                 {q}
               </div>

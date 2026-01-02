@@ -346,136 +346,123 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
         </div>
       )}
 
-      {/* ================= OUR PARTNERS ================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* ================= OUR PARTNERS ================= */}
-          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-            Our Partners
-          </h2>
+    {/* ================= OUR PARTNERS ================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
 
-          <div className="grid md:grid-cols-3 gap-12 text-center mb-20">
-            {[
-              {
-                img: "P1.png",
-                name: "BG Oilfield Sdn Bhd, Malaysia",
-                loc: "KLCC, Kuala Lumpur, Malaysia",
-              },
-              {
-                img: "apta_logo.jpeg",
-                name: "Apta Consultancy",
-                loc: "Kingwood, TX, 77399, USA",
-              },
-              {
-                img: "bg.png",
-                name: "Bee Groups, Iran",
-                loc: "UK Reg No.: 09020747",
-              },
-            ].map((p, i) => (
-              <div key={i}>
-                <div className="h-28 flex items-center justify-center mb-6">
-                  <img
-                    src={`/images/partners/${p.img}`}
-                    alt={p.name}
-                    className="max-h-full max-w-[180px] object-contain"
-                  />
-                </div>
-                <h3 className="font-bold text-lg">{p.name}</h3>
-                <p className="text-gray-700">{p.loc}</p>
-              </div>
-            ))}
-          </div>
+    <h2 className="text-4xl md:text-5xl font-bold text-center text-[#1B4D3E] mb-16">
+  Our Partners
+</h2>
 
-          {/* ================= GLOBAL SERVICE PARTNERS ================= */}
-          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-            Global Service Partners
-          </h2>
+    {/* ================= OUR CLIENTS ================= */}
+    <div className="mb-20">
+      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-6">
+        Our Clients
+      </h3>
 
-          <div className="grid md:grid-cols-5 gap-10 text-center mb-20">
-            {[
-              {
-                img: "PTS.png",
-                name: "Production Tool",
-                loc: "Solution, USA",
-              },
-              { img: "rara.png", name: "Rara Energy", loc: "Abu Dhabi" },
-              {
-                img: "tps.png",
-                name: "Technical Petroleum",
-                loc: "Services, Egypt",
-              },
-              {
-                img: "sutera.png",
-                name: "Sutera Energy",
-                loc: "Solutions, Brunei",
-              },
-              {
-                img: "pgas.png",
-                name: "Permian Oil and Gas",
-                loc: "Services Limited, Nigeria",
-              },
-            ].map((p, i) => (
-              <div key={i}>
-                <div className="h-24 flex items-center justify-center mb-4">
-                  <img
-                    src={`/images/partners/${p.img}`}
-                    alt={p.name}
-                    className="max-h-full max-w-[160px] object-contain"
-                  />
-                </div>
-                <p className="font-semibold">{p.name}</p>
-                <p className="text-gray-700">{p.loc}</p>
-              </div>
-            ))}
-          </div>
+      <ul className="grid md:grid-cols-3 gap-4 list-disc list-inside text-gray-700 text-lg">
+        <li>Oil India</li>
+        <li>Petronas Carigali</li>
+        <li>Cairn India</li>
+        <li>SPOC, Sudan</li>
+        <li>Kiri Energy</li>
+        <li>SEE Energy</li>
+      </ul>
+    </div>
 
-          {/* ================= TECHNOLOGY PARTNERS ================= */}
-          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-            Technology Partners
-          </h2>
+    {/* ================= GLOBAL SERVICE PARTNERS ================= */}
+    <div className="mb-20">
+      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-10">
+        Global Service Partners
+      </h3>
 
-          <div className="grid md:grid-cols-2 gap-16 text-center mb-20">
-            {[
-              { img: "Original_logo-3.jpg", name: "Turnera Tech" },
-              { img: "tdpvista-1.png", name: "TDPVista, India" },
-            ].map((p, i) => (
-              <div key={i}>
-                <div className="h-32 flex items-center justify-center mb-6">
-                  <img
-                    src={`/images/partners/${p.img}`}
-                    alt={p.name}
-                    className="max-h-full max-w-[220px] object-contain"
-                  />
-                </div>
-                <p className="font-bold text-lg">{p.name}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* ================= UNIVERSITY PARTNERS ================= */}
-          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-            University Partners
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-16 text-center">
-            {[
-              { img: "P3.png", name: "IIT ISM Dhanbad" },
-              { img: "rgu.png", name: "Robert Gordon University" },
-            ].map((p, i) => (
-              <div key={i}>
-                <div className="h-28 flex items-center justify-center mb-6">
-                  <img
-                    src={`/images/partners/${p.img}`}
-                    alt={p.name}
-                    className="max-h-full max-w-[200px] object-contain"
-                  />
-                </div>
-                <p className="font-bold text-lg">{p.name}</p>
-              </div>
-            ))}
-          </div>
+      <div className="grid md:grid-cols-3 gap-10 text-center">
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">Permian Oil & Gas</p>
         </div>
-      </section>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">TPS</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">Sutera Energy</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">Rara Energy</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <img
+            src="/images/GoldenGateBridge.png"
+            alt="Golden Gate Bridge Trading and Services"
+            className="mx-auto mb-4 h-20 object-contain"
+          />
+          <p className="font-semibold text-lg">
+            Golden Gate Bridge Trading and Services
+          </p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <img
+            src="/images/AdreeEnergy.jpg"
+            alt="Adisshre Energies Pvt Ltd"
+            className="mx-auto mb-4 h-20 object-contain"
+          />
+          <p className="font-semibold text-lg">
+            Adisshre Energies Pvt Ltd
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* ================= TECHNOLOGY PARTNERS ================= */}
+    <div>
+      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-10">
+        Technology Partners
+      </h3>
+
+      <div className="grid md:grid-cols-3 gap-10 text-center">
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">Turnera Tech</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <p className="font-semibold text-lg">IIT ISM</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <img
+            src="/images/NSP.png"
+            alt="NSP"
+            className="mx-auto mb-4 h-20 object-contain"
+          />
+          <p className="font-semibold text-lg">NSP</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <img
+            src="/images/UGreen.jpg"
+            alt="U Green"
+            className="mx-auto mb-4 h-20 object-contain"
+          />
+          <p className="font-semibold text-lg">U Green</p>
+        </div>
+
+        <div className="border rounded-xl p-6 shadow-sm">
+          <img
+            src="/images/HOPON.png"
+            alt="Hopun Innovation"
+            className="mx-auto mb-4 h-20 object-contain"
+          />
+          <p className="font-semibold text-lg">Hopun Innovation</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
     </div>
   );
 };

@@ -42,7 +42,8 @@ export default function SandMaster() {
       {/* ========================================================= */}
       {/* HERO SECTION */}
       {/* ========================================================= */}
-      <section className="w-full bg-gradient-to-r from-[#e8f5e9] to-white py-20">
+      <section className="w-full bg-gradient-to-r from-[#AFE1AF]
+ to-white py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           {/* LEFT CONTENT */}
@@ -479,7 +480,7 @@ function FAQItem({ faq }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-[#1B4D3E]/30 rounded-xl bg-[#e8f5e9]">
+    <div className="border border-[#1B4D3E]/30 rounded-xl bg-[#AFE1AF]">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center px-6 py-4 text-left"

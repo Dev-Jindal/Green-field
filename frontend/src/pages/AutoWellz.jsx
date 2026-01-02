@@ -59,7 +59,7 @@ export default function AutoWellz() {
   return (
     <div className="pt-24 text-[#1B4D3E]">
 
-     <section className="bg-gradient-to-r from-[#e8f5e9] to-white py-20">
+     <section className="bg-gradient-to-r from-[#AFE1AF] to-white py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           <div>
@@ -442,7 +442,7 @@ export default function AutoWellz() {
 
       {/* Card 1 */}
       <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#e8f5e9] mb-5 group-hover:bg-[#1B4D3E] transition">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#AFE1AF] mb-5 group-hover:bg-[#1B4D3E] transition">
           <RefreshCcw className="text-[#1B4D3E] group-hover:text-white" size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-3">
@@ -456,7 +456,7 @@ export default function AutoWellz() {
 
       {/* Card 2 */}
       <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#e8f5e9] mb-5 group-hover:bg-[#1B4D3E] transition">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#AFE1AF] mb-5 group-hover:bg-[#1B4D3E] transition">
           <PlugZap className="text-[#1B4D3E] group-hover:text-white" size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-3">
@@ -470,7 +470,7 @@ export default function AutoWellz() {
 
       {/* Card 3 */}
       <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#e8f5e9] mb-5 group-hover:bg-[#1B4D3E] transition">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#AFE1AF] mb-5 group-hover:bg-[#1B4D3E] transition">
           <BrainCircuit className="text-[#1B4D3E] group-hover:text-white" size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-3">
@@ -484,7 +484,7 @@ export default function AutoWellz() {
 
       {/* Card 4 */}
       <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#e8f5e9] mb-5 group-hover:bg-[#1B4D3E] transition">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#AFE1AF] mb-5 group-hover:bg-[#1B4D3E] transition">
           <BarChart3 className="text-[#1B4D3E] group-hover:text-white" size={24} />
         </div>
         <h3 className="text-xl font-semibold mb-3">
