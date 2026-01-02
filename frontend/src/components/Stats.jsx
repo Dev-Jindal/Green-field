@@ -191,10 +191,10 @@ import React from "react";
 import "../index.css";
 
 const achievements = [
-  { number: "5000+", label: "Professionals Trained Globally", icon: "👥" },
-  { number: "5+", label: "Years of Excellence", icon: "⏱️" },
-  { number: "10+", label: "University Collaborations", icon: "📚" },
-  { number: "344 MT", label: "Carbon Reduction", icon: "🌿" },
+  { number: "2MM USD+", label: "Savings", icon: "👥" },
+  { number: "100+", label: "Man Years of Excellence", icon: "⏱️" },
+  { number: "150+", label: "Wells Simulations ", icon: "📚" },
+  { number: "500+ MT", label: "Carbon Emissions Saved", icon: "🌿" },
 ];
 
 export default function StatsCarousel() {
@@ -212,7 +212,7 @@ export default function StatsCarousel() {
             Our Achievements
           </h2>
           <p className="text-xl text-gray-600">
-            5+ Years of Excellence, 5000+ Professionals Trained Globally, and more.
+            100+ Man Years of Excellence, 500+ MT carbon emissions saved, and more.
           </p>
         </div>
 

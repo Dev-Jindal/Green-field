@@ -1,15 +1,13 @@
-
-
-
-
 // src/components/Hero.jsx
 import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ThreeJSBackground from "./ThreeJSBackground"; // Import the 3D component
+import ThreeJSBackground from "./ThreeJSBackground";
 
 export default function Hero() {
-  // Existing typewriter logic (copied for completeness, assuming it's the working one)
+  /* ===============================
+     TYPEWRITER 1 (Existing)
+  =============================== */
   const phrases = ["Energy Excellence", "Sustainable Solutions", "Production Optimization"];
   const [typed, setTyped] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -20,91 +18,166 @@ export default function Hero() {
     let timeoutId;
     const current = phrases[phraseIndex];
     const typingSpeed = deleting ? 30 : 70;
-    const completePause = 800;
+    const pause = 800;
 
     if (!deleting) {
       if (charIndex === current.length) {
-        timeoutId = setTimeout(() => setDeleting(true), completePause);
+        timeoutId = setTimeout(() => setDeleting(true), pause);
       } else {
         timeoutId = setTimeout(() => {
           setTyped(current.slice(0, charIndex + 1));
-          setCharIndex((c) => c + 1);
+          setCharIndex(c => c + 1);
         }, typingSpeed);
       }
     } else {
       timeoutId = setTimeout(() => {
         setTyped(current.slice(0, charIndex - 1));
-        setCharIndex((c) => c - 1);
+        setCharIndex(c => c - 1);
 
         if (charIndex - 1 === 0) {
           setDeleting(false);
-          setPhraseIndex((p) => (p + 1) % phrases.length);
+          setPhraseIndex(p => (p + 1) % phrases.length);
         }
       }, typingSpeed);
     }
 
     return () => clearTimeout(timeoutId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charIndex, deleting, phraseIndex]);
-  // End of typewriter logic
+
+  /* ===============================
+     TYPEWRITER 2 (G.O.T.S)
+  =============================== */
+  const gotsWords = [
+    "Growth",
+    "Operational Excellence",
+    "Technology",
+    "Sustainability",
+  ];
+
+  const [gotsText, setGotsText] = useState("");
+  const [gotsIndex, setGotsIndex] = useState(0);
+  const [gotsChar, setGotsChar] = useState(0);
+  const [gotsDeleting, setGotsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    const current = gotsWords[gotsIndex];
+    const speed = gotsDeleting ? 25 : 60;
+    const pause = 900;
+
+    if (!gotsDeleting) {
+      if (gotsChar === current.length) {
+        timer = setTimeout(() => setGotsDeleting(true), pause);
+      } else {
+        timer = setTimeout(() => {
+          setGotsText(current.slice(0, gotsChar + 1));
+          setGotsChar(c => c + 1);
+        }, speed);
+      }
+    } else {
+      timer = setTimeout(() => {
+        setGotsText(current.slice(0, gotsChar - 1));
+        setGotsChar(c => c - 1);
+
+        if (gotsChar - 1 === 0) {
+          setGotsDeleting(false);
+          setGotsIndex(i => (i + 1) % gotsWords.length);
+        }
+      }, speed);
+    }
+
+    return () => clearTimeout(timer);
+  }, [gotsChar, gotsDeleting, gotsIndex]);
 
   return (
-    <section className="relative bg-[#1B4D3E] text-white py-24 overflow-hidden">
-      {/* 3D Background Integration */}
-      <ThreeJSBackground /> 
+    <>
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative bg-[#AFE1AF] text-white py-24 overflow-hidden">
+        <ThreeJSBackground />
+        <div className="absolute inset-0 bg-black/30 z-10" />
 
-      {/* Static Color Overlay */}
-      <div className="absolute inset-0 bg-black/20 z-10" /> 
-      
-      {/* Caret Style */}
-      <style>{`
-        .caret::after {
-          content: "|";
-          display: inline-block;
-          margin-left: 6px;
-          animation: blink 1s steps(2,end) infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-      `}</style>
+        <style>{`
+          .caret::after {
+            content: "|";
+            margin-left: 6px;
+            animation: blink 1s steps(2,end) infinite;
+          }
+          @keyframes blink { 50% { opacity: 0; } }
+        `}</style>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Innovative Solutions for
-              <span className="block md:inline text-[#e8f5e9] caret">
-                {" "}{typed}
-              </span>
-            </h1>
-            {/* ... rest of the content (omitted for brevity) ... */}
-            <p className="text-xl text-gray-200 leading-relaxed">
-               Providing cutting-edge engineering consultancy and customized
-               software solutions for the oil and gas industry since 2015.
-            </p>
-            <div className="flex flex-wrap gap-4">
-               <Link to="/schedule-demo" className="bg-white text-[#1B4D3E] px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 shadow-lg transition">
-                 Book a Demo
-               </Link>
-               <Link to="/services" className="border-2 border-white text-white hover:bg-white hover:text-[#1B4D3E] px-8 py-4 rounded-lg font-semibold transition">
+        <div className="relative max-w-7xl mx-auto px-4 z-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-[#0F3D2E]">
+                Innovative Solutions for
+                <span className="block md:inline text-white caret">
+                  {" "}{typed}
+                </span>
+              </h1>
+
+              <p className="text-xl text-[#0F3D2E]/90 leading-relaxed">
+                Providing cutting-edge engineering consultancy and customized
+                software solutions for the oil and gas industry since 2015.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/schedule-demo"
+                  className="bg-white text-[#0F3D2E] px-8 py-4 rounded-lg font-semibold hover:bg-[#AFE1AF] hover:text-[#0F3D2E] transition shadow-md"
+                >
+                  Book a Demo
+                </Link>
+                <Link
+                  to="/services"
+                  className="border-2 border-white text-white hover:bg-[#AFE1AF] hover:text-[#0F3D2E] px-8 py-4 rounded-lg font-semibold transition"
+                >
                   Our Services
-               </Link>
+                </Link>
+              </div>
             </div>
-          </div>
-          {/* RIGHT VIDEO (omitted for brevity) */}
-          <div className="relative w-full max-w-xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-black/10">
-              <video
-                src="/video/hero.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-[330px] md:h-[360px] object-cover"
-              />
+
+            <div className="relative w-full max-w-xl mx-auto">
+              <div className="overflow-hidden rounded-2xl shadow-2xl bg-black/10 ring-4 ring-[#AFE1AF]/40">
+                <video
+                  src="/video/hero.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-[330px] md:h-[360px] object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ================= G.O.T.S SECTION ================= */}
+      <section className="bg-[#AFE1AF]/20 py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0F3D2E] mb-4">
+            Our Core Values
+          </h2>
+
+          <p className="text-lg text-[#0F3D2E]/80 mb-8">
+            Built on a strong foundation that drives excellence and sustainability
+          </p>
+
+          <div className="inline-block bg-white px-10 py-8 rounded-2xl shadow-xl border border-[#AFE1AF]">
+            <h3 className="text-3xl font-extrabold text-[#0F3D2E] tracking-widest mb-3">
+              G.O.T.S
+            </h3>
+
+            <p className="text-2xl font-semibold text-[#0F3D2E] caret transition-all duration-300">
+              {gotsText}
+            </p>
+
+            <p className="mt-4 text-[#0F3D2E]/70 text-sm">
+              Growth · Operational Excellence · Technology · Sustainability
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
