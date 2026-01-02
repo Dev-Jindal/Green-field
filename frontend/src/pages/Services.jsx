@@ -2,87 +2,93 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Code,
-  Briefcase,
-  GraduationCap,
+  LineChart, // Keeping this for the 4th logo
   Wrench,
-  LineChart,
   Shield,
 } from "lucide-react";
 
 const Services = () => {
-  // === updated main services (four items) ===
   const navigate = useNavigate();
-const mainServices = [
-  {
-    icon: Briefcase,
-    title: "Energy Consultancy",
-    slug: "oil-gas",
-    description:
-      "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
-    features: [
-      "Reservoir Engineering",
-      "Production Optimization",
-      "Well Design & Planning",
-      "Field Development Studies",
-      "Risk Assessment",
-    ],
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    icon: Code,
-    title: "Software Development",
-    slug: "software",
-    description:
-      "Custom software solutions and integrations tailored to the energy sector — web apps, automation and cloud systems.",
-    features: [
-      "Workflow Automation",
-      "Data Management Systems",
-      "Real-time Monitoring",
-      "Cloud-native Solutions",
-      "Mobile Applications",
-    ],
-    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    icon: GraduationCap,
-    title: "Training",
-    slug: "training",
-    description:
-      "Hands-on professional training programs and certifications for industry teams and individuals.",
-    features: [
-      "Technical Workshops",
-      "Software Training",
-      "Best Practices",
-      "Industry Standards",
-      "Certification Programs",
-    ],
-    image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    icon: LineChart,
-    title: "Data Analysis",
-    slug: "data-analysis",
-    description:
-      "Advanced analytics, visualization and reporting to convert operational data into actionable insights.",
-    features: [
-      "Data Cleaning & ETL",
-      "Trend Analysis",
-      "Predictive Models",
-      "Dashboards & Reporting",
-      "Anomaly Detection",
-    ],
-    image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-];
 
+  // === updated main services ===
+  const mainServices = [
+    {
+      title: "Energy Consultancy",
+      slug: "oil-gas",
+      // Factory Icon (Online URL)
+      iconImage: "https://img.icons8.com/ios-filled/100/000000/factory.png", 
+      description:
+        "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
+      features: [
+        "Reservoir Engineering",
+        "Production Optimization",
+        "Well Design & Planning",
+        "Field Development Studies",
+        "Risk Assessment",
+      ],
+      image:
+        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    },
+    {
+      title: "Software Development",
+      slug: "software",
+      // Flask/Chemistry Icon (Online URL)
+      iconImage: "https://img.icons8.com/ios-filled/100/000000/test-tube.png",
+      description:
+        "Custom software solutions and integrations tailored to the energy sector — web apps, automation and cloud systems.",
+      features: [
+        "Workflow Automation",
+        "Data Management Systems",
+        "Real-time Monitoring",
+        "Cloud-native Solutions",
+        "Mobile Applications",
+      ],
+      image:
+        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    },
+    {
+      title: "Training",
+      slug: "training",
+      // Planet/Saturn Icon (Online URL)
+      iconImage: "https://img.icons8.com/ios-filled/100/000000/planet.png",
+      description:
+        "Hands-on professional training programs and certifications for industry teams and individuals.",
+      features: [
+        "Technical Workshops",
+        "Software Training",
+        "Best Practices",
+        "Industry Standards",
+        "Certification Programs",
+      ],
+      image:
+        "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    },
+    {
+      // 4th Logo kept as Lucide Icon (LineChart)
+      icon: LineChart,
+      title: "Data Analysis",
+      slug: "data-analysis",
+      description:
+        "Advanced analytics, visualization and reporting to convert operational data into actionable insights.",
+      features: [
+        "Data Cleaning & ETL",
+        "Trend Analysis",
+        "Predictive Models",
+        "Dashboards & Reporting",
+        "Anomaly Detection",
+      ],
+      image:
+        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    },
+  ];
 
-  // === additional services (kept as before) ===
+  // === additional services ===
   const additionalServices = [
     {
       icon: Wrench,
       title: "Technical Support",
-      description: "Round-the-clock technical assistance for all our products and services",
+      description:
+        "Round-the-clock technical assistance for all our products and services",
     },
     {
       icon: Shield,
@@ -92,11 +98,12 @@ const mainServices = [
     {
       icon: LineChart,
       title: "Performance Analysis",
-      description: "Detailed analytics and reporting to optimize your operations",
+      description:
+        "Detailed analytics and reporting to optimize your operations",
     },
   ];
 
-  // === Typewriter logic (rotates the four service names) ===
+  // === Typewriter logic ===
   const phrases = mainServices.map((s) => s.title);
   const [typed, setTyped] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -137,32 +144,31 @@ const mainServices = [
   return (
     <div className="pt-20">
       {/* ============= HERO SECTION ============= */}
-      <section className="bg-[#1B4D3E] text-white py-20">
+      <section className="bg-[#84A98C] text-[#1B4D3E] py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to optimize your operations and drive
-            innovation in the energy sector.
+          <p className="text-xl text-[#1B4D3E] max-w-3xl mx-auto leading-relaxed font-medium">
+            Comprehensive solutions designed to optimize your operations and
+            drive innovation in the energy sector.
           </p>
 
-          {/* Typewriter caret styles */}
           <style>{`
             .caret::after {
               content: "|";
               display: inline-block;
               margin-left: 6px;
               animation: blink 1s steps(2,end) infinite;
+              color: #1B4D3E; 
             }
             @keyframes blink { 50% { opacity: 0; } }
           `}</style>
 
-        <div className="mt-6 text-2xl md:text-3xl text-[#e8f5e9] font-semibold">
-  Specializing in{" "}
-  <span className="ml-2 inline-block caret text-3xl md:text-4xl font-bold">
-    {typed}
-  </span>
-</div>
-
+          <div className="mt-6 text-2xl md:text-3xl font-semibold">
+            Specializing in{" "}
+            <span className="ml-2 inline-block caret text-3xl md:text-4xl font-bold">
+              {typed}
+            </span>
+          </div>
         </div>
       </section>
 
@@ -171,24 +177,36 @@ const mainServices = [
         <div className="max-w-7xl mx-auto px-4 space-y-20">
           {mainServices.map((service, index) => (
             <div
-  key={index}
-  onClick={() => navigate(`/services/${service.slug}`)}
-  className={`grid md:grid-cols-2 gap-12 items-center cursor-pointer ${
-    index % 2 === 1 ? "md:flex-row-reverse" : ""
-  } hover:bg-gray-50 rounded-2xl p-4 transition`}
->
-
+              key={index}
+              onClick={() => navigate(`/services/${service.slug}`)}
+              className={`grid md:grid-cols-2 gap-12 items-center cursor-pointer ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              } hover:bg-gray-50 rounded-2xl p-4 transition`}
+            >
               {/* TEXT CONTENT */}
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                <div className="bg-[#1B4D3E] w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
-                  <service.icon className="w-10 h-10 text-white" />
+                {/* Icon Container */}
+                <div className="bg-[#1B4D3E] w-20 h-20 rounded-full flex items-center justify-center mb-6 overflow-hidden p-4">
+                  {/* Logic: If iconImage exists, use img tag, otherwise use Lucide icon */}
+                  {service.iconImage ? (
+                    <img 
+                      src={service.iconImage} 
+                      alt={`${service.title} icon`} 
+                      className="w-full h-full object-contain filter brightness-0 invert" 
+                      // 'brightness-0 invert' turns black icons into white to match the green background
+                    />
+                  ) : (
+                    <service.icon className="w-10 h-10 text-white" />
+                  )}
                 </div>
 
                 <h2 className="text-4xl font-bold text-[#1B4D3E] mb-4">
                   {service.title}
                 </h2>
 
-                <p className="text-lg text-gray-700 mb-6">{service.description}</p>
+                <p className="text-lg text-gray-700 mb-6">
+                  {service.description}
+                </p>
 
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
@@ -250,7 +268,7 @@ const mainServices = [
       </section>
 
       {/* ============= WHY CHOOSE US ============= */}
-      <section className="py-20 bg-[#1B4D3E] text-white">
+      <section className="py-20 bg-[#3E705D] text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose Our Services?

@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
+// === THEME CONSTANTS ===
+const THEME = {
+  textDark: "text-[#1B4D3E]",
+  bgDark: "bg-[#1B4D3E]",
+  bgSage: "bg-[#84A98C]",
+  textSage: "text-[#84A98C]",
+  bgLight: "bg-[#f5faf7]", // Light sage tint for cards/backgrounds
+  buttonPrimary: "bg-white text-[#1B4D3E] border-2 border-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white transition-colors duration-300",
+};
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -62,10 +72,11 @@ const Contact = () => {
     <div className="pt-20">
 
       {/* ============= HERO SECTION ============= */}
-      <section className="bg-[#1B4D3E] text-white py-20">
+      {/* Updated Background to Sage Green (#84A98C) and Text to Dark Green */}
+      <section className={`${THEME.bgSage} ${THEME.textDark} py-20`}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed font-medium">
             Have a question or ready to start your next project? We'd love to hear from you.
           </p>
         </div>
@@ -80,21 +91,21 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-[#e8f5e9] p-8 rounded-xl text-center hover:shadow-xl transition-shadow"
+                className={`${THEME.bgLight} p-8 rounded-xl text-center hover:shadow-xl transition-shadow border border-[#84A98C]/20`}
               >
-                <div className="bg-[#1B4D3E] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className={`${THEME.bgDark} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#1B4D3E] mb-2">
+                <h3 className={`text-xl font-bold ${THEME.textDark} mb-2`}>
                   {info.title}
                 </h3>
 
                 {info.link ? (
-                  <a href={info.link} className="text-gray-700 hover:text-[#1B4D3E] transition">
+                  <a href={info.link} className="text-gray-700 hover:text-[#1B4D3E] transition font-medium">
                     {info.details}
                   </a>
                 ) : (
-                  <p className="text-gray-700">{info.details}</p>
+                  <p className="text-gray-700 font-medium">{info.details}</p>
                 )}
               </div>
             ))}
@@ -102,16 +113,16 @@ const Contact = () => {
 
           {/* FORM */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[#e8f5e9] rounded-2xl p-10 shadow-xl">
+            <div className={`${THEME.bgLight} rounded-2xl p-10 shadow-xl border border-[#84A98C]/20`}>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] text-center mb-8">
+              <h2 className={`text-3xl md:text-4xl font-bold ${THEME.textDark} text-center mb-8`}>
                 Send Us a Message
               </h2>
 
               {submitted ? (
                 <div className="text-center py-12">
-                  <CheckCircle className="w-20 h-20 text-[#1B4D3E] mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold text-[#1B4D3E] mb-2">Thank You!</h3>
+                  <CheckCircle className={`w-20 h-20 ${THEME.textDark} mx-auto mb-6`} />
+                  <h3 className={`text-2xl font-bold ${THEME.textDark} mb-2`}>Thank You!</h3>
                   <p className="text-gray-700">
                     We've received your message and will get back to you shortly.
                   </p>
@@ -122,7 +133,7 @@ const Contact = () => {
                   {/* Name + Email */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-[#1B4D3E] font-medium mb-2">Full Name *</label>
+                      <label className={`block ${THEME.textDark} font-bold mb-2`}>Full Name *</label>
                       <input
                         type="text"
                         name="name"
@@ -130,13 +141,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent"
+                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent outline-none transition"
                         placeholder="John Doe"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[#1B4D3E] font-medium mb-2">Email Address *</label>
+                      <label className={`block ${THEME.textDark} font-bold mb-2`}>Email Address *</label>
                       <input
                         type="email"
                         name="email"
@@ -144,7 +155,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent"
+                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent outline-none transition"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -153,27 +164,27 @@ const Contact = () => {
                   {/* Phone + Company */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-[#1B4D3E] font-medium mb-2">Phone Number</label>
+                      <label className={`block ${THEME.textDark} font-bold mb-2`}>Phone Number</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent"
+                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent outline-none transition"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[#1B4D3E] font-medium mb-2">Company</label>
+                      <label className={`block ${THEME.textDark} font-bold mb-2`}>Company</label>
                       <input
                         type="text"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent"
+                        focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent outline-none transition"
                         placeholder="Your Company"
                       />
                     </div>
@@ -181,7 +192,7 @@ const Contact = () => {
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-[#1B4D3E] font-medium mb-2">Subject *</label>
+                    <label className={`block ${THEME.textDark} font-bold mb-2`}>Subject *</label>
                     <input
                       type="text"
                       name="subject"
@@ -189,14 +200,14 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                      focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent"
+                      focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent outline-none transition"
                       placeholder="How can we help you?"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-[#1B4D3E] font-medium mb-2">Message *</label>
+                    <label className={`block ${THEME.textDark} font-bold mb-2`}>Message *</label>
                     <textarea
                       name="message"
                       required
@@ -204,16 +215,16 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg
-                      focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent resize-none"
+                      focus:ring-2 focus:ring-[#1B4D3E] focus:border-transparent resize-none outline-none transition"
                       placeholder="Tell us more about your project..."
                     ></textarea>
                   </div>
 
+                  {/* Updated Button Style: White BG, Dark Text/Border */}
                   <button
                     type="submit"
-                    className="w-full bg-[#1B4D3E] text-white py-4 rounded-lg font-semibold
-                    hover:bg-[#153c30] transition-all duration-300 transform hover:scale-105
-                    shadow-lg flex items-center justify-center gap-2"
+                    className={`w-full ${THEME.buttonPrimary} py-4 rounded-lg font-bold
+                    transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2`}
                   >
                     Send Message
                     <Send className="w-5 h-5" />
@@ -227,10 +238,10 @@ const Contact = () => {
       </section>
 
       {/* ============= GLOBAL PRESENCE ============= */}
-      <section className="py-20 bg-[#e8f5e9]">
+      <section className={`py-20 ${THEME.bgLight}`}>
         <div className="max-w-7xl mx-auto px-4 text-center">
 
-          <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">
+          <h2 className={`text-4xl font-bold ${THEME.textDark} mb-6`}>
             Our Global Presence
           </h2>
 
@@ -238,9 +249,9 @@ const Contact = () => {
             With engineering teams across multiple continents, we serve clients worldwide with excellence and expertise.
           </p>
 
-          <div className="bg-white rounded-2xl shadow-xl p-12">
-            <MapPin className="w-24 h-24 text-[#1B4D3E] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-[#1B4D3E]">Global Operations</h3>
+          <div className="bg-white rounded-2xl shadow-xl p-12 border border-[#84A98C]/20">
+            <MapPin className={`w-24 h-24 ${THEME.textDark} mx-auto mb-4`} />
+            <h3 className={`text-2xl font-bold ${THEME.textDark}`}>Global Operations</h3>
             <p className="text-gray-700 mt-2">Serving clients around the world</p>
           </div>
 

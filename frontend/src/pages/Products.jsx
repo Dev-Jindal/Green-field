@@ -1,16 +1,22 @@
-import { Box, Workflow, Cpu, Mountain, Leaf, ArrowRight } from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Products = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Products() {
   const navigate = useNavigate();
+  const productRef = useRef(null);
 
   const products = [
     {
-      icon: Box,
+      icon: "/images/icons/SandMaster.jpg",
       name: "SandMaster",
       tagline: "Advanced Sand Management",
       description:
-        "Comprehensive software solution for sand management...",
+        "Comprehensive software solution for sand management in oil and gas operations. Monitor, predict, and optimize sand control strategies with real-time analytics.",
       features: [
         "Real-time sand production monitoring",
         "Predictive analytics",
@@ -22,11 +28,11 @@ const Products = () => {
       link: "/products/sandmaster",
     },
     {
-      icon: Workflow,
+      icon: "/images/icons/AutoWellz.jpg",
       name: "AutoWellz",
       tagline: "Well Operation Workflow",
       description:
-        "Streamline your well operations with automated workflow...",
+        "Streamline your well operations with automated workflow management. From planning to execution, manage every aspect efficiently.",
       features: [
         "Workflow automation",
         "Real-time collaboration",
@@ -38,11 +44,11 @@ const Products = () => {
       link: "/products/autowellz",
     },
     {
-      icon: Cpu,
+      icon: "/images/icons/AutoPro.jpg",
       name: "AutoPro",
       tagline: "Engineering Process Digitization",
       description:
-        "Transform your engineering processes with digital solutions...",
+        "Transform your engineering processes with digital solutions. Automate routine tasks, enhance accuracy, and improve efficiency.",
       features: [
         "Process automation",
         "Digital workflows",
@@ -53,27 +59,26 @@ const Products = () => {
       link: "/products/autopro",
     },
     {
-      icon: Mountain,
+      icon: "/images/icons/RockMaster.jpg",
       name: "RockMaster",
       tagline: "Rock Mechanical Stability",
       description:
-        "Advanced rock mechanics analysis tool...",
+        "Advanced rock mechanics analysis tool for evaluating wellbore stability, formation integrity, and geomechanical risks.",
       features: [
         "Wellbore stability analysis",
         "Geomechanical modeling",
         "Risk prediction",
         "Formation evaluation",
       ],
-      video:
-        "/video/RockMaster_Final.mp4",
+      video: "/video/RockMaster_Final.mp4",
       link: "/products/rockmaster",
     },
     {
-      icon: Leaf,
+      icon: "/images/icons/GREEN.jpg",
       name: "GREEN",
       tagline: "GHG Emissions Calculator",
       description:
-        "Calculate and track your carbon footprint...",
+        "Calculate, track, and reduce your carbon footprint with our comprehensive emissions calculator.",
       features: [
         "Emissions calculation",
         "Carbon footprint tracking",
@@ -86,30 +91,56 @@ const Products = () => {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".product-card");
+      gsap.from(cards, {
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: productRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+    }, productRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="pt-20">
-      <section className="bg-[#AFE1AF] text-[#1B4D3E] py-20">
+      {/* Header Section with Sage Green Background */}
+      <section className="bg-[#84A98C] text-[#1B4D3E] py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Products</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Innovative software solutions built for the future of engineering and energy.
+          <p className="text-xl text-[#1B4D3E] max-w-3xl mx-auto font-medium">
+            Innovative software solutions built for the future of engineering and
+            energy.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" ref={productRef}>
         <div className="max-w-7xl mx-auto px-4 space-y-24">
           {products.map((product, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
+              className={`grid md:grid-cols-2 gap-12 items-center product-card ${
                 index % 2 === 1 ? "md:grid-flow-dense" : ""
               }`}
             >
+              {/* TEXT COLUMN */}
               <div className={index % 2 === 1 ? "md:col-start-2" : ""}>
-                <div className="bg-[#AFE1AF] w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-
-                  <product.icon className="w-10 h-10 text-[#1B4D3E]" />
+                {/* ICON CONTAINER */}
+                <div className="bg-[#84A98C] w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg overflow-hidden p-1">
+                  <img
+                    src={product.icon}
+                    alt={`${product.name} icon`}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
 
                 <h2 className="text-4xl font-bold text-[#1B4D3E] mb-2">
@@ -139,33 +170,57 @@ const Products = () => {
                   </ul>
                 </div>
 
-                {/* UPDATED BUTTON WITH NAVIGATION */}
+                {/* BUTTON */}
                 <button
                   onClick={() => navigate(product.link)}
-                  className="bg-[#1B4D3E] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#153c30] transition-all duration-300 flex items-center gap-2 shadow-lg"
+                  className="bg-white text-[#1B4D3E] border-2 border-[#1B4D3E] px-8 py-3 rounded-lg font-bold hover:bg-[#1B4D3E] hover:text-white transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-xl"
                 >
                   Learn More
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className={index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 bg-[#1B4D3E] opacity-20 blur-3xl"></div>
+              {/* MEDIA COLUMN (Video/Image) */}
+              <div
+                className={
+                  index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
+                }
+              >
+                {/* VIDEO FRAME CONTAINER
+                   Restored exact style from your reference: 
+                   relative, rounded-2xl, overflow-hidden, shadow-2xl
+                   Added 'aspect-video' to maintain perfect ratio for video content.
+                */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video w-full group bg-gray-100">
+                  
+                  {/* Background Blur Effect */}
+                  <div className="absolute inset-0 bg-[#1B4D3E] opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-20"></div>
 
                   {product.video ? (
-                    <iframe
-                      src={product.video}
-                      className="relative w-full h-[350px] md:h-[420px] rounded-2xl"
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    product.video.includes("vimeo") ? (
+                      <iframe
+                        src={product.video}
+                        className="w-full h-full relative z-10"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        title={product.name}
+                      ></iframe>
+                    ) : (
+                      <video
+                        src={product.video}
+                        className="w-full h-full object-cover relative z-10"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      ></video>
+                    )
                   ) : (
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-500"
                     />
                   )}
                 </div>
@@ -176,6 +231,4 @@ const Products = () => {
       </section>
     </div>
   );
-};
-
-export default Products;
+}

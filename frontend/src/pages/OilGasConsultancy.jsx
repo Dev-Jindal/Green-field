@@ -11,8 +11,9 @@ import { DownloadCloud, Mail, Phone, ChevronRight, Zap, Link } from "lucide-reac
  * Tailwind CSS required.
  */
 
-const BRAND_COLOR_CLASS = "text-emerald-800";
-const CTA_EMERALD = "bg-emerald-600 hover:bg-emerald-700";
+// Updated Color Constants
+const BRAND_COLOR_CLASS = "text-[#1B4D3E]";
+const CTA_DARK_GREEN = "bg-[#1B4D3E] hover:bg-[#153c30]";
 
 export default function OilGasConsultancy() {
   const NAV_TOP_PADDING = "pt-18";
@@ -35,20 +36,24 @@ export default function OilGasConsultancy() {
     });
   }, []);
 
-  // hero background (public/images/oil-hero.jpg)
+  // hero background
   const heroStyle = {
     backgroundImage: `url('/images/backgrounds/oilbackground.png')`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    backgroundColor: "#0F4C3A",
+    // backgroundColor removed so it doesn't show through
   };
 
   return (
-    <main className={`${NAV_TOP_PADDING} bg-gray-50 text-slate-800 min-h-screen`}>
+    <main className={`${NAV_TOP_PADDING} bg-white text-slate-800 min-h-screen`}>
       {/* HERO */}
       <header className="relative">
         <div className="h-72 md:h-[480px] rounded-b-3xl overflow-hidden relative shadow-lg" style={heroStyle}>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10" />
+          {/* CHANGED: Removed the green gradient overlay.
+             Added a neutral black/40% overlay just to ensure white text readability over the image.
+          */}
+          <div className="absolute inset-0 bg-black/40 z-10" />
+
           <div className="absolute inset-0 flex items-center z-20">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
               <div className="text-white max-w-3xl">
@@ -65,21 +70,19 @@ export default function OilGasConsultancy() {
                 </p>
 
                 <div ref={heroCtaRef} style={{ opacity: 0 }} className="mt-8">
-                  {/* Only Download Brochure in hero */}
                   <a
                     href="/brochures/Integrated-Sand-Management_Brochure_Rev-Sep2021.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className={`${CTA_EMERALD} inline-flex items-center gap-3 text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
+                    className={`${CTA_DARK_GREEN} inline-flex items-center gap-3 text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
                   >
                     <DownloadCloud className="w-5 h-5" /> Download Brochure
                   </a>
-
                 </div>
               </div>
             </div>
           </div>
-          <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.02) 60%, rgba(0,0,0,0) 100%)" }} />
+          {/* Removed the extra bottom fade gradient to keep the image clean */}
         </div>
       </header>
 
@@ -88,7 +91,7 @@ export default function OilGasConsultancy() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left: content */}
           <article ref={contentRef} className="lg:col-span-8 space-y-10">
-            <h2 className={`text-3xl md:text-4xl font-extrabold ${BRAND_COLOR_CLASS} border-b-2 border-emerald-200 pb-3`}>
+            <h2 className={`text-3xl md:text-4xl font-extrabold ${BRAND_COLOR_CLASS} border-b-2 border-[#84A98C]/50 pb-3`}>
               Energy Consultancy
             </h2>
 
@@ -100,7 +103,7 @@ export default function OilGasConsultancy() {
                 className="w-full h-64 md:h-96 object-cover rounded-2xl"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
-                  e.currentTarget.parentElement.style.background = "#E6F4F1";
+                  e.currentTarget.parentElement.style.background = "#e8f5e9";
                   e.currentTarget.parentElement.style.minHeight = "220px";
                 }}
               />
@@ -108,7 +111,7 @@ export default function OilGasConsultancy() {
 
             {/* Scope card */}
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 space-y-6">
-              <h3 className="text-2xl font-semibold text-emerald-800">How We Add Value</h3>
+              <h3 className="text-2xl font-semibold text-[#1B4D3E]">How We Add Value</h3>
               <p className="text-slate-700 leading-relaxed">
                 We deliver a wide portfolio of upstream services — subsurface rock mechanics, sand control,
                 surface handling, production engineering and commercial advisory. Our approach combines field expertise
@@ -116,8 +119,8 @@ export default function OilGasConsultancy() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-6 bg-emerald-50 rounded-xl shadow-sm border border-emerald-100">
-                  <h4 className="font-bold text-emerald-800 mb-3">Integrated Sand Management</h4>
+                <div className="p-6 bg-[#e8f5e9] rounded-xl shadow-sm border border-[#84A98C]/30">
+                  <h4 className="font-bold text-[#1B4D3E] mb-3">Integrated Sand Management</h4>
                   <ul className="list-disc pl-5 text-slate-600 space-y-2 text-sm">
                     <li>Rock mechanics &amp; sand control</li>
                     <li>Surface sand management audits</li>
@@ -126,8 +129,8 @@ export default function OilGasConsultancy() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-emerald-50 rounded-xl shadow-sm border border-emerald-100">
-                  <h4 className="font-bold text-emerald-800 mb-3">Production Engineering</h4>
+                <div className="p-6 bg-[#e8f5e9] rounded-xl shadow-sm border border-[#84A98C]/30">
+                  <h4 className="font-bold text-[#1B4D3E] mb-3">Production Engineering</h4>
                   <ul className="list-disc pl-5 text-slate-600 space-y-2 text-sm">
                     <li>Artificial lift selection &amp; optimization</li>
                     <li>ESP completion design &amp; selection</li>
@@ -140,7 +143,7 @@ export default function OilGasConsultancy() {
 
             {/* Drilling & Reservoir */}
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <h4 className="text-xl font-semibold text-emerald-800 mb-4">Drilling, Completion &amp; Reservoir</h4>
+              <h4 className="text-xl font-semibold text-[#1B4D3E] mb-4">Drilling, Completion &amp; Reservoir</h4>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold mb-2">Drilling &amp; Completion</h5>
@@ -163,7 +166,7 @@ export default function OilGasConsultancy() {
 
             {/* Petroleum Economics */}
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <h4 className="text-xl font-semibold text-emerald-800 mb-4">Petroleum Economics &amp; Commercial Advisory</h4>
+              <h4 className="text-xl font-semibold text-[#1B4D3E] mb-4">Petroleum Economics &amp; Commercial Advisory</h4>
               <ul className="list-disc pl-5 text-slate-700 space-y-2 text-sm">
                 <li>Due diligence (asset &amp; company level)</li>
                 <li>Market entry &amp; field commercialization studies</li>
@@ -176,7 +179,7 @@ export default function OilGasConsultancy() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 border border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition"
+                className="inline-flex items-center gap-2 border-2 border-[#1B4D3E] text-[#1B4D3E] px-6 py-3 rounded-lg font-semibold hover:bg-[#e8f5e9] transition"
               >
                 Request Consultation
               </a>
@@ -190,14 +193,14 @@ export default function OilGasConsultancy() {
             </div>
           </article>
 
-          {/* Right: Emerald-themed sidebar (reworked to match Software layout style) */}
+          {/* Right: Sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-28 space-y-6">
-              {/* 1) Request a Demo - Emerald CTA Card */}
-              <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 p-6 rounded-2xl shadow-2xl text-white">
+              {/* 1) Request a Demo - Solid dark green background */}
+              <div className="bg-[#1B4D3E] p-6 rounded-2xl shadow-2xl text-white">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-50/20 flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-emerald-100" />
+                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-[#84A98C]" />
                   </div>
                   <div>
                     <h4 className="text-xl font-extrabold mb-1">Request a Demo</h4>
@@ -208,14 +211,14 @@ export default function OilGasConsultancy() {
                 <div className="mt-6">
                   <a
                     href="/schedule-demo"
-                    className="w-full inline-flex items-center justify-center gap-3 bg-white text-emerald-800 px-4 py-3 rounded-lg font-bold shadow hover:scale-[1.02] transition"
+                    className="w-full inline-flex items-center justify-center gap-3 bg-white text-[#1B4D3E] px-4 py-3 rounded-lg font-bold shadow hover:scale-[1.02] transition"
                   >
                     Schedule Demo
                     <ChevronRight className="w-4 h-4" />
                   </a>
                 </div>
 
-                <div className="mt-4 text-sm text-emerald-100/90 flex flex-col gap-2">
+                <div className="mt-4 text-sm text-[#e8f5e9] flex flex-col gap-2">
                   <div>Custom POC available</div>
                   <div>Data-driven demo with sample dashboards</div>
                 </div>
@@ -224,56 +227,52 @@ export default function OilGasConsultancy() {
               {/* 2) Direct Contact Card */}
               <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-emerald-600" />
+                  <div className="w-12 h-12 rounded-full bg-[#e8f5e9] flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-[#1B4D3E]" />
                   </div>
                   <div>
-                    <div className="font-extrabold text-emerald-800">Get in touch</div>
+                    <div className="font-extrabold text-[#1B4D3E]">Get in touch</div>
                     <div className="text-sm text-slate-600">We respond within 24 business hours</div>
                   </div>
                 </div>
 
                 <div className="text-sm text-slate-700 space-y-2">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-emerald-500" />
-                    <a href="mailto:support@greenfield.energy" className="font-medium text-slate-800">support@greenfield.energy</a>
+                    <Mail className="w-4 h-4 text-[#84A98C]" />
+                    <a href="mailto:support@greenfield.energy" className="font-medium text-slate-800 hover:text-[#1B4D3E]">support@greenfield.energy</a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-emerald-500" />
-                    <a href="tel:+919876543210" className="font-medium text-slate-800">+91 98765 43210</a>
+                    <Phone className="w-4 h-4 text-[#84A98C]" />
+                    <a href="tel:+919876543210" className="font-medium text-slate-800 hover:text-[#1B4D3E]">+91 98765 43210</a>
                   </div>
                 </div>
-
-
               </div>
 
               {/* 3) Our Expertise / Quick Links */}
               <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <h5 className="text-lg font-bold text-emerald-800 mb-4">Our Expertise</h5>
+                <h5 className="text-lg font-bold text-[#1B4D3E] mb-4">Our Expertise</h5>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-center gap-3">
-                    <Zap className="w-4 h-4 text-emerald-500" />
-                    <a href="#sand-management" className="hover:text-emerald-600 transition">Integrated Sand Management</a>
+                    <Zap className="w-4 h-4 text-[#84A98C]" />
+                    <a href="#sand-management" className="hover:text-[#1B4D3E] transition">Integrated Sand Management</a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <ChevronRight className="w-4 h-4 text-emerald-500" />
-                    <a href="/services/software" className="hover:text-emerald-600 transition">Software Development</a>
+                    <ChevronRight className="w-4 h-4 text-[#84A98C]" />
+                    <a href="/services/software" className="hover:text-[#1B4D3E] transition">Software Development</a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <ChevronRight className="w-4 h-4 text-emerald-500" />
-                    <a href="/services/training" className="hover:text-emerald-600 transition">Technical Training</a>
+                    <ChevronRight className="w-4 h-4 text-[#84A98C]" />
+                    <a href="/services/training" className="hover:text-[#1B4D3E] transition">Technical Training</a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <ChevronRight className="w-4 h-4 text-emerald-500" />
-                    <a href="/services/data-analysis" className="hover:text-emerald-600 transition">Data Analysis &amp; Dashboards</a>
+                    <ChevronRight className="w-4 h-4 text-[#84A98C]" />
+                    <a href="/services/data-analysis" className="hover:text-[#1B4D3E] transition">Data Analysis &amp; Dashboards</a>
                   </li>
                 </ul>
               </div>
             </div>
           </aside>
         </div>
-
-
       </div>
 
       <div className="h-24" />
