@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import ScheduleDemo from "./pages/ScheduleDemo";
 import Careers from "./pages/Careers";
 import Events from "./pages/Events";
+import Register from "./pages/Register";
 
 // PRODUCT PAGES
 import SandMaster from "./pages/sandmaster.jsx";
@@ -52,6 +53,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/schedule-demo" element={<ScheduleDemo />} />
             <Route path="/career" element={<Careers />} />
+            <Route path="/register" element={<Register />} />
 
             {/* ✅ EVENTS (FIXED & COMPLETE) */}
             <Route path="/events" element={<Events />} />

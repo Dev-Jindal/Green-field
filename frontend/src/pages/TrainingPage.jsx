@@ -3,6 +3,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { GraduationCap, Download, Calendar, Users, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 // Brand colors
 const PRIMARY_COLOR_CLASS = "text-[#0F4C3A]";
@@ -68,7 +69,8 @@ const trainingData = [
 /* ===============================
    SPLIT COURSE CARD
 ================================ */
-const SplitCourseCard = ({ course, index }) => {
+const SplitCourseCard = ({ course, index, onEnroll }) => {
+
   const reverseLayout = index % 2 !== 0;
 
   return (
@@ -146,9 +148,11 @@ const SplitCourseCard = ({ course, index }) => {
 
           {/* ACTIONS */}
           <div className="mt-8 pt-4 border-t flex flex-wrap gap-3">
-            <button
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold shadow-md transition ${CTA_COLOR_CLASS} ${CTA_TEXT_CLASS}`}
-            >
+          <button
+  onClick={() => onEnroll(course.title)}
+  className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold shadow-md transition ${CTA_COLOR_CLASS} ${CTA_TEXT_CLASS}`}
+>
+
               <GraduationCap className="w-5 h-5" />
               Enroll Now
             </button>
@@ -176,6 +180,13 @@ const SplitCourseCard = ({ course, index }) => {
 ================================ */
 export default function TrainingPage() {
   const headerRef = useRef(null);
+const navigate = useNavigate();
+
+const handleEnroll = (trainingTitle) => {
+  navigate("/register", {
+    state: { selectedTraining: trainingTitle },
+  });
+};
 
   useEffect(() => {
     const el = headerRef.current;
@@ -208,12 +219,14 @@ export default function TrainingPage() {
       {/* COURSES */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20 space-y-12">
         {trainingData.map((course, index) => (
-          <SplitCourseCard
-            key={course.id}
-            course={course}
-            index={index}
-          />
-        ))}
+  <SplitCourseCard
+    key={course.id}
+    course={course}
+    index={index}
+    onEnroll={handleEnroll}
+  />
+))}
+
       </section>
     </main>
   );
