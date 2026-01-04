@@ -184,6 +184,7 @@ export default function Products() {
     {
       // Replaced Lucide component with image path
       icon: "/images/icons/SandMaster.jpg", 
+      slug:"sandmaster",
       name: "SandMaster",
       tagline: "Advanced Sand Management",
       description:
@@ -199,6 +200,7 @@ export default function Products() {
     },
     {
       icon: "/images/icons/RockMaster.jpg",
+      slug:"rockmaster",
       name: "RockMaster",
       tagline: "Rock Mechanical Stability",
       description:
@@ -213,6 +215,7 @@ export default function Products() {
     },
     {
       icon: "/images/icons/AutoWellz.jpg",
+      slug:"autowellz",
       name: "AutoWellz",
       tagline: "Well Operation Workflow",
       description:
@@ -228,6 +231,7 @@ export default function Products() {
     },
     {
       icon: "/images/icons/AutoPro.jpg",
+      slug:"autopro",
       name: "AutoPro",
       tagline: "Engineering Process Digitization",
       description:
@@ -242,6 +246,7 @@ export default function Products() {
     },
     {
       icon: "/images/icons/GREEN.jpg",
+      slug:"green",
       name: "GREEN",
       tagline: "GHG Emissions Calculator",
       description:
@@ -276,7 +281,7 @@ export default function Products() {
     return () => ctx.revert();
   }, []);
 
-  const words = ["Energy Software", "Digital Products", "Engineering Platforms"];
+  const words = ["Sand Management", "Rock Mechanical Stability", "Well Operation Workflow","Engineering Process Digitization"];
 const [typed, setTyped] = useState("");
 const [index, setIndex] = useState(0);
 const [subIndex, setSubIndex] = useState(0);
@@ -299,135 +304,134 @@ useEffect(() => {
 }, [subIndex, index]);
 
   return (
-    <section className="py-20 bg-white" ref={productRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 ">
-        {/* FULL WIDTH BACKGROUND WRAPPER */}
-<div className="w-full bg-[#AFE1AF] py-16 mb-12">
+   <section className="pt-20" ref={productRef}>
+  {/* ============= HERO SECTION (FULL WIDTH like Services) ============= */}
+  <section className="bg-[#AFE1AF] text-[#1B4D3E] py-20">
+    <div className="max-w-7xl mx-auto px-4 text-center">
+      <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        Our Products
+      </h1>
 
-  {/* CONTENT CONTAINER */}
-  <div className="max-w-7xl mx-auto px-6 text-center">
+      <p className="text-xl max-w-3xl mx-auto leading-relaxed font-medium text-[#0F2F27]">
+        Innovative digital solutions built for the future of energy.
+      </p>
 
-    <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-3">
-      Our Products
-    </h2>
+      {/* CARET STYLE */}
+      <style>{`
+        .caret::after {
+          content: "|";
+          display: inline-block;
+          margin-left: 6px;
+          animation: blink 1s steps(2, end) infinite;
+          color: #1B4D3E;
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+      `}</style>
 
-    <p className="text-[#0F2F27] max-w-2xl mx-auto leading-relaxed text-lg">
-      Innovative digital solutions built for the future of energy.
-    </p>
-
-    {/* CARET STYLE */}
-    <style>{`
-      .caret::after {
-        content: "|";
-        display: inline-block;
-        margin-left: 6px;
-        animation: blink 1s steps(2, end) infinite;
-        color: #1B4D3E;
-      }
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-    `}</style>
-
-    {/* TYPING ANIMATION */}
-    <div className="mt-6 text-xl md:text-2xl font-semibold text-[#1B4D3E]">
-      Specializing in
-      <span className="ml-2 caret text-2xl md:text-3xl font-bold">
-        {typed}
-      </span>
+      {/* TYPING ANIMATION */}
+      <div className="mt-6 text-2xl md:text-3xl font-semibold">
+        Specializing in{" "}
+        <span className="ml-2 inline-block caret text-3xl md:text-4xl font-bold">
+          {typed}
+        </span>
+      </div>
     </div>
+  </section>
 
-  </div>
-</div>
+  {/* ============= PRODUCTS LIST SECTION ============= */}
+  <section className="py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {products.map((product, index) => (
+        <div
+          key={index}
+          className={`grid md:grid-cols-2 gap-10 items-center product-card ${
+            index % 2 === 1 ? "md:grid-flow-dense" : ""
+          }`}
+        >
+          {/* TEXT SECTION */}
+          <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
+            {/* ICON */}
+            <div className="w-20 h-20 mb-6 shadow-lg rounded-2xl overflow-hidden">
+              <img
+                src={product.icon}
+                alt={`${product.name} Icon`}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
 
+            <h3 className="text-3xl font-bold text-[#1B4D3E] mb-2">
+              {product.name}
+            </h3>
 
+            <p className="text-lg font-semibold text-[#1B4D3E] mb-3">
+              {product.tagline}
+            </p>
 
-        {products.map((product, index) => (
+            <p className="text-gray-700 mb-6">
+              {product.description}
+            </p>
+
+            <ul className="space-y-2 mb-6">
+              {product.features.map((f, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-700">
+                  <div className="bg-[#1B4D3E] w-2 h-2 rounded-full" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+         <Link
+  to={`/products/${product.slug}`}
+  className="bg-[#AFE1AF] text-[#1B4D3E] px-6 py-2 rounded-lg font-semibold hover:bg-[#153c30] transition inline-flex items-center gap-2"
+>
+  Learn More <ArrowRight className="w-4 h-4" />
+</Link>
+
+          </div>
+
+          {/* MEDIA SECTION */}
           <div
-            key={index}
-            className={`grid md:grid-cols-2 gap-10 items-center product-card ${
-              index % 2 === 1 ? "md:grid-flow-dense" : ""
+            className={`${
+              index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
             }`}
           >
-            {/* TEXT SECTION */}
-            <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
-              {/* IMAGE ICON CONTAINER - Same dimensions (w-20 h-20) */}
-              <div className="w-20 h-20 mb-6 shadow-lg rounded-2xl">
-                 <img 
-                   src={product.icon} 
-                   alt={`${product.name} Icon`} 
-                   className="w-full h-full object-cover rounded-2xl" 
-                 />
-              </div>
-
-              <h3 className="text-3xl font-bold text-[#1B4D3E] mb-2">
-                {product.name}
-              </h3>
-
-              <p className="text-lg font-semibold text-[#1B4D3E] mb-3">
-                {product.tagline}
-              </p>
-
-              <p className="text-gray-700 mb-6">
-                {product.description}
-              </p>
-
-              <ul className="space-y-2 mb-6">
-                {product.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-700">
-                    <div className="bg-[#1B4D3E] w-2 h-2 rounded-full" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                to="/products"
-                className="bg-[#1B4D3E] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#153c30] transition inline-flex items-center gap-2"
-              >
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* MEDIA SECTION */}
-            <div
-              className={`${
-                index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
-              }`}
-            >
-              <div className="relative w-full h-[300px] md:h-[350px] border-[3px] border-[#1B4D3E] rounded-xl overflow-hidden shadow-xl">
-                {product.video ? (
-                  product.video.includes("vimeo") ? (
-                    <iframe
-                      src={product.video}
-                      className="w-full h-full object-cover"
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowFullScreen
-                      title={product.name}
-                    />
-                  ) : (
-                    <video
-                      src={product.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  )
+            <div className="relative w-full h-[300px] md:h-[350px] border-[3px] border-[#1B4D3E] rounded-xl overflow-hidden shadow-xl">
+              {product.video ? (
+                product.video.includes("vimeo") ? (
+                  <iframe
+                    src={product.video}
+                    className="w-full h-full object-cover"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={product.name}
+                  />
                 ) : (
-                  <img
-                    src={product.image} // Note: Your data didn't have a 'product.image' property for the main media, but keeping logic just in case
-                    alt={product.name}
+                  <video
+                    src={product.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     className="w-full h-full object-cover"
                   />
-                )}
-              </div>
+                )
+              ) : (
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
+  </section>
+</section>
+
   );
 }

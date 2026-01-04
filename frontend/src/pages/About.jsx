@@ -5,7 +5,7 @@ import { Target, Eye, Users, Globe, Award, ChevronRight, X } from "lucide-react"
 const THEME = {
   textDark: "text-[#1B4D3E]",
   bgDark: "bg-[#1B4D3E]",
-  bgSage: "bg-[#84A98C]",
+  bgSage: "bg-[#AFE1AF]",
   textSage: "text-[#84A98C]",
   bgLight: "bg-[#f5faf7]", // Light sage tint for backgrounds
   bgWhite: "bg-white",
@@ -168,7 +168,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
               className="rounded-2xl shadow-2xl"
             />
             {/* Updated Box Color to Dark Green */}
-            <div className={`absolute -bottom-6 -right-6 ${THEME.bgDark} text-white p-6 rounded-xl shadow-xl`}>
+            <div className={`absolute -bottom-6 -right-6 ${THEME.bgSage} text-[#1B4D3E] p-6 rounded-xl shadow-xl`}>
               <div className="text-4xl font-bold mb-1">9+</div>
               <div className="text-sm">Years of Excellence</div>
             </div>
@@ -241,7 +241,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
                 key={index}
                 className={`text-center p-8 rounded-xl ${THEME.bgLight} hover:shadow-xl transition-transform duration-300 hover:-translate-y-2`}
               >
-                <div className={`${THEME.bgDark} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6`}>
+                <div className={`${THEME.bgSage} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6`}>
                   <value.icon className="w-10 h-10 text-white" />
                 </div>
 

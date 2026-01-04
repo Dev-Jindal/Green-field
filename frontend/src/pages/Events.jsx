@@ -38,7 +38,7 @@ const Events = () => {
     <div className="relative w-full bg-slate-50">
       {/* ================= HERO ================= */}
       {/* Updated Background to Sage Green (#84A98C) and Text to Dark Green (#1B4D3E) */}
-      <section className="bg-[#84A98C] text-[#1B4D3E] py-24 mt-20">
+      <section className="bg-[#AFE1AF] text-[#1B4D3E] py-24 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}

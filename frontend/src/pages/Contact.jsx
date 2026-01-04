@@ -5,10 +5,10 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 const THEME = {
   textDark: "text-[#1B4D3E]",
   bgDark: "bg-[#1B4D3E]",
-  bgSage: "bg-[#84A98C]",
+  bgSage: "bg-[#AFE1AF]",
   textSage: "text-[#84A98C]",
   bgLight: "bg-[#f5faf7]", // Light sage tint for cards/backgrounds
-  buttonPrimary: "bg-white text-[#1B4D3E] border-2 border-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white transition-colors duration-300",
+  buttonPrimary: "bg-white text-[#1B4D3E] border-2 border-[#1B4D3E] hover:bg-[#AFE1AF] hover:text-[#1B4D3E] transition-colors duration-300",
 };
 
 const Contact = () => {
@@ -93,7 +93,7 @@ const Contact = () => {
                 key={index}
                 className={`${THEME.bgLight} p-8 rounded-xl text-center hover:shadow-xl transition-shadow border border-[#84A98C]/20`}
               >
-                <div className={`${THEME.bgDark} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                <div className={`${THEME.bgSage} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className={`text-xl font-bold ${THEME.textDark} mb-2`}>

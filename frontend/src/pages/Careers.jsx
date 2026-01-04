@@ -6,7 +6,7 @@ import { Briefcase, Users, TrendingUp, Leaf } from "lucide-react";
 const THEME = {
   textDark: "text-[#1B4D3E]",
   bgDark: "bg-[#1B4D3E]",
-  bgSage: "bg-[#84A98C]",
+  bgSage: "bg-[#AFE1AF]",
   textSage: "text-[#84A98C]",
   bgLight: "bg-[#f5faf7]", // Light sage tint
   bgWhite: "bg-white",
@@ -236,7 +236,7 @@ const Careers = () => {
 
             <a
               href="mailto:Support@greenfield.energy"
-              className={`inline-block mt-6 ${THEME.bgDark} text-white px-10 py-3 rounded-xl font-bold hover:opacity-90 transition shadow-md`}
+              className={`inline-block mt-6 ${THEME.bgSage} ${THEME.textDark} px-10 py-3 rounded-xl font-bold hover:opacity-90 transition shadow-md`}
             >
               Send Your Resume
             </a>

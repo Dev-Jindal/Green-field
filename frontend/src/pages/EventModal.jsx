@@ -22,8 +22,8 @@ const EventModal = ({ event, onClose }) => {
         className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]"
       >
         {/* Header */}
-        <div className="bg-[#1B4D3E] p-6 md:p-8 text-white relative">
-          <div className="flex items-center gap-2 text-white/80 text-sm mb-3">
+        <div className="bg-[#AFE1AF] p-6 md:p-8 text-[#1B4D3E] relative">
+          <div className="flex items-center gap-2 text-[#1B4D3E]/80 text-sm mb-3">
             <Calendar size={16} />
             {event.date}
           </div>
