@@ -168,12 +168,12 @@
 // }
 // src/components/Products.jsx (MINIMAL CHANGE)
 
-
-import React, { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react"; // Only ArrowRight is needed now
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState, useRef } from "react";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -276,17 +276,71 @@ export default function Products() {
     return () => ctx.revert();
   }, []);
 
+  const words = ["Energy Software", "Digital Products", "Engineering Platforms"];
+const [typed, setTyped] = useState("");
+const [index, setIndex] = useState(0);
+const [subIndex, setSubIndex] = useState(0);
+
+useEffect(() => {
+  if (subIndex === words[index].length + 1) {
+    setTimeout(() => {
+      setSubIndex(0);
+      setIndex((index + 1) % words.length);
+    }, 1200);
+    return;
+  }
+
+  const timeout = setTimeout(() => {
+    setTyped(words[index].substring(0, subIndex));
+    setSubIndex(subIndex + 1);
+  }, 120);
+
+  return () => clearTimeout(timeout);
+}, [subIndex, index]);
+
   return (
     <section className="py-20 bg-white" ref={productRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-2">
-            Our Products
-          </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Innovative digital solutions built for the future of energy.
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 ">
+        {/* FULL WIDTH BACKGROUND WRAPPER */}
+<div className="w-full bg-[#AFE1AF] py-16 mb-12">
+
+  {/* CONTENT CONTAINER */}
+  <div className="max-w-7xl mx-auto px-6 text-center">
+
+    <h2 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-3">
+      Our Products
+    </h2>
+
+    <p className="text-[#0F2F27] max-w-2xl mx-auto leading-relaxed text-lg">
+      Innovative digital solutions built for the future of energy.
+    </p>
+
+    {/* CARET STYLE */}
+    <style>{`
+      .caret::after {
+        content: "|";
+        display: inline-block;
+        margin-left: 6px;
+        animation: blink 1s steps(2, end) infinite;
+        color: #1B4D3E;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    `}</style>
+
+    {/* TYPING ANIMATION */}
+    <div className="mt-6 text-xl md:text-2xl font-semibold text-[#1B4D3E]">
+      Specializing in
+      <span className="ml-2 caret text-2xl md:text-3xl font-bold">
+        {typed}
+      </span>
+    </div>
+
+  </div>
+</div>
+
+
 
         {products.map((product, index) => (
           <div
