@@ -37,7 +37,8 @@ const Events = () => {
   return (
     <div className="relative w-full bg-slate-50">
       {/* ================= HERO ================= */}
-      <section className="bg-[#1B4D3E] text-white py-24 mt-20">
+      {/* Updated Background to Sage Green (#84A98C) and Text to Dark Green (#1B4D3E) */}
+      <section className="bg-[#84A98C] text-[#1B4D3E] py-24 mt-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -45,10 +46,10 @@ const Events = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-extrabold mb-6"
           >
-            News & <span className="text-[#81c784]">Events</span>
+            News & <span className="text-white">Events</span>
           </motion.h1>
 
-          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg text-[#1B4D3E] max-w-2xl mx-auto font-medium">
             Tracking our journey in sustainability, innovation, and industry leadership.
           </p>
         </div>
@@ -65,7 +66,7 @@ const Events = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-200 flex flex-col overflow-hidden"
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-200 flex flex-col overflow-hidden group"
             >
               <div className="p-7 flex flex-col flex-1">
                 {/* Date */}
@@ -75,7 +76,7 @@ const Events = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1B4D3E] transition-colors">
                   {event.title}
                 </h3>
 
@@ -88,12 +89,12 @@ const Events = () => {
                 <div className="mt-auto flex items-center justify-between pt-6 border-t border-gray-100">
                   <button
                     onClick={() => openEvent(event)}
-                    className="group flex items-center text-[#1B4D3E] font-bold text-sm hover:text-[#2e7d32]"
+                    className="group/btn flex items-center text-[#1B4D3E] font-bold text-sm hover:text-[#2e7d32]"
                   >
                     READ UPDATE
                     <ArrowRight
                       size={16}
-                      className="ml-2 group-hover:translate-x-1 transition-transform"
+                      className="ml-2 group-hover/btn:translate-x-1 transition-transform"
                     />
                   </button>
 
@@ -106,6 +107,7 @@ const Events = () => {
                 </div>
               </div>
 
+              {/* Bottom Border Accent matches Dark Green Brand Color */}
               <div className="h-1 bg-[#1B4D3E]" />
             </motion.div>
           ))}

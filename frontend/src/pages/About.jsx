@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import { Target, Eye, Users, Globe, Award, ChevronRight, X } from "lucide-react";
 
+// === THEME CONSTANTS ===
+const THEME = {
+  textDark: "text-[#1B4D3E]",
+  bgDark: "bg-[#1B4D3E]",
+  bgSage: "bg-[#84A98C]",
+  textSage: "text-[#84A98C]",
+  bgLight: "bg-[#f5faf7]", // Light sage tint for backgrounds
+  bgWhite: "bg-white",
+  buttonPrimary: "bg-white text-[#1B4D3E] hover:bg-[#f0fdf4] hover:shadow-xl",
+};
+
 const About = () => {
   // State to manage which team member's popup is open
   const [selectedMember, setSelectedMember] = useState(null);
@@ -105,12 +116,13 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
   return (
     <div className="pt-20">
       {/* ================= HERO ================= */}
-      <section className="bg-[#1B4D3E] text-white py-20">
+      {/* Updated Background to Sage Green */}
+      <section className={`${THEME.bgSage} ${THEME.textDark} py-20`}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             About Greenfield Energy
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed font-medium">
             Leading the future of energy consultancy with innovative solutions
             and unparalleled expertise.
           </p>
@@ -122,7 +134,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           {/* LEFT TEXT */}
           <div>
-            <h2 className="text-4xl font-bold text-[#1B4D3E] mb-6">
+            <h2 className={`text-4xl font-bold ${THEME.textDark} mb-6`}>
               Our Story
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -155,7 +167,8 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
               alt="Team collaboration"
               className="rounded-2xl shadow-2xl"
             />
-            <div className="absolute -bottom-6 -right-6 bg-[#1B4D3E] text-white p-6 rounded-xl shadow-xl">
+            {/* Updated Box Color to Dark Green */}
+            <div className={`absolute -bottom-6 -right-6 ${THEME.bgDark} text-white p-6 rounded-xl shadow-xl`}>
               <div className="text-4xl font-bold mb-1">9+</div>
               <div className="text-sm">Years of Excellence</div>
             </div>
@@ -164,7 +177,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
       </section>
 
       {/* ================= VISION / MISSION & ACHIEVEMENTS ================= */}
-      <section className="py-20 bg-[#e8f5e9]">
+      <section className={`py-20 ${THEME.bgLight}`}>
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           {/* Achievements */}
           <div className="order-2 md:order-1">
@@ -174,7 +187,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
                   key={index}
                   className="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition"
                 >
-                  <div className="text-4xl font-bold text-[#1B4D3E] mb-2">
+                  <div className={`text-4xl font-bold ${THEME.textDark} mb-2`}>
                     {item.metric}
                   </div>
                   <div className="text-gray-700 font-medium">{item.label}</div>
@@ -186,8 +199,8 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
           {/* Vision & Mission */}
           <div className="order-1 md:order-2">
             <div className="flex items-center gap-4 mb-6">
-              <Eye className="w-12 h-12 text-[#1B4D3E]" />
-              <h2 className="text-4xl font-bold text-[#1B4D3E]">Our Vision</h2>
+              <Eye className={`w-12 h-12 ${THEME.textDark}`} />
+              <h2 className={`text-4xl font-bold ${THEME.textDark}`}>Our Vision</h2>
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -197,8 +210,8 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
             </p>
 
             <div className="flex items-center gap-4 mb-6">
-              <Target className="w-12 h-12 text-[#1B4D3E]" />
-              <h2 className="text-4xl font-bold text-[#1B4D3E]">Our Mission</h2>
+              <Target className={`w-12 h-12 ${THEME.textDark}`} />
+              <h2 className={`text-4xl font-bold ${THEME.textDark}`}>Our Mission</h2>
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -214,7 +227,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
+            <h2 className={`text-4xl md:text-5xl font-bold ${THEME.textDark} mb-4`}>
               Our Core Values
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -226,13 +239,13 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
             {values.map((value, index) => (
               <div
                 key={index}
-                className="text-center p-8 rounded-xl bg-[#e8f5e9] hover:shadow-xl transition-transform duration-300 hover:-translate-y-2"
+                className={`text-center p-8 rounded-xl ${THEME.bgLight} hover:shadow-xl transition-transform duration-300 hover:-translate-y-2`}
               >
-                <div className="bg-[#1B4D3E] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className={`${THEME.bgDark} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6`}>
                   <value.icon className="w-10 h-10 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#1B4D3E] mb-4">
+                <h3 className={`text-2xl font-bold ${THEME.textDark} mb-4`}>
                   {value.title}
                 </h3>
 
@@ -245,12 +258,12 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
         </div>
       </section>
 
-      {/* ================= OUR TEAM (UPDATED WITH POPUP) ================= */}
-      <section className="py-20 bg-[#f5faf7]">
+      {/* ================= OUR TEAM ================= */}
+      <section className={`py-20 ${THEME.bgLight}`}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
+            <h2 className={`text-4xl md:text-5xl font-bold ${THEME.textDark} mb-4`}>
               Our Leadership & Team
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -264,7 +277,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group h-full border-t-4 border-[#1B4D3E]"
+                className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group h-full border-t-4 border-[#1B4D3E]`}
               >
                 {/* Image Area - Kept in the grid card */}
                 <div className="h-72 overflow-hidden relative">
@@ -277,7 +290,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
 
                 {/* Card Content */}
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-[#1B4D3E] mb-1">
+                  <h3 className={`text-xl font-bold ${THEME.textDark} mb-1`}>
                     {member.name}
                   </h3>
                   <p className="text-xs font-bold uppercase tracking-wider text-red-600 mb-4">
@@ -293,7 +306,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
                   <div className="mt-auto">
                     <button
                       onClick={() => setSelectedMember(member)}
-                      className="inline-flex items-center text-[#1B4D3E] font-bold text-sm hover:text-red-600 transition-colors group/btn"
+                      className={`inline-flex items-center ${THEME.textDark} font-bold text-sm hover:text-red-600 transition-colors group/btn`}
                     >
                       Read Full Profile
                       <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
@@ -306,7 +319,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
         </div>
       </section>
 
-      {/* ================= POPUP MODAL WINDOW (TEXT ONLY) ================= */}
+      {/* ================= POPUP MODAL WINDOW ================= */}
       {selectedMember && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop with Blur */}
@@ -316,7 +329,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
           ></div>
 
           {/* Modal Content - TEXT ONLY, NO IMAGE */}
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative z-10 animate-in fade-in zoom-in duration-300 border-t-8 border-[#1B4D3E]">
+          <div className={`bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative z-10 animate-in fade-in zoom-in duration-300 border-t-8 border-[#1B4D3E]`}>
             
             {/* Close Button */}
             <button 
@@ -329,7 +342,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
             {/* Modal Text Content */}
             <div className="p-8 md:p-12">
               <div className="mb-8 border-b border-gray-100 pb-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-2">
+                <h3 className={`text-3xl md:text-4xl font-bold ${THEME.textDark} mb-2`}>
                   {selectedMember.name}
                 </h3>
                 <p className="text-sm md:text-base font-bold uppercase tracking-wider text-red-600">
@@ -346,123 +359,123 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
         </div>
       )}
 
-    {/* ================= OUR PARTNERS ================= */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4">
+      {/* ================= OUR PARTNERS ================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
 
-    <h2 className="text-4xl md:text-5xl font-bold text-center text-[#1B4D3E] mb-16">
-  Our Partners
-</h2>
+          <h2 className={`text-4xl md:text-5xl font-bold text-center ${THEME.textDark} mb-16`}>
+            Our Partners
+          </h2>
 
-    {/* ================= OUR CLIENTS ================= */}
-    <div className="mb-20">
-      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-6">
-        Our Clients
-      </h3>
+          {/* ================= OUR CLIENTS ================= */}
+          <div className="mb-20">
+            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-6`}>
+              Our Clients
+            </h3>
 
-      <ul className="grid md:grid-cols-3 gap-4 list-disc list-inside text-gray-700 text-lg">
-        <li>Oil India</li>
-        <li>Petronas Carigali</li>
-        <li>Cairn India</li>
-        <li>SPOC, Sudan</li>
-        <li>Kiri Energy</li>
-        <li>SEE Energy</li>
-      </ul>
-    </div>
+            <ul className="grid md:grid-cols-3 gap-4 list-disc list-inside text-gray-700 text-lg">
+              <li>Oil India</li>
+              <li>Petronas Carigali</li>
+              <li>Cairn India</li>
+              <li>SPOC, Sudan</li>
+              <li>Kiri Energy</li>
+              <li>SEE Energy</li>
+            </ul>
+          </div>
 
-    {/* ================= GLOBAL SERVICE PARTNERS ================= */}
-    <div className="mb-20">
-      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-10">
-        Global Service Partners
-      </h3>
+          {/* ================= GLOBAL SERVICE PARTNERS ================= */}
+          <div className="mb-20">
+            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-10`}>
+              Global Service Partners
+            </h3>
 
-      <div className="grid md:grid-cols-3 gap-10 text-center">
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">Permian Oil & Gas</p>
+            <div className="grid md:grid-cols-3 gap-10 text-center">
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">Permian Oil & Gas</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">TPS</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">Sutera Energy</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">Rara Energy</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <img
+                  src="/images/GoldenGateBridge.png"
+                  alt="Golden Gate Bridge Trading and Services"
+                  className="mx-auto mb-4 h-20 object-contain"
+                />
+                <p className="font-semibold text-lg">
+                  Golden Gate Bridge Trading and Services
+                </p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <img
+                  src="/images/AdreeEnergy.jpg"
+                  alt="Adisshre Energies Pvt Ltd"
+                  className="mx-auto mb-4 h-20 object-contain"
+                />
+                <p className="font-semibold text-lg">
+                  Adisshre Energies Pvt Ltd
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ================= TECHNOLOGY PARTNERS ================= */}
+          <div>
+            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-10`}>
+              Technology Partners
+            </h3>
+
+            <div className="grid md:grid-cols-3 gap-10 text-center">
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">Turnera Tech</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <p className="font-semibold text-lg">IIT ISM</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <img
+                  src="/images/NSP.png"
+                  alt="NSP"
+                  className="mx-auto mb-4 h-20 object-contain"
+                />
+                <p className="font-semibold text-lg">NSP</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <img
+                  src="/images/UGreen.jpg"
+                  alt="U Green"
+                  className="mx-auto mb-4 h-20 object-contain"
+                />
+                <p className="font-semibold text-lg">U Green</p>
+              </div>
+
+              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <img
+                  src="/images/HOPON.png"
+                  alt="Hopun Innovation"
+                  className="mx-auto mb-4 h-20 object-contain"
+                />
+                <p className="font-semibold text-lg">Hopun Innovation</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">TPS</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">Sutera Energy</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">Rara Energy</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <img
-            src="/images/GoldenGateBridge.png"
-            alt="Golden Gate Bridge Trading and Services"
-            className="mx-auto mb-4 h-20 object-contain"
-          />
-          <p className="font-semibold text-lg">
-            Golden Gate Bridge Trading and Services
-          </p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <img
-            src="/images/AdreeEnergy.jpg"
-            alt="Adisshre Energies Pvt Ltd"
-            className="mx-auto mb-4 h-20 object-contain"
-          />
-          <p className="font-semibold text-lg">
-            Adisshre Energies Pvt Ltd
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* ================= TECHNOLOGY PARTNERS ================= */}
-    <div>
-      <h3 className="text-2xl font-bold text-[#1B4D3E] mb-10">
-        Technology Partners
-      </h3>
-
-      <div className="grid md:grid-cols-3 gap-10 text-center">
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">Turnera Tech</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <p className="font-semibold text-lg">IIT ISM</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <img
-            src="/images/NSP.png"
-            alt="NSP"
-            className="mx-auto mb-4 h-20 object-contain"
-          />
-          <p className="font-semibold text-lg">NSP</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <img
-            src="/images/UGreen.jpg"
-            alt="U Green"
-            className="mx-auto mb-4 h-20 object-contain"
-          />
-          <p className="font-semibold text-lg">U Green</p>
-        </div>
-
-        <div className="border rounded-xl p-6 shadow-sm">
-          <img
-            src="/images/HOPON.png"
-            alt="Hopun Innovation"
-            className="mx-auto mb-4 h-20 object-contain"
-          />
-          <p className="font-semibold text-lg">Hopun Innovation</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+      </section>
     </div>
   );
 };

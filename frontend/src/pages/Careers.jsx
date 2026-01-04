@@ -1,14 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Users,
-  TrendingUp,
-  Leaf,
-} from "lucide-react";
+import { Briefcase, Users, TrendingUp, Leaf } from "lucide-react";
+
+/* ================= THEME CONSTANTS ================= */
+const THEME = {
+  textDark: "text-[#1B4D3E]",
+  bgDark: "bg-[#1B4D3E]",
+  bgSage: "bg-[#84A98C]",
+  textSage: "text-[#84A98C]",
+  bgLight: "bg-[#f5faf7]", // Light sage tint
+  bgWhite: "bg-white",
+  buttonPrimary: "bg-white text-[#1B4D3E] hover:bg-[#f0fdf4] shadow-lg hover:scale-105 transition",
+  buttonSecondary: "border-2 border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white transition",
+};
 
 /* ================= ANIMATIONS ================= */
-
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -31,10 +37,11 @@ const stagger = {
 const Careers = () => {
   return (
     <div className="bg-white font-sans overflow-hidden">
-
       {/* ================= HERO ================= */}
-      <section className="relative bg-[#143d2c] text-white py-24">
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#1f6f4a,_transparent_60%)]" />
+      {/* Updated Background to Sage Green, Text to Dark Green */}
+      <section className={`relative ${THEME.bgSage} ${THEME.textDark} py-24`}>
+        {/* Subtle overlay for texture */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,_#ffffff,_transparent_60%)]" />
 
         <motion.div
           className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center"
@@ -43,11 +50,11 @@ const Careers = () => {
           variants={stagger}
         >
           <motion.div variants={fadeUp}>
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-5xl font-extrabold leading-tight">
               Build the Future of <br /> Energy & Engineering
             </h1>
 
-            <p className="mt-6 text-lg text-gray-200 max-w-xl">
+            <p className="mt-6 text-lg font-medium opacity-90 max-w-xl">
               Work on real oil & gas challenges using engineering excellence,
               data intelligence, and sustainable innovation.
             </p>
@@ -55,13 +62,13 @@ const Careers = () => {
             <div className="mt-8 flex gap-4">
               <a
                 href="#future-opportunities"
-                className="bg-white text-[#143d2c] px-7 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
+                className={`${THEME.buttonPrimary} px-7 py-3 rounded-xl font-bold`}
               >
                 Future Opportunities
               </a>
               <a
                 href="#life-at-gots"
-                className="border border-white/60 px-7 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#143d2c] transition"
+                className={`${THEME.buttonSecondary} px-7 py-3 rounded-xl font-bold`}
               >
                 Life at GOTS
               </a>
@@ -70,12 +77,12 @@ const Careers = () => {
 
           <motion.div
             variants={fadeUp}
-            className="hidden md:block backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-10 shadow-2xl"
+            className="hidden md:block backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-10 shadow-2xl"
           >
-            <p className="text-2xl font-semibold">
+            <p className="text-2xl font-bold">
               Engineers. Analysts. Thinkers.
             </p>
-            <p className="mt-4 text-gray-200">
+            <p className="mt-4 font-medium opacity-90">
               We value clarity, logic, and long-term impact.
             </p>
           </motion.div>
@@ -93,7 +100,7 @@ const Careers = () => {
         >
           <motion.h2
             variants={fadeUp}
-            className="text-4xl font-bold text-gray-900"
+            className={`text-4xl font-bold ${THEME.textDark}`}
           >
             Why Work With Us
           </motion.h2>
@@ -125,15 +132,13 @@ const Careers = () => {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ y: -8 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-[#1B4D3E]"
               >
-                <item.icon className="w-12 h-12 text-green-700 mx-auto" />
-                <h3 className="mt-5 font-semibold text-lg">
+                <item.icon className={`w-12 h-12 ${THEME.textSage} mx-auto`} />
+                <h3 className={`mt-5 font-bold text-lg ${THEME.textDark}`}>
                   {item.title}
                 </h3>
-                <p className="mt-2 text-gray-600 text-sm">
-                  {item.text}
-                </p>
+                <p className="mt-2 text-gray-600 text-sm">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -150,10 +155,10 @@ const Careers = () => {
           variants={stagger}
         >
           <motion.div variants={fadeUp}>
-            <h2 className="text-4xl font-bold text-gray-900">
+            <h2 className={`text-4xl font-bold ${THEME.textDark}`}>
               Life at GOTS
             </h2>
-            <ul className="mt-6 space-y-3 text-gray-700">
+            <ul className="mt-6 space-y-3 text-gray-700 font-medium">
               <li>• Collaborative engineering culture</li>
               <li>• Ownership from day one</li>
               <li>• Direct client & field exposure</li>
@@ -164,9 +169,9 @@ const Careers = () => {
 
           <motion.div
             variants={fadeUp}
-            className="bg-gray-100 rounded-3xl p-10 shadow-inner"
+            className={`${THEME.bgLight} rounded-3xl p-10 shadow-inner border border-[#84A98C]/20`}
           >
-            <p className="text-2xl font-semibold text-gray-800">
+            <p className={`text-2xl font-bold ${THEME.textDark}`}>
               “We don’t hire roles. We hire problem-solvers.”
             </p>
           </motion.div>
@@ -184,7 +189,7 @@ const Careers = () => {
         >
           <motion.h2
             variants={fadeUp}
-            className="text-4xl font-bold text-gray-900"
+            className={`text-4xl font-bold ${THEME.textDark}`}
           >
             Future Opportunities at GOTS
           </motion.h2>
@@ -210,30 +215,28 @@ const Careers = () => {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="bg-white p-8 rounded-2xl shadow-lg"
+                className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-[#84A98C]"
               >
-                <p className="font-semibold text-gray-800">
-                  {text}
-                </p>
+                <p className={`font-bold ${THEME.textDark}`}>{text}</p>
               </motion.div>
             ))}
           </motion.div>
 
           <motion.div
             variants={fadeUp}
-            className="mt-16 bg-white rounded-3xl p-10 shadow-xl"
+            className="mt-16 bg-white rounded-3xl p-10 shadow-xl border border-gray-100"
           >
-            <h3 className="text-2xl font-semibold text-gray-900">
+            <h3 className={`text-2xl font-bold ${THEME.textDark}`}>
               Stay Connected
             </h3>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-              Share your resume with us, and we’ll reach out when a role
-              aligns with your expertise.
+              Share your resume with us, and we’ll reach out when a role aligns
+              with your expertise.
             </p>
 
             <a
               href="mailto:Support@greenfield.energy"
-              className="inline-block mt-6 bg-green-700 text-white px-10 py-3 rounded-xl font-semibold hover:bg-green-800 transition"
+              className={`inline-block mt-6 ${THEME.bgDark} text-white px-10 py-3 rounded-xl font-bold hover:opacity-90 transition shadow-md`}
             >
               Send Your Resume
             </a>
@@ -242,28 +245,28 @@ const Careers = () => {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="bg-[#143d2c] py-20 text-center text-white">
+      {/* Updated to Sage Green Background */}
+      <section className={`${THEME.bgSage} py-20 text-center ${THEME.textDark}`}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-3xl font-extrabold">
             Ready to Build Something Meaningful?
           </h2>
-          <p className="mt-4 text-gray-200">
+          <p className="mt-4 font-medium opacity-90">
             Let’s connect and explore future possibilities.
           </p>
           <a
             href="mailto:careers@greenfieldots.com"
-            className="inline-block mt-6 bg-white text-[#143d2c] px-10 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
+            className={`inline-block mt-6 bg-white ${THEME.textDark} px-10 py-3 rounded-xl font-bold shadow-xl hover:scale-105 transition`}
           >
             Support@greenfield.energy
           </a>
         </motion.div>
       </section>
-
     </div>
   );
 };
