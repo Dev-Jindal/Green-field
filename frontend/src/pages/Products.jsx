@@ -109,7 +109,7 @@ const Products = () => {
               <div className={index % 2 === 1 ? "md:col-start-2" : ""}>
                 <div className="bg-[#AFE1AF] w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
 
-                  <product.icon className="w-10 h-10 text-[#1B4D3E]" />
+                  <product.icon className="w-10 h-10 text-[#1B4D3E]" />  
                 </div>
 
                 <h2 className="text-4xl font-bold text-[#1B4D3E] mb-2">

@@ -127,7 +127,7 @@ export default function WhyChoose() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#0F2F27] mb-4">
             Why Choose <span className="text-[#2FBF9C]">Greenfield OTS</span>
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="text-[#2F4F44] max-w-3xl mx-auto text-lg">
             Delivering technology-driven, safe and cost-effective oil & gas
             engineering and IT solutions through global expertise.
           </p>
@@ -142,7 +142,7 @@ export default function WhyChoose() {
                 key={i}
                 className="
                   group
-                  bg-[#1B4D3E]/90
+                 bg-[#AFE1AF]
                   rounded-2xl
                   overflow-hidden
                   shadow-lg
@@ -181,12 +181,12 @@ export default function WhyChoose() {
                       <Icon className="w-6 h-6" />
                     </div>
 
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-xl font-semibold text-[#144D3A]">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-[#2F4F44] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
