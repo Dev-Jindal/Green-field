@@ -6,19 +6,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: [
-    "https://www.edvantage.org.in",
-    "http://localhost:5173" // for local dev (optional)
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
-app.options("*", cors());
-
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 
