@@ -13,7 +13,9 @@ import { DownloadCloud, Mail, Phone, ChevronRight, Zap, Link } from "lucide-reac
 
 // Updated Color Constants
 const BRAND_COLOR_CLASS = "text-[#1B4D3E]";
-const CTA_DARK_GREEN = "bg-[#1B4D3E] hover:bg-[#153c30]";
+const CTA_DARK_GREEN =
+  "bg-[#AFE1AF] text-[#1B4D3E] hover:bg-[#153c30] hover:text-white";
+
 
 export default function OilGasConsultancy() {
   const NAV_TOP_PADDING = "pt-18";
@@ -65,14 +67,14 @@ export default function OilGasConsultancy() {
                   Integrated upstream solutions — reservoir optimization, production efficiency, sand management and commercial advisory.
                 </p>
 
-                <div ref={heroCtaRef} style={{ opacity: 0 }} className="mt-8">
+                <div ref={heroCtaRef} style={{ opacity: 0 }} className="mt-8  text-black">
                   <a
                     href="/brochures/Integrated-Sand-Management_Brochure_Rev-Sep2021.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className={`${CTA_DARK_GREEN} inline-flex items-center gap-3 text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
+                    className={`${CTA_DARK_GREEN} inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold shadow-2xl transition transform hover:scale-[1.02]`}
                   >
-                    <DownloadCloud className="w-5 h-5" /> Download Brochure
+                    <DownloadCloud className="w-5 h-5 " /> Download Brochure
                   </a>
                 </div>
               </div>
@@ -174,14 +176,14 @@ export default function OilGasConsultancy() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 border-2 border-[#1B4D3E] text-[#1B4D3E] px-6 py-3 rounded-lg font-semibold hover:bg-[#e8f5e9] transition"
+                className="inline-flex items-center gap-2 border-2 border-[#1B4D3E] text-[#1B4D3E] px-6 py-3 rounded-lg font-semibold hover:bg-[#AFE1AF] text-[#1B4D3E] transition"
               >
                 Request Consultation
               </a>
 
               <a
                 href="/brochures/Integrated-Sand-Management_Brochure_Rev-Sep2021.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white shadow-sm border border-gray-200 text-slate-700 hover:bg-gray-50 transition"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white shadow-sm border border-gray-200 text-slate-700 hover:bg-[#AFE1AF] text-[#1B4D3E] transition"
               >
                 <DownloadCloud className="w-4 h-4" /> Download Full Brochure
               </a>

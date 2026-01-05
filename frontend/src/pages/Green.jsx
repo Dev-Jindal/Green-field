@@ -83,13 +83,16 @@ export default function Green() {
           <div className="flex justify-center md:justify-end">
             <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
               <div className="relative pb-[56.25%]">
-                <iframe
-                  src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                ></iframe>
+               <video
+                  src="/video/GREEN.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="auto"
+                  className="absolute inset-0 w-full h-full object-cover bg-black"
+                />
               </div>
             </div>
           </div>

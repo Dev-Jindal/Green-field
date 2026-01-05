@@ -144,7 +144,7 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* ============= HERO SECTION ============= */}
-      <section className="bg-[#84A98C] text-[#1B4D3E] py-20">
+      <section className="bg-[#AFE1AF] text-[#1B4D3E] py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl text-[#1B4D3E] max-w-3xl mx-auto leading-relaxed font-medium">
@@ -312,7 +312,7 @@ const Services = () => {
 
           <a
             href="/contact"
-            className="inline-block bg-[#1B4D3E] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-[#153c30] transition-transform duration-300 hover:scale-105 shadow-lg"
+            className="inline-block bg-[#AFE1AF] text-[#1B4D3E] px-10 py-4 rounded-lg text-lg font-semibold hover: transition-transform duration-300 hover:scale-105 shadow-lg"
           >
             Contact Us Today
           </a>

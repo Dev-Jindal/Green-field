@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 // Brand colors
 const PRIMARY_COLOR_CLASS = "text-[#1B4D3E]";
-const CTA_COLOR_CLASS = "bg-[#1B4D3E] hover:bg-[#153c30]";
-const CTA_TEXT_CLASS = "text-white";
+const CTA_COLOR_CLASS = "bg-[#AFE1AF] hover:border-2 border-[#1B4D3E]  ";
+const CTA_TEXT_CLASS = "text-[#1B4D3E]";
 
 /* ===============================
    TRAINING DATA (WITH BROCHURES)

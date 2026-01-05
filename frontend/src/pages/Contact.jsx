@@ -250,7 +250,7 @@ const Contact = () => {
           </p>
 
           <div className="bg-white rounded-2xl shadow-xl p-12 border border-[#84A98C]/20">
-            <MapPin className={`w-24 h-24 ${THEME.textDark} mx-auto mb-4`} />
+            <MapPin className={`w-24 h-24  text-[#AFE1AF] mx-auto mb-4`} />
             <h3 className={`text-2xl font-bold ${THEME.textDark}`}>Global Operations</h3>
             <p className="text-gray-700 mt-2">Serving clients around the world</p>
           </div>

@@ -27,8 +27,8 @@ export default function DataAnalysis() {
 	const PRIMARY_COLOR = "#0F4C3A"; // Dark Emerald
 	const LIGHT_GREEN = "#D1FAE5"; // Light background accent
 	const ACCENT_COLOR = "#10B981"; // Brighter emerald
-	const CTA_BG = "bg-[#0F4C3A] hover:bg-emerald-700";
-	const CTA_TEXT = "text-white";
+	const CTA_BG = "bg-[#AFE1AF] border-2 border-[#1B4D3E]";
+	const CTA_TEXT = "text-[#1B4D3E]";
 
 	// Data content based on user input
 	const contentData = {
