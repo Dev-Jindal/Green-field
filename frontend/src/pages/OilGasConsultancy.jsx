@@ -41,7 +41,6 @@ export default function OilGasConsultancy() {
     backgroundImage: `url('/images/backgrounds/oilbackground.png')`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    // backgroundColor removed so it doesn't show through
   };
 
   return (
@@ -49,9 +48,6 @@ export default function OilGasConsultancy() {
       {/* HERO */}
       <header className="relative">
         <div className="h-72 md:h-[480px] rounded-b-3xl overflow-hidden relative shadow-lg" style={heroStyle}>
-          {/* CHANGED: Removed the green gradient overlay.
-             Added a neutral black/40% overlay just to ensure white text readability over the image.
-          */}
           <div className="absolute inset-0 bg-black/40 z-10" />
 
           <div className="absolute inset-0 flex items-center z-20">
@@ -82,7 +78,6 @@ export default function OilGasConsultancy() {
               </div>
             </div>
           </div>
-          {/* Removed the extra bottom fade gradient to keep the image clean */}
         </div>
       </header>
 
@@ -196,29 +191,33 @@ export default function OilGasConsultancy() {
           {/* Right: Sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-28 space-y-6">
-              {/* 1) Request a Demo - Solid dark green background */}
-              <div className="bg-[#1B4D3E] p-6 rounded-2xl shadow-2xl text-white">
+              
+              {/* 1) Request a Demo - UPDATED to Light Green Background */}
+              {/* bg changed to #AFE1AF, text changed to dark green */}
+              <div className="bg-[#AFE1AF] p-6 rounded-2xl shadow-2xl text-[#1B4D3E]">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-[#84A98C]" />
+                  {/* Icon container: white background for contrast */}
+                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-[#1B4D3E]" />
                   </div>
                   <div>
                     <h4 className="text-xl font-extrabold mb-1">Request a Demo</h4>
-                    <p className="text-sm opacity-90">Book a scoping demo or POC — we'll tailor a demo to your asset and KPIs.</p>
+                    <p className="text-sm font-medium opacity-90">Book a scoping demo or POC — we'll tailor a demo to your asset and KPIs.</p>
                   </div>
                 </div>
 
                 <div className="mt-6">
+                  {/* Button: Dark green background, White text */}
                   <a
                     href="/schedule-demo"
-                    className="w-full inline-flex items-center justify-center gap-3 bg-white text-[#1B4D3E] px-4 py-3 rounded-lg font-bold shadow hover:scale-[1.02] transition"
+                    className="w-full inline-flex items-center justify-center gap-3 bg-[#1B4D3E] text-white px-4 py-3 rounded-lg font-bold shadow hover:bg-[#153c30] transition hover:scale-[1.02]"
                   >
                     Schedule Demo
                     <ChevronRight className="w-4 h-4" />
                   </a>
                 </div>
 
-                <div className="mt-4 text-sm text-[#e8f5e9] flex flex-col gap-2">
+                <div className="mt-4 text-sm text-[#0F2F27] flex flex-col gap-2 font-medium">
                   <div>Custom POC available</div>
                   <div>Data-driven demo with sample dashboards</div>
                 </div>

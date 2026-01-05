@@ -16,7 +16,7 @@ const Services = () => {
       title: "Energy Consultancy",
       slug: "oil-gas",
       // Factory Icon (Online URL)
-      iconImage: "https://img.icons8.com/ios-filled/100/000000/factory.png", 
+      iconImage: "https://img.icons8.com/ios-filled/100/000000/factory.png",
       description:
         "Comprehensive engineering consultancy for upstream & downstream operations, reservoir studies and production optimization.",
       features: [
@@ -186,17 +186,16 @@ const Services = () => {
               {/* TEXT CONTENT */}
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
                 {/* Icon Container */}
-                <div className="bg-[#1B4D3E] w-20 h-20 rounded-full flex items-center justify-center mb-6 overflow-hidden p-4">
+                <div className="w-20 h-20 mb-6 rounded-full bg-[#AFE1AF] flex items-center justify-center shadow-md">
                   {/* Logic: If iconImage exists, use img tag, otherwise use Lucide icon */}
                   {service.iconImage ? (
-                    <img 
-                      src={service.iconImage} 
-                      alt={`${service.title} icon`} 
-                      className="w-full h-full object-contain filter brightness-0 invert" 
-                      // 'brightness-0 invert' turns black icons into white to match the green background
+                    <img
+                      src={service.iconImage}
+                      alt={`${service.title} icon`}
+                      className="w-12 h-12 object-contain mix-blend-multiply"
                     />
                   ) : (
-                    <service.icon className="w-10 h-10 text-white" />
+                    <service.icon className="w-10 h-10 text-[#1B4D3E]" />
                   )}
                 </div>
 
@@ -252,8 +251,8 @@ const Services = () => {
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2"
               >
-                <div className="bg-[#1B4D3E] w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="w-8 h-8 text-white" />
+                <div className="bg-[#AFE1AF] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <service.icon className="w-8 h-8 text-[#1B4D3E]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#1B4D3E] mb-4">
                   {service.title}
@@ -268,9 +267,10 @@ const Services = () => {
       </section>
 
       {/* ============= WHY CHOOSE US ============= */}
-      <section className="py-20 bg-[#3E705D] text-white">
+      {/* Updated Background to #AFE1AF and Text to Dark Green */}
+      <section className="py-20 bg-[#AFE1AF] text-[#1B4D3E]">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1B4D3E]">
             Why Choose Our Services?
           </h2>
 
@@ -291,7 +291,8 @@ const Services = () => {
             </div>
           </div>
 
-          <p className="text-xl text-gray-200 leading-relaxed mt-12 max-w-3xl mx-auto">
+          {/* Updated text color to dark green for readability on light background */}
+          <p className="text-xl text-[#0F2F27] leading-relaxed mt-12 max-w-3xl mx-auto font-medium">
             Backed by industry expertise and innovation, we deliver tailored
             solutions that drive measurable performance improvements.
           </p>
