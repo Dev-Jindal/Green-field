@@ -1,12 +1,41 @@
 // src/pages/Green.jsx
-import { ArrowRight } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom"; // ✅ ADD THIS
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import eventsData from "../data/eventsData";
 
 export default function Green() {
-  // Vimeo or any environment video related to sustainability
-  
-const navigate = useNavigate();
+
+  const navigate = useNavigate();
+
+  const faqs = [
+    {
+      question: "How does GREEN help reduce carbon footprint?",
+      answer:
+        "GREEN tracks real-time emissions, identifies high-impact sources and provides actionable insights to reduce carbon footprint through optimization and renewable integration.",
+    },
+    {
+      question: "Can GREEN integrate with existing renewable systems?",
+      answer:
+        "Yes. GREEN seamlessly integrates with solar, wind, hybrid renewable systems, SCADA, IoT meters and existing energy infrastructure.",
+    },
+    {
+      question: "Does GREEN support ESG and audit reporting?",
+      answer:
+        "Yes. GREEN automatically generates ESG, GRI, ISO 14001 and sustainability reports with complete audit-ready data trails.",
+    },
+    {
+      question: "How accurate is GREEN’s emission tracking?",
+      answer:
+        "GREEN uses calibrated industry-standard emission factors and real-time operational data to ensure high accuracy in emission tracking.",
+    },
+    {
+      question: "Can I connect GREEN to IoT and smart meters?",
+      answer:
+        "Yes. GREEN supports integration with IoT devices, smart meters and energy sensors for real-time monitoring and analytics.",
+    },
+  ];
+
   return (
     <div className="pt-24">
 
@@ -18,51 +47,52 @@ const navigate = useNavigate();
             <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">GREEN</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
-              Optimize Energy Usage —  
+              Optimize Energy Usage —
               <br />Decarbonize Operations with Precision
             </h1>
 
             <p className="text-[#1B4D3E]/80 mt-5 text-lg leading-relaxed">
-              GREEN is an advanced sustainability and decarbonization platform 
-              designed for industries seeking cleaner operations. It helps you track 
-              carbon footprint, optimize renewable energy usage, monitor emission sources, 
+              GREEN is an advanced sustainability and decarbonization platform
+              designed for industries seeking cleaner operations. It helps you track
+              carbon footprint, optimize renewable energy usage, monitor emission sources,
               and automate ESG reporting with real-time insights.
             </p>
 
             <div className="flex gap-4 mt-8">
-             <Link
-                             to="/schedule-demo"
-                             className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold
-                                        hover:bg-[#163f33] transition inline-flex items-center gap-2"
-                           >
-                             Book a Demo <ArrowRight size={18} />
-                           </Link>
+              <Link
+                to="/schedule-demo"
+                className="px-6 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold
+                           hover:bg-[#163f33] transition inline-flex items-center gap-2"
+              >
+                Book a Demo <ArrowRight size={18} />
+              </Link>
 
               <a
                 href="/brochure/Green Brochure reading version.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3 border-2 border-[#1B4D3E] text-[#1B4D3E] rounded-xl font-semibold hover:bg-[#1B4D3E] hover:text-white transition inline-flex items-center gap-2"
+                className="px-6 py-3 border-2 border-[#1B4D3E] text-[#1B4D3E] rounded-xl
+                           font-semibold hover:bg-[#1B4D3E] hover:text-white transition inline-flex items-center gap-2"
               >
                 Download Brochure
               </a>
             </div>
           </div>
 
-          {/* RIGHT: Vimeo video */}
-        <div className="flex justify-center">
-  <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
-    <div className="relative pb-[56.25%]">
-      <iframe
-        src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
-        frameBorder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowFullScreen
-        className="absolute inset-0 w-full h-full"
-      ></iframe>
-    </div>
-  </div>
-</div>
+          {/* VIDEO */}
+          <div className="flex justify-center md:justify-end">
+            <div className="w-full max-w-2xl shadow-lg rounded-2xl overflow-hidden bg-white">
+              <div className="relative pb-[56.25%]">
+                <iframe
+                  src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0&playsinline=1"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -76,7 +106,7 @@ const navigate = useNavigate();
         </div>
       </section>
 
-      {/* THREE FEATURE CARDS */}
+      {/* FEATURE CARDS */}
       <section className="py-20 bg-[#f7fffb]">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
 
@@ -113,7 +143,6 @@ const navigate = useNavigate();
       {/* WHAT IS GREEN */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-
           <div>
             <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">What is GREEN?</h2>
             <ul className="space-y-4 text-[#1B4D3E]/80 leading-relaxed">
@@ -125,14 +154,13 @@ const navigate = useNavigate();
           </div>
 
           <div>
+            <div className="flex justify-center md:justify-end"></div>
             <img
               src="/images/greenhome.png"
               alt="GREEN environment monitoring"
-               className="rounded-xl shadow-lg"
-
+              className="w-full max-w-md rounded-xl shadow-lg"
             />
           </div>
-
         </div>
       </section>
 
@@ -151,7 +179,7 @@ const navigate = useNavigate();
           <div>
             <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Energy & Emission Dashboard</h2>
             <p className="text-[#1B4D3E]/80 leading-relaxed mb-4">
-              GREEN provides a unified dashboard to visualize energy usage, forecast peak demand 
+              GREEN provides a unified dashboard to visualize energy usage, forecast peak demand
               and identify emission hotspots — allowing industries to take immediate corrective action.
             </p>
 
@@ -173,7 +201,6 @@ const navigate = useNavigate();
             <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">ESG Reporting & Compliance</h2>
             <p className="text-[#1B4D3E]/80 leading-relaxed mb-4">
               GREEN simplifies ESG data management with auto-compiled reports aligned with global standards.
-              This ensures transparency and readiness for audits and investor reviews.
             </p>
 
             <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
@@ -187,14 +214,14 @@ const navigate = useNavigate();
             <img
               src="https://www.greenfield.energy/wp-content/uploads/2024/02/p-3.jpg"
               alt="compliance"
-                className="rounded-xl shadow-lg object-contain w-full h-auto"
+              className="rounded-xl shadow-lg object-contain w-full h-auto"
             />
           </div>
 
         </div>
       </section>
 
-      {/* COST SAVING ANALYSIS */}
+      {/* COST SAVINGS */}
       <section className="py-20 bg-[#f7fffb]">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
@@ -202,15 +229,14 @@ const navigate = useNavigate();
             <img
               src="/images/greencostsaving.png"
               alt="cost analysis"
-              className="rounded-xl shadow-lg object-contain w-full h-auto"
+              className="w-full max-w-md rounded-xl shadow-lg object-contain"
             />
           </div>
 
           <div>
             <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Cost Savings & Optimization</h2>
             <p className="text-[#1B4D3E]/80 leading-relaxed mb-4">
-              GREEN identifies the potential cost savings from renewable adoption, equipment optimization 
-              and energy-waste reduction, helping companies cut expenses at scale.
+              GREEN identifies potential cost savings from renewable adoption and energy optimization.
             </p>
 
             <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
@@ -222,71 +248,79 @@ const navigate = useNavigate();
 
         </div>
       </section>
+    {/* OPERATIONAL SUSTAINABILITY */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-      {/* OPERATIONAL EXCELLENCE */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Operational Sustainability</h2>
+    {/* TEXT CONTENT */}
+    <div>
+      <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+        Operational Sustainability
+      </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
-                <li><b>Green KPI System:</b> Score energy efficiency across departments.</li>
-                <li><b>Low Carbon Operations:</b> Immediate insights to cut footprint.</li>
-                <li><b>Automation:</b> Digital-first sustainability workflows.</li>
-                <li><b>Forecasting:</b> Predict future consumption & emissions.</li>
-                <li><b>Cross-Department Visibility:</b> Centralized sustainability portal.</li>
-                <li><b>Net-Zero Roadmap:</b> Track company progress towards net-zero goals.</li>
-              </ul>
-            </div>
-             <div>
-            <img
-              src="/images/greenOperational.png"
-              alt="cost analysis"
-               className="rounded-xl shadow-lg object-contain w-full h-auto"
-            />
-          </div>
-           
-          </div>
-        </div>
-      </section>
+      <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
+        <li><b>Green KPI System:</b> Score energy efficiency across departments.</li>
+        <li><b>Low Carbon Operations:</b> Immediate insights to cut footprint.</li>
+        <li><b>Automation:</b> Digital-first sustainability workflows.</li>
+        <li><b>Forecasting:</b> Predict future consumption & emissions.</li>
+        <li><b>Cross-Department Visibility:</b> Centralized sustainability portal.</li>
+        <li><b>Net-Zero Roadmap:</b> Track progress towards net-zero goals.</li>
+      </ul>
+    </div>
 
-      {/* LONG TERM SUPPORT */}
-      <section className="py-20 bg-[#f7fffb]">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    {/* IMAGE — RIGHT SIDE */}
+    <div>
+      <img
+        src="/images/greenOperational.png"
+        alt="operational sustainability"
+        className="w-full max-w-md rounded-xl shadow-lg object-contain"
+      />
+    </div>
 
-          <div>
-            <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Long Term Support & Integration</h2>
-            <p className="text-[#1B4D3E]/80 leading-relaxed mb-4">
-              GREEN is built as a scalable sustainability engine that integrates with your existing 
-              systems — ensuring seamless data flow, continuous improvements and long-term reliability.
-            </p>
+  </div>
+</section>
 
-            <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
-              <li>IoT & SCADA connectivity.</li>
-              <li>Quarterly feature updates.</li>
-              <li>Expert-led sustainability optimization support.</li>
-            </ul>
-          </div>
 
-          <div>
-            <img
-              src="/images/greenlongterm.png"
-              alt="support"
-              className="rounded-xl shadow-lg object-cover w-full h-64"
-            />
-          </div>
+{/* LONG TERM SUPPORT */}
+<section className="py-20 bg-[#f7fffb]">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-        </div>
-      </section>
+    {/* IMAGE — LEFT SIDE */}
+    <div>
+      <img
+        src="/images/greenlongterm.png"
+        alt="support"
+        className="rounded-xl shadow-lg object-cover w-full h-64"
+      />
+    </div>
+
+    {/* TEXT CONTENT */}
+    <div>
+      <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+        Long Term Support & Integration
+      </h2>
+
+      <p className="text-[#1B4D3E]/80 leading-relaxed mb-4">
+        GREEN integrates seamlessly with existing systems ensuring long-term reliability.
+      </p>
+
+      <ul className="list-disc pl-6 space-y-3 text-[#1B4D3E]/80">
+        <li>IoT & SCADA connectivity.</li>
+        <li>Quarterly feature updates.</li>
+        <li>Expert-led sustainability optimization support.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
       {/* INTEGRATION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Integration & Connectivity</h2>
           <p className="text-[#1B4D3E]/80 leading-relaxed">
-            GREEN integrates across your entire ecosystem — including energy meters, renewable systems,
-            analytics tools and ERPs — providing unified sustainability intelligence.
+            GREEN integrates across your ecosystem — energy meters, renewables and analytics tools.
           </p>
         </div>
       </section>
@@ -295,81 +329,64 @@ const navigate = useNavigate();
       <section className="py-20 bg-[#f7fffb]">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-[#1B4D3E] mb-6">
+            Frequently Asked Questions
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              "How does GREEN help reduce carbon footprint?",
-              "Can GREEN integrate with existing renewable systems?",
-              "Does GREEN support ESG and audit reporting?",
-              "How accurate is GREEN’s emission tracking?",
-              "Can I connect GREEN to IoT and smart meters?",
-            ].map((q) => (
-              <div
-                key={q}
-                className="border border-[#1B4D3E] bg-[#AFE1AF] rounded-xl p-4 text-[#1B4D3E] font-medium shadow-sm"
-              >
-                {q}
-              </div>
+          <div className="space-y-4 max-w-4xl">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} faq={faq} />
             ))}
           </div>
 
         </div>
       </section>
 
-        {/* ========================================================= */}
-{/* INSIGHTS & EVENTS SECTION */}
-{/* ========================================================= */}
-<section className="py-24 bg-[#f7fffb] text-center">
-  <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
-    Discover More: Insights & Events from GOTS
-  </h2>
+      {/* INSIGHTS & EVENTS */}
+      <section className="py-24 bg-[#f7fffb] text-center">
+        <h2 className="text-4xl font-bold text-[#1B4D3E] mb-12">
+          Discover More: Insights & Events from GOTS
+        </h2>
 
-  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-    {eventsData.slice(0, 3).map((event) => (
-      <div
-        key={event.id}
-        className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
-      >
-        {/* Top Accent */}
-        <div className="h-2 bg-[#1B4D3E]" />
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          {eventsData.slice(0, 3).map((event) => (
+            <div
+              key={event.id}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden text-left hover:shadow-2xl transition"
+            >
+              <div className="h-2 bg-[#1B4D3E]" />
 
-        <div className="p-6 flex flex-col h-full">
-          {/* Date */}
-          <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
-            {event.date}
-          </p>
+              <div className="p-6 flex flex-col h-full">
+                <p className="text-xs font-semibold text-[#1B4D3E] uppercase mb-2">
+                  {event.date}
+                </p>
 
-          {/* Title */}
-          <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
-            {event.title}
-          </h3>
+                <h3 className="text-xl font-bold text-[#1B4D3E] leading-snug">
+                  {event.title}
+                </h3>
 
-          {/* Preview */}
-          <p className="text-[#1B4D3E]/70 mt-3 flex-1">
-            {event.preview}
-          </p>
+                <p className="text-[#1B4D3E]/70 mt-3 flex-1">
+                  {event.preview}
+                </p>
 
-          {/* Read More */}
-          <button
-            onClick={() => navigate(`/events/${event.id}`)}
-            className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
-          >
-            Read Update →
-          </button>
+                <button
+                  onClick={() => navigate(`/events/${event.id}`)}
+                  className="mt-6 text-sm font-semibold text-[#1B4D3E] hover:underline"
+                >
+                  Read Update →
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
 
-  {/* CTA */}
-  <button
-    onClick={() => navigate("/events")}
-    className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
-  >
-    Read Our Events
-  </button>
-</section>
+        <button
+          onClick={() => navigate("/events")}
+          className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+        >
+          Read Our Events
+        </button>
+      </section>
 
       {/* FINAL CTA */}
       <section className="py-20 bg-[#0c2f26] text-center">
@@ -381,6 +398,35 @@ const navigate = useNavigate();
         </button>
       </section>
 
+    </div>
+  );
+}
+
+function FAQItem({ faq }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border border-[#1B4D3E]/30 rounded-xl bg-[#AFE1AF]">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center px-6 py-4 text-left"
+      >
+        <span className="text-[#1B4D3E] font-semibold">
+          {faq.question}
+        </span>
+
+        <ChevronDown
+          className={`text-[#1B4D3E] transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {open && (
+        <div className="px-6 pb-5 text-[#1B4D3E]/80 leading-relaxed">
+          {faq.answer}
+        </div>
+      )}
     </div>
   );
 }
