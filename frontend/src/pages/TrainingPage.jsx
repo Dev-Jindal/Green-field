@@ -1,13 +1,10 @@
-
-
-
 import React, { useEffect, useRef } from "react";
 import { GraduationCap, Download, Calendar, Users, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // Brand colors
-const PRIMARY_COLOR_CLASS = "text-[#0F4C3A]";
-const CTA_COLOR_CLASS = "bg-[#0F4C3A] hover:bg-emerald-700";
+const PRIMARY_COLOR_CLASS = "text-[#1B4D3E]";
+const CTA_COLOR_CLASS = "bg-[#1B4D3E] hover:bg-[#153c30]";
 const CTA_TEXT_CLASS = "text-white";
 
 /* ===============================
@@ -92,8 +89,9 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
             className="w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.style.display = "none";
+              // Updated fallback color to Dark Green
               e.currentTarget.parentElement.innerHTML =
-                '<div class="flex items-center justify-center h-full bg-[#0F4C3A] text-white text-xl font-bold">Image Unavailable</div>';
+                '<div class="flex items-center justify-center h-full bg-[#1B4D3E] text-white text-xl font-bold">Image Unavailable</div>';
             }}
           />
           <div className="absolute inset-0 bg-black/10" />
@@ -111,11 +109,13 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
             {/* STATS */}
             <div className="flex flex-wrap gap-6 text-sm text-slate-600 font-semibold mb-6 border-b pb-4">
               <span className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-emerald-600" />
+                {/* Updated Icon Color */}
+                <Calendar className="w-4 h-4 text-[#1B4D3E]" />
                 {course.duration}
               </span>
               <span className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-emerald-600" />
+                {/* Updated Icon Color */}
+                <Users className="w-4 h-4 text-[#1B4D3E]" />
                 Professional Level
               </span>
             </div>
@@ -131,7 +131,8 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
                 {course.topics.map((t, i) => (
                   <span
                     key={i}
-                    className="text-sm bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 font-medium"
+                    // Updated Pill Colors: Light Green BG, Dark Green Text
+                    className="text-sm bg-[#AFE1AF] text-[#1B4D3E] px-3 py-1 rounded-full font-bold"
                   >
                     {t}
                   </span>
@@ -148,11 +149,10 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
 
           {/* ACTIONS */}
           <div className="mt-8 pt-4 border-t flex flex-wrap gap-3">
-          <button
-  onClick={() => onEnroll(course.title)}
-  className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold shadow-md transition ${CTA_COLOR_CLASS} ${CTA_TEXT_CLASS}`}
->
-
+            <button
+              onClick={() => onEnroll(course.title)}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold shadow-md transition ${CTA_COLOR_CLASS} ${CTA_TEXT_CLASS}`}
+            >
               <GraduationCap className="w-5 h-5" />
               Enroll Now
             </button>
@@ -161,13 +161,12 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
               href={course.brochure}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-emerald-600 text-emerald-700 rounded-xl font-semibold hover:bg-emerald-50 transition"
+              // Updated Secondary Button Colors
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#1B4D3E] text-[#1B4D3E] rounded-xl font-semibold hover:bg-[#AFE1AF] transition"
             >
               <Download className="w-5 h-5" />
               Download Brochure
             </a>
-
-            
           </div>
         </div>
       </div>
@@ -180,13 +179,13 @@ const SplitCourseCard = ({ course, index, onEnroll }) => {
 ================================ */
 export default function TrainingPage() {
   const headerRef = useRef(null);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handleEnroll = (trainingTitle) => {
-  navigate("/register", {
-    state: { selectedTraining: trainingTitle },
-  });
-};
+  const handleEnroll = (trainingTitle) => {
+    navigate("/register", {
+      state: { selectedTraining: trainingTitle },
+    });
+  };
 
   useEffect(() => {
     const el = headerRef.current;
@@ -207,8 +206,8 @@ const handleEnroll = (trainingTitle) => {
         ref={headerRef}
         className="max-w-7xl mx-auto px-6 md:px-12 py-12"
       >
-        <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-          Industry-led <span className="text-emerald-600">Training</span>
+        <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-slate-800">
+          Industry-led <span className="text-[#1B4D3E]">Training</span>
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl">
           Practical, instructor-led courses focused on production and
@@ -219,14 +218,13 @@ const handleEnroll = (trainingTitle) => {
       {/* COURSES */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20 space-y-12">
         {trainingData.map((course, index) => (
-  <SplitCourseCard
-    key={course.id}
-    course={course}
-    index={index}
-    onEnroll={handleEnroll}
-  />
-))}
-
+          <SplitCourseCard
+            key={course.id}
+            course={course}
+            index={index}
+            onEnroll={handleEnroll}
+          />
+        ))}
       </section>
     </main>
   );
