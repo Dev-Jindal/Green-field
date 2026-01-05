@@ -28,7 +28,7 @@ export default function Services({ services }) {
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <div key={i} tabIndex={0} className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition focus:outline-none focus:ring-4 focus:ring-[#1B4D3E]/20">
-              <div className="bg-[#1B4D3E] w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+              <div className="bg-[#AFE1AF] w-16 h-16 rounded-lg flex items-center justify-center mb-6">
                 <s.icon className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-2xl font-bold text-[#1B4D3E] mb-3">{s.title}</h4>

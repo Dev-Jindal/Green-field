@@ -330,7 +330,7 @@ export default function Products() {
 
               <Link
                 to="/products"
-                className="bg-[#1B4D3E] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#153c30] transition inline-flex items-center gap-2"
+                className="bg-[#AFE1AF] text-[#1B4D3E] px-6 py-2 rounded-lg font-semibold hover: transition inline-flex items-center gap-2"
               >
                 Learn More <ArrowRight className="w-4 h-4" />
               </Link>

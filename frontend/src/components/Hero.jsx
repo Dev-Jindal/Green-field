@@ -1,14 +1,18 @@
 // src/components/Hero.jsx
 import React, { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ThreeJSBackground from "./ThreeJSBackground";
 
 export default function Hero() {
   /* ===============================
-     TYPEWRITER 1 (Existing)
+     TYPEWRITER 1
   =============================== */
-  const phrases = ["Energy Excellence", "Sustainable Solutions", "Production Optimization"];
+  const phrases = [
+    "Energy Excellence",
+    "Sustainable Solutions",
+    "Production Optimization", // <-- longest phrase
+  ];
+
   const [typed, setTyped] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -26,17 +30,17 @@ export default function Hero() {
       } else {
         timeoutId = setTimeout(() => {
           setTyped(current.slice(0, charIndex + 1));
-          setCharIndex(c => c + 1);
+          setCharIndex((c) => c + 1);
         }, typingSpeed);
       }
     } else {
       timeoutId = setTimeout(() => {
         setTyped(current.slice(0, charIndex - 1));
-        setCharIndex(c => c - 1);
+        setCharIndex((c) => c - 1);
 
         if (charIndex - 1 === 0) {
           setDeleting(false);
-          setPhraseIndex(p => (p + 1) % phrases.length);
+          setPhraseIndex((p) => (p + 1) % phrases.length);
         }
       }, typingSpeed);
     }
@@ -71,17 +75,17 @@ export default function Hero() {
       } else {
         timer = setTimeout(() => {
           setGotsText(current.slice(0, gotsChar + 1));
-          setGotsChar(c => c + 1);
+          setGotsChar((c) => c + 1);
         }, speed);
       }
     } else {
       timer = setTimeout(() => {
         setGotsText(current.slice(0, gotsChar - 1));
-        setGotsChar(c => c - 1);
+        setGotsChar((c) => c - 1);
 
         if (gotsChar - 1 === 0) {
           setGotsDeleting(false);
-          setGotsIndex(i => (i + 1) % gotsWords.length);
+          setGotsIndex((i) => (i + 1) % gotsWords.length);
         }
       }, speed);
     }
@@ -107,13 +111,33 @@ export default function Hero() {
 
         <div className="relative max-w-7xl mx-auto px-4 z-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            {/* LEFT */}
+            <div className="space-y-8 max-w-[560px]">
+              {/* STATIC LINE */}
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-[#0F3D2E]">
                 Innovative Solutions for
-                <span className="block md:inline text-white caret">
-                  {" "}{typed}
-                </span>
               </h1>
+
+              {/* TYPEWRITER WITH RESERVED WIDTH */}
+              <div className="relative">
+                {/* Invisible placeholder (locks width) */}
+                <div className="opacity-0 pointer-events-none text-4xl md:text-5xl font-bold">
+                  Production Optimization
+                </div>
+
+                {/* Actual typing text */}
+                <div
+                  className="
+                    absolute inset-0
+                    text-4xl md:text-5xl
+                    font-bold text-white caret
+                    leading-tight
+                    whitespace-nowrap
+                  "
+                >
+                  {typed}
+                </div>
+              </div>
 
               <p className="text-xl text-[#0F3D2E]/90 leading-relaxed">
                 Providing cutting-edge engineering consultancy and customized
@@ -123,10 +147,11 @@ export default function Hero() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/schedule-demo"
-                  className="bg-white text-[#0F3D2E] px-8 py-4 rounded-lg font-semibold hover:bg-[#AFE1AF] hover:text-[#0F3D2E] transition shadow-md"
+                  className="bg-white text-[#0F3D2E] px-8 py-4 rounded-lg font-semibold hover:bg-[#AFE1AF] transition shadow-md"
                 >
                   Book a Demo
                 </Link>
+
                 <Link
                   to="/services"
                   className="border-2 border-white text-white hover:bg-[#AFE1AF] hover:text-[#0F3D2E] px-8 py-4 rounded-lg font-semibold transition"
@@ -136,6 +161,7 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* RIGHT VIDEO (ABSOLUTELY STABLE) */}
             <div className="relative w-full max-w-xl mx-auto">
               <div className="overflow-hidden rounded-2xl shadow-2xl bg-black/10 ring-4 ring-[#AFE1AF]/40">
                 <video
@@ -168,7 +194,7 @@ export default function Hero() {
               G.O.T.S
             </h3>
 
-            <p className="text-2xl font-semibold text-[#0F3D2E] caret transition-all duration-300">
+            <p className="text-2xl font-semibold text-[#0F3D2E] caret">
               {gotsText}
             </p>
 

@@ -268,12 +268,12 @@ export const blogPosts = [
 
 
 export const partnerLogos = [
+  "/images/NSP.png",
+  "/images/GoldenGateBridge.png",
+  "/images/UGreen.jpg",
+  "/images/HOPON.png",
+  "/images/AdreeEnergy.jpg",
   "/images/partners/P1.png",
-  "/images/partners/P2.png",
-  "/images/partners/P3.png",
-  "/images/partners/P4.png",
-  "/images/partners/P5.png",
-  "/images/partners/P6.png",
 ];
 
 export const statsData = [
