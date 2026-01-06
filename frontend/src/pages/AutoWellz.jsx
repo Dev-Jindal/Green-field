@@ -83,58 +83,6 @@ export default function AutoWellz() {
                 Book a Demo <ArrowRight size={18} />
               </Link>
 
-              {/* Talk to Expert Hover */}
-<div className="relative inline-block">
-  <button
-    className="
-      group
-      relative
-      px-6 py-3
-      border-2 border-[#1B4D3E]
-      rounded-xl
-      font-semibold
-      overflow-hidden
-      text-[#1B4D3E]
-      hover:bg-[#1B4D3E]
-      hover:text-white
-      transition-colors
-      duration-300
-      flex items-center justify-center
-      min-w-[210px]
-    "
-  >
-    {/* Default Text */}
-    <span
-      className="
-        flex items-center gap-2
-        transition-all duration-300
-        group-hover:-translate-y-8
-        group-hover:opacity-0
-      "
-    >
-      <Phone size={18} />
-      Talk to an Expert
-    </span>
-
-    {/* Hover Text */}
-    <span
-      className="
-        absolute
-        flex items-center gap-2
-        opacity-0
-        translate-y-8
-        transition-all duration-300
-        group-hover:translate-y-0
-        group-hover:opacity-100
-      "
-    >
-      📞 86583 24008
-    </span>
-  </button>
-</div>
-
-
-
               <a
                 href="/brochure/Autowellz Brochure.pdf"
                 target="_blank"
@@ -184,7 +132,7 @@ export default function AutoWellz() {
 
       {/* ================= WHY AUTOWELLZ ================= */}
       <section className="py-20 bg-[#f7fffb]">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
 
           <div>
             <h2 className="text-3xl font-bold mb-6">
@@ -370,13 +318,13 @@ export default function AutoWellz() {
       <img
         src="/images/Picture5.png"
         alt="Operational planning dashboard"
-        className="rounded-xl shadow-lg object-cover"
+        className="w-full max-w-xl md:max-w-2xl rounded-2xl shadow-lg scale-105"
       />
 
       <img
         src="/images/Picture6.png"
         alt="Analytics and reporting"
-        className="rounded-xl shadow-lg object-cover"
+        className="w-full max-w-xl md:max-w-2xl rounded-2xl shadow-lg scale-105"
       />
     </div>
 
@@ -412,7 +360,7 @@ export default function AutoWellz() {
       <img
         src="/images/Picture10.png"
         alt="Security and Governance"
-        className="w-full max-w-md rounded-2xl shadow-lg"
+        className="w-full max-w-xl md:max-w-2xl rounded-2xl shadow-lg scale-105"
       />
     </div>
 
@@ -621,61 +569,6 @@ export default function AutoWellz() {
       <button className="px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#1aa87d] transition">
         Request Demo
       </button>
-
- <div className="relative inline-block">
-  <button
-    className="
-      group
-      relative
-      px-6 py-3
-      rounded-xl
-      font-semibold
-      overflow-hidden
-      min-w-[220px]
-
-      border-2 border-white
-      text-white
-      bg-transparent
-
-      hover:bg-[#1B4D3E]
-      hover:text-white
-
-      transition-colors duration-300
-      flex items-center justify-center
-    "
-  >
-    {/* Default Text */}
-    <span
-      className="
-        flex items-center gap-2
-        transition-all duration-300
-        group-hover:-translate-y-8
-        group-hover:opacity-0
-      "
-    >
-      <Phone size={18} />
-      Talk to an Expert
-    </span>
-
-    {/* Hover Text */}
-    <span
-      className="
-        absolute
-        flex items-center gap-2
-        opacity-0
-        translate-y-8
-        transition-all duration-300
-        group-hover:translate-y-0
-        group-hover:opacity-100
-      "
-    >
-      📞 86583 24008
-    </span>
-  </button>
-</div>
-
-
-
 
       <a
         href="/brochure/Autowellz Brochure.pdf"

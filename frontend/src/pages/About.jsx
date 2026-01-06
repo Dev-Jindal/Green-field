@@ -358,124 +358,138 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
           </div>
         </div>
       )}
+{/* ================= OUR PARTNERS ================= */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
 
-      {/* ================= OUR PARTNERS ================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+    <h2 className={`text-4xl md:text-5xl font-bold text-center ${THEME.textDark} mb-16`}>
+      Our Partners
+    </h2>
 
-          <h2 className={`text-4xl md:text-5xl font-bold text-center ${THEME.textDark} mb-16`}>
-            Our Partners
-          </h2>
+    {/* ================= OUR CLIENTS ================= */}
+    <div className="mb-20">
+      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+        Our Clients
+      </h3>
 
-          {/* ================= OUR CLIENTS ================= */}
-          <div className="mb-20">
-            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-6`}>
-              Our Clients
-            </h3>
+      <div className="overflow-hidden relative">
+        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+          {[
+            { img: "/images/Oil India.png", size: "h-22 md:h-24 max-w-[180px]" },
+            { img: "/images/petronas_carigali.png", size: "h-24 md:h-26 max-w-[210px]" },
+            { img: "/images/Cairn.png", size: "h-24 md:h-26 max-w-[200px]" },
+            { img: "/images/spoc.png", size: "h-30 md:h-34 max-w-[230px]" },
+            { img: "/images/KIRI.jpg", size: "h-30 md:h-34 max-w-[230px]" },
+            { img: "/images/SEE.png", size: "h-24 md:h-26 max-w-[200px]" },
 
-            <ul className="grid md:grid-cols-3 gap-4 list-disc list-inside text-gray-700 text-lg">
-              <li>Oil India</li>
-              <li>Petronas Carigali</li>
-              <li>Cairn India</li>
-              <li>SPOC, Sudan</li>
-              <li>Kiri Energy</li>
-              <li>SEE Energy</li>
-            </ul>
-          </div>
-
-          {/* ================= GLOBAL SERVICE PARTNERS ================= */}
-          <div className="mb-20">
-            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-10`}>
-              Global Service Partners
-            </h3>
-
-            <div className="grid md:grid-cols-3 gap-10 text-center">
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">Permian Oil & Gas</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">TPS</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">Sutera Energy</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">Rara Energy</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <img
-                  src="/images/GoldenGateBridge.png"
-                  alt="Golden Gate Bridge Trading and Services"
-                  className="mx-auto mb-4 h-20 object-contain"
-                />
-                <p className="font-semibold text-lg">
-                  Golden Gate Bridge Trading and Services
-                </p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <img
-                  src="/images/AdreeEnergy.jpg"
-                  alt="Adisshre Energies Pvt Ltd"
-                  className="mx-auto mb-4 h-20 object-contain"
-                />
-                <p className="font-semibold text-lg">
-                  Adisshre Energies Pvt Ltd
-                </p>
-              </div>
+            // duplicate for smooth loop
+            { img: "/images/Oil India.png", size: "h-22 md:h-24 max-w-[180px]" },
+            { img: "/images/petronas_carigali.png", size: "h-24 md:h-26 max-w-[210px]" },
+            { img: "/images/Cairn.png", size: "h-24 md:h-26 max-w-[200px]" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 w-72 mx-4 flex items-center justify-center"
+            >
+              <img
+                src={item.img}
+                alt="client-logo"
+                className={`${item.size} object-contain transition-transform duration-300 hover:scale-105`}
+              />
             </div>
-          </div>
-
-          {/* ================= TECHNOLOGY PARTNERS ================= */}
-          <div>
-            <h3 className={`text-2xl font-bold ${THEME.textDark} mb-10`}>
-              Technology Partners
-            </h3>
-
-            <div className="grid md:grid-cols-3 gap-10 text-center">
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">Turnera Tech</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <p className="font-semibold text-lg">IIT ISM</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <img
-                  src="/images/NSP.png"
-                  alt="NSP"
-                  className="mx-auto mb-4 h-20 object-contain"
-                />
-                <p className="font-semibold text-lg">NSP</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <img
-                  src="/images/UGreen.jpg"
-                  alt="U Green"
-                  className="mx-auto mb-4 h-20 object-contain"
-                />
-                <p className="font-semibold text-lg">U Green</p>
-              </div>
-
-              <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <img
-                  src="/images/HOPON.png"
-                  alt="Hopun Innovation"
-                  className="mx-auto mb-4 h-20 object-contain"
-                />
-                <p className="font-semibold text-lg">Hopun Innovation</p>
-              </div>
-            </div>
-          </div>
-
+          ))}
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* ================= GLOBAL SERVICE PARTNERS ================= */}
+    <div className="mb-20">
+      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+        Global Service Partners
+      </h3>
+
+      <div className="overflow-hidden relative">
+        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+          {[
+            "/images/Permian Oil & Gas.png",
+            "/images/TPS.jpg",
+            "/images/Sutera.png",
+            "/images/Rara.png",
+            "/images/GoldenGateBridge.png",
+
+            // duplicate
+            "/images/Permian Oil & Gas.png",
+            "/images/TPS.jpg",
+            "/images/Sutera.png",
+          ].map((img, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 w-80 mx-4 flex items-center justify-center"
+            >
+              <img
+                src={img}
+                alt="service-partner-logo"
+                className="h-24 md:h-26 max-w-[240px] object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* ================= TECHNOLOGY PARTNERS ================= */}
+    <div>
+      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+        Technology Partners
+      </h3>
+
+      <div className="overflow-hidden relative">
+        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+          {[
+            { img: "/images/images_1.png", size: "h-22 md:h-24 max-w-[190px]" },
+            { img: "/images/iit-dhanbad-feature-img-01.jpg", size: "h-26 md:h-28 max-w-[230px]" },
+            { img: "/images/NSP.png", size: "h-22 md:h-24 max-w-[180px]" },
+            { img: "/images/UGreen.jpg", size: "h-22 md:h-24 max-w-[180px]" },
+            { img: "/images/Adishree.jpeg", size: "h-28 md:h-32 max-w-[220px]" },
+            { img: "/images/HOPON.png", size: "h-24 md:h-26 max-w-[200px]" },
+
+            // duplicate
+            { img: "/images/images_1.png", size: "h-22 md:h-24 max-w-[190px]" },
+            { img: "/images/iit-dhanbad-feature-img-01.jpg", size: "h-26 md:h-28 max-w-[230px]" },
+            { img: "/images/NSP.png", size: "h-22 md:h-24 max-w-[180px]" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 w-72 mx-4 flex items-center justify-center"
+            >
+              <img
+                src={item.img}
+                alt="tech-logo"
+                className={`${item.size} object-contain transition-transform duration-300 hover:scale-105`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* ================= MARQUEE ANIMATION ================= */}
+    <style>{`
+      .animate-marquee {
+        animation: marquee 7s linear infinite;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `}</style>
+
+  </div>
+</section>
+
+
+
+
     </div>
   );
 };
