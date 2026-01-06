@@ -57,18 +57,18 @@ export default function AutoWellz() {
   ];
 
   return (
-    <div className="pt-24 text-[#1B4D3E]">
+    <div className="pt-0">
 
-     <section className="bg-gradient-to-r from-[#AFE1AF] to-white py-20">
+     <section className="w-full bg-gradient-to-r from-[#AFE1AF] to-white pt-20 pb-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           <div>
                  <img
     src="/images/AutoWellz.jpg"
     alt="AutoWellz Logo"
-    className="h-14 mb-4"
+    className="h-16 md:h-20 lg:h-24 mb-3 object-contain"
   />
-            <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">
+            <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
               AutoWellz
             </h3>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
