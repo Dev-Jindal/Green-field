@@ -368,12 +368,12 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
 
     {/* ================= OUR CLIENTS ================= */}
     <div className="mb-20">
-      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+     <h3 className={`text-2xl md:text-3xl font-bold ${THEME.textDark} mb-8`}>
         Our Clients
       </h3>
 
-      <div className="overflow-hidden relative">
-        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+      <div className="overflow-hidden relative h-[120px] md:h-[140px] -mt-4 md:-mt-6">
+        <div className="flex items-center whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
           {[
             { img: "/images/Oil India.png", size: "h-22 md:h-24 max-w-[180px]" },
             { img: "/images/petronas_carigali.png", size: "h-24 md:h-26 max-w-[210px]" },
@@ -382,7 +382,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
             { img: "/images/KIRI.jpg", size: "h-30 md:h-34 max-w-[230px]" },
             { img: "/images/SEE.png", size: "h-24 md:h-26 max-w-[200px]" },
 
-            // duplicate for smooth loop
+            // duplicate
             { img: "/images/Oil India.png", size: "h-22 md:h-24 max-w-[180px]" },
             { img: "/images/petronas_carigali.png", size: "h-24 md:h-26 max-w-[210px]" },
             { img: "/images/Cairn.png", size: "h-24 md:h-26 max-w-[200px]" },
@@ -403,13 +403,13 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
     </div>
 
     {/* ================= GLOBAL SERVICE PARTNERS ================= */}
-    <div className="mb-20">
-      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+    <div className="mb-8 md:mb-10">
+      <h3 className={`text-2xl md:text-3xl font-bold ${THEME.textDark} mb-8`}>
         Global Service Partners
       </h3>
 
-      <div className="overflow-hidden relative">
-        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+      <div className="overflow-hidden relative h-[120px] md:h-[140px]">
+        <div className="flex items-center whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
           {[
             "/images/Permian Oil & Gas.png",
             "/images/TPS.jpg",
@@ -439,12 +439,12 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
 
     {/* ================= TECHNOLOGY PARTNERS ================= */}
     <div>
-      <h3 className={`text-2xl font-bold ${THEME.textDark} mb-8`}>
+      <h3 className={`text-2xl md:text-3xl font-bold ${THEME.textDark} mb-8`}>
         Technology Partners
       </h3>
 
-      <div className="overflow-hidden relative">
-        <div className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+      <div className="overflow-hidden relative h-[120px] md:h-[140px]">
+        <div className="flex items-center whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
           {[
             { img: "/images/images_1.png", size: "h-22 md:h-24 max-w-[190px]" },
             { img: "/images/iit-dhanbad-feature-img-01.jpg", size: "h-26 md:h-28 max-w-[230px]" },
@@ -476,7 +476,7 @@ With a strong engineering foundation, Firoza works at the intersection of petrol
     {/* ================= MARQUEE ANIMATION ================= */}
     <style>{`
       .animate-marquee {
-        animation: marquee 7s linear infinite;
+        animation: marquee 10s linear infinite;
       }
       @keyframes marquee {
         0% { transform: translateX(0); }
