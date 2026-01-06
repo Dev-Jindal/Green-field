@@ -254,7 +254,7 @@ export default function Products() {
         "Reduction strategies",
       ],
       video:
-        "https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&background=1",
+        "/video/GREEN.mp4",
     },
   ];
 
