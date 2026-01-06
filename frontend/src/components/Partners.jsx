@@ -16,7 +16,7 @@ export default function Partners({ logos = [] }) {
               <div
                 key={i}
                 className="flex-shrink-0 flex items-center justify-center px-10"
-                style={{ width: "260px" }}   // equal spacing
+                style={{ width: "260px" }}  
               >
                 <img
                   src={img}
