@@ -5,6 +5,7 @@ import eventsData from "../data/eventsData";
 
 
 
+
 export default function SandMaster() {
   const navigate = useNavigate();
   const faqs = [
@@ -48,6 +49,11 @@ export default function SandMaster() {
 
           {/* LEFT CONTENT */}
           <div>
+              <img
+    src="/images/SandMaster.jpg"
+    alt="SandMaster Logo"
+    className="h-14 mb-4"
+  />
             <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">SandMaster</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">

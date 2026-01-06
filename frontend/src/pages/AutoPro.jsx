@@ -434,6 +434,11 @@ export default function AutoPro() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           <div>
+                        <img
+    src="/images/AutoPro.jpg"
+    alt="AutoPro Logo"
+    className="h-14 mb-4"
+  />
             <h3 className="text-[#1B4D3E] font-semibold text-lg mb-2">AutoPro</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
