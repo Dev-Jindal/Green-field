@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { DownloadCloud, Cpu, Code, ChevronRight, Mail, Phone } from "lucide-react";
+import { DownloadCloud, Cpu, Code, ChevronRight, Mail, Phone,Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /**
  * SoftwareDevelopment page (fixed paths)
@@ -173,19 +174,43 @@ export default function SoftwareDevelopment() {
 
                             {/* Unified CTA Card: Request Demo & Contact */}
                             {/* UPDATED: Light Green Background, Dark Text */}
-                            <a id="contact" href="/schedule-demo" className={`block bg-[#AFE1AF] text-[#1B4D3E] p-8 rounded-2xl shadow-2xl transition duration-300 transform hover:scale-[1.01]`}>
-                                <div className="text-center">
-                                    <h5 className="text-2xl font-extrabold mb-2">Ready for a Demo?</h5>
-                                    <p className="text-sm font-medium opacity-90 mb-6">
-                                        Schedule a live demonstration of SandMaster or discuss a custom Proof of Concept (POC) for your specific asset.
-                                    </p>
-                                    
-                                    {/* Button Inverted: Dark Green Background, White Text */}
-                                    <button className="w-full inline-flex justify-center items-center gap-3 bg-[#1B4D3E] text-white px-6 py-3 rounded-xl font-bold shadow-lg transition duration-300 hover:bg-[#153c30]">
-                                        <Code className="w-5 h-5" /> Schedule Live Demo
-                                    </button>
-                                </div>
-                            </a>
+                           
+                              <div className="bg-[#AFE1AF] p-6 shadow-2xl text-[#1B4D3E] border-2 border-[#1B4D3E]">
+  <div className="flex items-start gap-4">
+    {/* Icon container: white background for contrast */}
+    <div className="w-12 h-12 bg-white flex items-center justify-center">
+      <Zap className="w-6 h-6 text-[#1B4D3E]" />
+    </div>
+
+    <div>
+      <h4 className="text-xl font-extrabold mb-1">Request a Demo</h4>
+      <p className="text-sm font-medium opacity-90">
+        Book a scoping demo or POC — we'll tailor a demo to your asset and KPIs.
+      </p>
+    </div>
+  </div>
+
+  <div className="mt-6">
+    <Link
+      to="/schedule-demo"
+      className="w-full inline-flex items-center justify-center gap-3 
+                 bg-[#1B4D3E] text-white px-4 py-3 
+                 rounded-lg font-bold shadow 
+                 hover:bg-[#153c30] transition hover:scale-[1.02]"
+    >
+      Schedule Demo
+      <ChevronRight className="w-4 h-4" />
+    </Link>
+  </div>
+
+  <div className="mt-4 text-sm text-[#0F2F27] flex flex-col gap-2 font-medium">
+    <div>Custom POC available</div>
+    <div>Data-driven demo with sample dashboards</div>
+  </div>
+</div>
+
+
+                            
 
                             {/* Quick Contact Info */}
                             <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
