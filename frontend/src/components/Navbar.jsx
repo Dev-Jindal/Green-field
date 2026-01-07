@@ -214,6 +214,7 @@ const Navbar = () => {
     { name: 'Products', path: '/products', dropdown: true },
     { name: 'Services', path: '/services', dropdown: true },
     { name: 'Event', path: '/events' },
+    { name: 'Blog', path: '/blog' },          // ✅ ADDED
     { name: 'Career', path: '/career' },
     { name: 'Contact', path: '/contact' },
   ];

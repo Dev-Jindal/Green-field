@@ -47,7 +47,7 @@ export default function RockMaster() {
               <img
     src="/images/RockMaster.jpg"
     alt="RockMaster Logo"
-    className="h-16 md:h-20 lg:h-24 mb-3 object-contain"
+    className="h-14 md:h-16 lg:h-20 mb-6 object-contain"
   />
             <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
               RockMaster

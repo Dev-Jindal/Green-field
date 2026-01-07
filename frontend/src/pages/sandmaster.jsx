@@ -48,11 +48,14 @@ export default function SandMaster() {
 
           {/* LEFT CONTENT */}
           <div>
+            <div className="mb-6">
+
               <img
     src="/images/SandMaster.jpg"
     alt="SandMaster Logo"
-    className="h-16 md:h-20 lg:h-24 mb-3 object-contain"
+    className="h-14 md:h-16 lg:h-20 object-contain"
   />
+  </div>
             <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">SandMaster</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">

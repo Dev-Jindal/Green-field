@@ -62,12 +62,16 @@ export default function AutoWellz() {
      <section className="w-full bg-gradient-to-r from-[#AFE1AF] to-white pt-20 pb-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-          <div>
+          <div className="min-w-0">
+            <div className="relative mb-4 w-fit">
+             
+            
                  <img
     src="/images/AutoWellz.jpg"
     alt="AutoWellz Logo"
-    className="h-16 md:h-20 lg:h-24 mb-3 object-contain"
+    className="relative h-16 md:h-20 lg:h-24 pl-3 object-contain"
   />
+  </div>
             <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
               AutoWellz
             </h3>
@@ -102,7 +106,7 @@ export default function AutoWellz() {
           </div>
 
           {/* VIDEO */}
-          <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
+          <div className="rounded-2xl overflow-hidden shadow-xl bg-white min-w-0">
             <div className="relative pb-[56.25%]">
               <iframe
                 src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0"

@@ -29,6 +29,7 @@ import DataAnalysisPage from "./pages/DataAnalysisPage";
 
 // UTILITIES
 import ScrollToTop from "./components/ScrollToTop";
+import BlogPage from "./pages/BlogPage";
 
 // GSAP
 import gsap from "gsap";
@@ -54,6 +55,7 @@ function App() {
             <Route path="/schedule-demo" element={<ScheduleDemo />} />
             <Route path="/career" element={<Careers />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/blog" element={<BlogPage />} />
 
             {/* ✅ EVENTS (FIXED & COMPLETE) */}
             <Route path="/events" element={<Events />} />

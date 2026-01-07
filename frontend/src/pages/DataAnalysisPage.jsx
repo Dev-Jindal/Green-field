@@ -215,13 +215,36 @@ export default function DataAnalysis() {
 						<p className="text-lg text-slate-600 mb-8">
 							Contact our expert data team today to start leveraging your operational data for massive value creation.
 						</p>
-						<a
-							href="#contact"
-							className={`${CTA_BG} ${CTA_TEXT} inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-xl shadow-xl transition duration-300 transform hover:scale-[1.02]`}
-							onClick={(e) => e.preventDefault()}
-						>
-							<Mail className="w-6 h-6" /> Talk to a Data Scientist
-						</a>
+						<div className="relative inline-block group">
+  {/* BUTTON */}
+  <div
+    className={`${CTA_BG} ${CTA_TEXT} inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-xl shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer`}
+  >
+    <Mail className="w-6 h-6" /> Talk to a Data Scientist
+  </div>
+
+  {/* HOVER CONTACT CARD */}
+  <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2
+                  opacity-0 invisible
+                  group-hover:opacity-100 group-hover:visible
+                  transition-all duration-300
+                  bg-white rounded-xl shadow-2xl p-6 w-80 z-50">
+
+    <h4 className="text-lg font-bold text-[#1B4D3E] mb-2">
+      Contact Us
+    </h4>
+
+    <p className="text-gray-600 text-sm mb-4">
+      Speak directly with our data science expert.
+    </p>
+
+    <div className="space-y-2 text-sm">
+      <p>📧 contact@company.com</p>
+      <p>📞 +91 98765 43210</p>
+    </div>
+  </div>
+</div>
+
 					</div>
 				</section>
 
