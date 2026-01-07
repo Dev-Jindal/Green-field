@@ -1,6 +1,7 @@
 // src/pages/OilGasConsultancy.jsx
 import React, { useEffect, useRef } from "react";
-import { DownloadCloud, Mail, Phone, ChevronRight, Zap, Link } from "lucide-react";
+import { DownloadCloud, Mail, Phone, ChevronRight, Zap, Link as LinkIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /**
  * OilGasConsultancy.jsx
@@ -208,15 +209,14 @@ export default function OilGasConsultancy() {
                   </div>
                 </div>
 
-                <div className="mt-6">
-                  {/* Button: Dark green background, White text */}
-                  <a
-                    href="/schedule-demo"
+                 <div className="mt-6">
+                  <Link
+                    to="/schedule-demo"
                     className="w-full inline-flex items-center justify-center gap-3 bg-[#1B4D3E] text-white px-4 py-3 rounded-lg font-bold shadow hover:bg-[#153c30] transition hover:scale-[1.02]"
                   >
                     Schedule Demo
                     <ChevronRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-4 text-sm text-[#0F2F27] flex flex-col gap-2 font-medium">
