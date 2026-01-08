@@ -57,7 +57,7 @@ export default function SoftwareDevelopment() {
                         <div className="max-w-7xl mx-auto px-6 md:px-12">
                             <div className="text-white max-w-3xl">
                                 <h1 ref={heroTitleRef} className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
-                                    Software Development
+                                    Software Engineering
                                 </h1>
 
                                 <p ref={heroSubRef} className="mt-4 text-sm md:text-lg text-white/90 max-w-xl">

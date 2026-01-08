@@ -8,6 +8,7 @@ import {
   Briefcase,
   Users,
   Award,
+  Brain,
   TrendingUp,
 } from "lucide-react";
 
@@ -93,7 +94,7 @@ export const services = [
   {
     id:1,
     icon: Code,
-    title: "Software Development",
+    title: "Software Engineering",
     description: "Customized software solutions tailored to industry needs.",
   },
   {
@@ -107,6 +108,12 @@ export const services = [
     icon: Users,
     title: "Customized Training",
     description: "Professional training programs for industry professionals.",
+  },
+  {
+    id: 4,
+    icon: Brain, // make sure to import Brain from lucide-react
+    title: "AI & ML Solutions",
+    description: "Intelligent AI and machine learning solutions to drive automation, insights, and innovation.",
   },
  
 ];

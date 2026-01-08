@@ -33,7 +33,7 @@ export default function DataAnalysis() {
 	// Data content based on user input
 	const contentData = {
 		intro: {
-			title: "Data Analysis",
+			title: "AI & ML Solutions",
 			text: "With advent of big data analysis in Oil and Gas industry, operators and service partners are taking advantage of advanced algorithms and data science services for production optimization, time savings, efficiency of operations. Data Analytics framework for any task or process adds tremendous value creation for an organization. We, at GOTS with our experts in data science and advance algorithm builder cater to any data solutions for OIl and Gas industry application.",
 		},
 		whyUs: {

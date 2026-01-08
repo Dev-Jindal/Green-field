@@ -11,6 +11,8 @@ const getServicePath = (id) => {
       return "/services/oil-gas";
     case 3:
       return "/services/training";
+    case 4:
+      return "/services/data-analysis";
     default:
       return "/services";
   }

@@ -229,9 +229,9 @@ const Navbar = () => {
 
   const serviceItems = [
     { name: "Energy Consultancy", path: "/services/oil-gas" },
-    { name: "Software Development", path: "/services/software" },
+    { name: "Software Engineering", path: "/services/software" },
     { name: "Training", path: "/services/training" },
-    { name: "Data Analysis", path: "/services/data-analysis" },
+    { name: "AI&ML", path: "/services/data-analysis" },
   ];
 
   const isActive = (path) => location.pathname === path;
