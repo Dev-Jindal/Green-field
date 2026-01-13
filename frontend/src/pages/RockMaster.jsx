@@ -44,17 +44,20 @@ export default function RockMaster() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
           <div>
+              {/* Logo Wrapper with White Background and Padding */}
+            <div className="bg-white p-4  inline-block mb-6 shadow-sm">
               <img
-    src="/images/RockMaster.jpg"
-    alt="RockMaster Logo"
-    className="h-14 md:h-16 lg:h-20 mb-6 object-contain"
-  />
-            <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
+                src="/images/RockMaster.jpg"
+                alt="RockMaster Logo"
+                className="h-10 md:h-12 lg:h-14 object-contain"
+              />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-[#1B4D3E] leading-tight">
               RockMaster
-            </h3>
+            </h1>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
-              Mechanical Earth Modelling & Sanding Analysis
+              Critical Drawdown Pressure Profiling and Sanding Tendency Analysis
             </h1>
 
             <p className="text-[#1B4D3E]/80 mt-5 text-lg leading-relaxed">
@@ -107,7 +110,7 @@ export default function RockMaster() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#0f2730] leading-tight">
-            Bring together MEM, sanding tendency, and field-life sand modelling in a single tool with RockMaster.
+            Bring together MEM, CDP (Critical Drawdown Pressure Profiling), sanding tendency, and field-life sand modelling in a single tool with RockMaster.
           </h2>
         </div>
       </section>

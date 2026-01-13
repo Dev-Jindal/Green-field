@@ -56,7 +56,7 @@ export default function SandMaster() {
     className="h-14 md:h-16 lg:h-20 object-contain"
   />
   </div>
-            <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">SandMaster</h3>
+            <h3 className="text-4xl md:text-6xl font-bold text-[#1B4D3E] leading-tight">SandMaster</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
               Advanced Sand Management System for  
@@ -152,7 +152,7 @@ export default function SandMaster() {
             <div className="space-y-6">
               <div>
                 <h4 className="font-semibold text-[#1B4D3E]">Complete Flow Analysis</h4>
-                <p className="text-[#1B4D3E]/70 text-sm">Model erosion, deposition & PSD across the facility.</p>
+                <p className="text-[#1B4D3E]/70 text-sm">Model erosion, corrosion, deposition & PSD across the facility.</p>
               </div>
 
               <div>

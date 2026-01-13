@@ -69,17 +69,17 @@ export default function AutoWellz() {
                  <img
     src="/images/AutoWellz.jpg"
     alt="AutoWellz Logo"
-    className="relative h-16 md:h-20 lg:h-24 pl-3 object-contain"
+    className="relative h-16 md:h-20 lg:h-24 pl-1 object-contain"
   />
   </div>
-            <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
+            <h3 className="text-4xl md:text-6xl font-bold text-[#1B4D3E] leading-tight">
               AutoWellz
             </h3>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
               Workflow Automation & Advanced Analytics for Energy Operations
             </h1>
 
-            <p className="mt-6 text-lg text-[#1B4D3E]/80">
+            <p className="mt-6 text-lg text-[#1B4D3E]">
               AutoWellz is a fully A–Z integrated digital platform patented for facilitating
               workflow of procedure making and reporting with advance analysis of engineering
               parameters & utilized resources during the operations.

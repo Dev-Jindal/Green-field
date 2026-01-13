@@ -49,7 +49,7 @@ export default function Green() {
     alt="Green Logo"
     className="h-16 md:h-20 lg:h-24 mb-3 object-contain"
   />
-            <h3 className="text-[#1B4D3E] font-bold text-2xl md:text-3xl lg:text-4xl mb-3">GREEN</h3>
+            <h3 className="text-4xl md:text-6xl font-bold text-[#1B4D3E] leading-tight">GREEN</h3>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#1B4D3E] leading-tight">
               Optimize Energy Usage —
@@ -121,7 +121,7 @@ export default function Green() {
           <div className="rounded-3xl border border-[#1B4D3E]/20 p-8 bg-white">
             <h3 className="text-3xl font-bold text-[#1B4D3E] mb-6">Carbon Footprint Intelligence</h3>
             <ul className="space-y-4 text-[#1B4D3E]/90">
-              <li>Real-time estimation of CO₂, CH₄ and other GHG emissions.</li>
+              <li>Real-time calculation of CO₂, CH₄ and other GHG emissions.</li>
               <li>Track emission sources across operations and departments.</li>
               <li>Automated reduction suggestions based on usage patterns.</li>
             </ul>
@@ -298,7 +298,7 @@ export default function Green() {
       <img
         src="/images/greenlongterm.png"
         alt="support"
-        className="rounded-xl shadow-lg object-cover w-full h-64"
+        className="w-full max-w-md rounded-xl shadow-lg object-contain"
       />
     </div>
 
@@ -401,7 +401,10 @@ export default function Green() {
         <h2 className="text-3xl md:text-4xl font-bold text-white">
           Build a Sustainable, Energy-Efficient Future with GREEN
         </h2>
-        <button className="mt-8 px-8 py-3 bg-[#20c997] text-white font-semibold rounded-xl shadow-lg hover:bg-[#17a984] transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="mt-12 px-8 py-3 bg-[#1B4D3E] text-white rounded-xl font-semibold hover:bg-[#163f33] transition"
+        >
           Connect With Our Team
         </button>
       </section>
