@@ -69,13 +69,11 @@ Gaurav holds a B. Tech in Electronics Engineering from the Indian Institute of T
     },
     {
       name: "Abhishek Gupta",
-      role: "Senior Petroleum Engineer",
+      role: "Principal Petroleum Engineer",
       image: "/images/team/Abhishek Sir.png",
-      bio: `He is working as a Petroleum Engineer having 9+ yrs of experience in Oil & Gas Industry. Experience with Rig Operations involving Completion/Workover activities & with Rig less operations involving Coiled Tubing, E-Line, Slickline & Well Test operations.
-
-He is expert in Execution in Completion & Rigless operations for turn key Project including engineering support to Workover/Completion rigs & rigless operations. Expertise in Designing well completion, workover & rigless programs for ESP, PCP, Jet Pump, Mono & Selective injectors while abiding by process safety & HSE standards. Experience with well completions including seal bore packers, SSD’s, CIM’s etc.
-
-Currently working as a Senior Petroleum Engineer at Greenfield Oil & Trading services.`,
+      bio: `Abhishek Gupta is a Principal Petroleum Engineer at Greenfield Oil and Trading Services, bringing approximately 13 years of extensive experience in the global Oil & Gas sector. He is a recognized specialist in well intervention, possessing deep technical proficiency in Rig Operations—specifically Completions and Workovers—as well as Rigless Operations involving Coiled Tubing, E-Line, Slickline, and Well Testing.
+At Greenfield, Abhishek plays a pivotal role in the execution of sand management and consultancy projects, providing critical engineering support for complex well operations. His track record includes the successful delivery of high-stakes projects for major energy clients across Malaysia, India, Africa, and the Middle East. Abhishek is known for his ability to drive operational efficiency and deliver robust technical solutions in challenging international environments.
+`,
     },
     {
       name: "Sejal Jain",
