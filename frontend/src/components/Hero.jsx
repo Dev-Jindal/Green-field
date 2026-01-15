@@ -162,18 +162,19 @@ export default function Hero() {
             </div>
 
             {/* RIGHT VIDEO (ABSOLUTELY STABLE) */}
-            <div className="relative w-full max-w-xl mx-auto">
-              <div className="overflow-hidden rounded-2xl shadow-2xl bg-black/10 ring-4 ring-[#AFE1AF]/40">
-                <video
-                  src="/video/hero.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-[330px] md:h-[360px] object-cover"
-                />
-              </div>
-            </div>
+           
+{/* <div className="relative w-full max-w-xl mx-auto">
+  <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl bg-black/10 ring-4 ring-[#AFE1AF]/40">
+    <iframe
+      src="https://player.vimeo.com/video/686737424?autoplay=1&muted=1&loop=1&controls=0"
+      className="absolute inset-0 w-full h-full"
+      allow="autoplay; fullscreen"
+      allowFullScreen
+      title="AutoWellz Overview"
+    />
+  </div>
+</div> */}
+
           </div>
         </div>
       </section>
